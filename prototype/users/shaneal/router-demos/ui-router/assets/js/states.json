@@ -1,0 +1,28 @@
+[
+  {
+    "stateName": "home",
+    "urlPrefix": "/",
+    "type": "ui-router",
+    "views": {
+      "dtv-header": {
+        "templateUrl": "assets/components/nav/nav.html",
+        "controller": "dtvNavCtrl"
+      },
+      "dtv-tup": {
+        "template": "<p>This is some default content for the roor url. It is also the container that all pages to go inside.</p>"
+      }
+    }
+  },
+  {
+    "stateName": "shows",
+    "urlPrefix": "/shows",
+    "type": "ngload",
+    "src": "shows"
+  },
+  {
+    "stateName": "movies",
+    "urlPrefix": "/movies",
+    "type": "ngload",
+    "src": "movies"
+  }
+]

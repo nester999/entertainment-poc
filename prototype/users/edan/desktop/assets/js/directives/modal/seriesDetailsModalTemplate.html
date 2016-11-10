@@ -1,0 +1,43 @@
+<div ng-if="active" class="modal">
+	<div class="modal-overlay" ng-style="modalOverlay.style"></div>
+	<div class="modal-content" ng-style="modal.style">
+		<div class="background-overlay"></div>
+		<div class="modal-header">
+			<h3 class="series-title">{{seriesInfo.title}}</h3>
+			<div class="btn-close-modal" ng-click="closeModal()">X</div>
+			<div class="series-info">
+				<span class="episode-info">2 Seasons, 44 Episodes</span>
+				<span class="genre">Science Fiction, Series, Drama, Action/Adventure</span>
+				<span class="mature-rating">TV-PG</span>
+			</div>
+		</div>		
+		<div class="modal-body">
+			<div class="modal-body-content" ng-style="modalBodyContent.style">
+				<div class="series-description">After the Battle of New York, the world has changed. It now knows not only about the Avengers, but also the powerful menaces that require those superheroes and more to face them. In response, Phil Coulson of the Strategic Homeland Intervention, Enforcement and Logistics Division assembles an elite covert team to find and deal with these threats wherever they are found. With a world rapidly becoming more bizarre and dangerous than ever before as the supervillains arise, these agents of S.H.I.E.L.D. are ready to take them on.</div>
+				<div class="cta-btn">
+					<button class="btn blue-btn">Watch This Series</button>
+					<button class="btn general-btn">More Ways to Watch</button>
+				</div>
+			</div>
+			<div class="modal-tabs" ng-style="modalTabs.style" ng-class="{'modal-tabs-active': modalTabs.activeTab !== ''}">
+				<ul class="tabs-header clearfix" ng-style="modalTabs.header.style">
+					<li ng-repeat="tab in modalTabs.tabs" ng-click="selectTab(tab.value)" ng-class="{'active': tab.value === modalTabs.activeTab}"><span>{{tab.name}}</span></li>
+				</ul>
+				<div class="tabs-content" ng-if="modalTabs.activeTab">
+					<div class="tab-content" ng-if="modalTabs.activeTab === 'allEpisodes'">
+						All Episodes
+					</div>
+					<div class="tab-content" ng-if="modalTabs.activeTab === 'clips'">
+						Clips
+					</div>
+					<div class="tab-content" ng-if="modalTabs.activeTab === 'castCrew'">
+						Cast &amp; Crew
+					</div>
+					<div class="tab-content" ng-if="modalTabs.activeTab === 'similarShows'">
+						Similar Shows
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

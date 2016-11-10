@@ -1,0 +1,452 @@
+@import 'variables.less';
+@import 'modalDetails.less';
+
+.modal{
+  font-size: 16px;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  bottom: 0; 
+  right: 0;
+  margin: 0 auto;
+  // background: salmon;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  .btn {
+    font-size: 1em;
+    text-transform: inherit;
+    font-weight: 100;
+    letter-spacing: inherit;
+    color: #FFF;
+    text-shadow: none;
+    border: none;
+    box-shadow: none;
+    padding: .85em 1em;
+    border-radius: 3px;
+    margin-right: 15px;
+    &.blue-btn { background-color: #147cff;
+      &:hover { background-color: #147cff; background-image: none; }
+    }
+    &.general-btn { background-color: #FFF; color: #777;
+      &:hover { background-color: #FFF; background-image: none; }
+    }
+  }
+  .aspect-ratio-wrapper {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+
+    .aspect-content {
+      position:  absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      padding-top: 56.25%
+    }
+
+
+  }
+  .modal-overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 100;
+    opacity: 0;
+    transition: .1s;
+  }
+  .btn-close-modal {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.3em 0.1em 0 0;
+    font-size: 2em;
+    cursor: pointer;
+  }
+  .modal-content {
+    position: absolute;
+    font-size: 16px;
+    top: 11%;
+    left: 50%;
+    margin: auto;
+    border: 1px #ccc solid;
+    width: 100%;
+    height: 69%;
+    max-width: 800px;
+    background: #000;
+    z-index: 101;
+    color: #FFF;
+    background-size: contain;
+    overflow: hidden;
+    padding: 0;
+    transition: 0.25s;
+    opacity: 1;
+    -webkit-box-shadow: 0px 6px 10px 0px #555;;
+    box-shadow: 0px 6px 10px 0px #555;
+    h3 { font-size: 1.2em;
+      padding: 0.7em 0.53em;
+      display: inline-block; 
+      margin-top: 0; 
+      color: #444;
+      font-family: 'DIN-light';}
+    .series-info { font-size: 0.75em; padding: 1em 0; color: #777;
+      .icon-dtv2-common-circle {
+        position: relative;
+        color: forestgreen;
+        font-size: 1.5em;
+        margin-left: 0.3em;
+        margin-right: 0;
+        padding-right: 0;
+        .icon-dtv2-common-check {
+          position: absolute;
+          color: black;
+          top: 0;
+          left: 3px;
+        }
+      }
+      span { padding: 0 1em; border-right: 2px solid #777;
+        &:first-child { padding-left: 1em; }
+        &:last-child { padding-right: 0; border: 0; font-family: 'DTV-DIN-bold';}
+      }
+    }
+    .series-description { font-size: 1em; line-height: 1.5em; color: #CCC; text-shadow: 1px 1px 7px #000; margin-bottom: 2em; }
+    .background-overlay {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#adadad+0,000000+99&amp;0+0,1+100 */
+      /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNhZGFkYWQiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC45OSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+      background: -moz-radial-gradient(center, ellipse cover,  rgba(173,173,173,0) 0%, rgba(0,0,0,0.99) 99%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+      background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(173,173,173,0)), color-stop(99%,rgba(0,0,0,0.99)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+      background: -webkit-radial-gradient(center, ellipse cover,  rgba(173,173,173,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-radial-gradient(center, ellipse cover,  rgba(173,173,173,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* Opera 12+ */
+      background: -ms-radial-gradient(center, ellipse cover,  rgba(173,173,173,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* IE10+ */
+      background: radial-gradient(ellipse at center,  rgba(173,173,173,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00adadad', endColorstr='#000000',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+    .modal-header {
+      padding: 2.5em 2.5em 0 2.5em;
+    }
+    .modal-body {
+      position: relative;
+      margin: 0;
+    }
+    .modal-start-watching-content {
+      position: absolute;
+      top: -34%; 
+      left: 0; 
+      bottom: 0; 
+      right: 0;
+      margin: auto;
+      width: 9.6em;
+      height: 3em;
+      background: #111;
+      color: #bbb;
+      cursor: pointer;
+      opacity: 0.9;
+      -webkit-border-radius: 27px;
+      -moz-border-radius: 27px;
+      -ms-border-radius: 27px;
+      -o-border-radius: 27px;
+      border-radius: 27px;
+      -webkit-border: 1px solid white;
+      -moz-border: 1px solid white;
+      -ms-border: 1px solid white;
+      -o-border: 1px solid white;
+      border: 1px solid white;
+      .icon-dtv2-play {
+        position: absolute;
+        color: #fff;
+        margin: 0 auto;
+        top: 0;
+        font-size: 1.3em;
+        right: 0;
+        left: 0;
+        padding: 0.8em 0.8em 0.8em 1.1em;
+      }
+      .start-watching-info {
+          margin-left: 4.5em;
+          font-size: 0.7em;
+          line-height: 1.6em;
+          padding-top: 0.5em;
+          font-family: 'DIN-light';
+      }
+      .series-episode {
+        width: 3em;
+        color: #fff;
+        font-size: 1.3em;
+        font-family: 'DIN-light';
+        text-transform: uppercase;
+        display: inline-block;
+      }
+      .episode-title{
+        position: relative;
+        display: inline-block;
+        color: #ddd;
+        font-size: 1.3em;
+        margin-left: 0;
+        font-family: 'DIN-light';
+      }
+    }
+    .white-details-bar {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 40%;
+      background: #FDFDFD;
+      .title-row {
+        position: relative;
+        width: 100%;
+        height: 19%;
+        // border: 1px solid red;
+        .icon {
+          cursor: pointer;
+        }
+      }
+      .series-information {
+        // position: relative;
+        // width: 100%;
+        // height: 15%;
+        // border: 1px solid salmon;
+      }
+      .description-container {
+        position: relative;
+        width: 95%;
+        height: 38%;
+        overflow: hidden;
+        line-height: 1em;
+        padding: 0 0.7em;
+        // border: 1px solid orange;
+        .description {
+          color: #999;
+          font-size: 0.75em;
+        }
+      }
+      .modal-tabs {
+        position: relative;
+        width: 100%;
+        height: 30%;
+        border-top: 1px solid #ccc;
+        ul {
+          transition: .25s;
+          padding: 1em 0;
+          font-size: 0.9em;
+          color: #555;
+          li {
+            float: left;
+            width: 25%;
+            text-align: center;
+            cursor: pointer; 
+            font-family: 'DIN-Medium';
+            :active {
+              font-size: 1em;
+            }
+            span { padding: 1.5em 0; display: block; }
+          }
+        }
+      }
+    }
+    .modal-body-content {
+      padding: 0 2.5em;
+      overflow: hidden;
+      transition: .25s;
+    }
+  }
+  // .modal-tabs {
+  //   position: absolute;
+  //   width: 100%;
+  //   left: 0;
+  //   top: 0;
+  //   ul.tabs-header {
+  //     transition: .25s;
+  //     li {
+  //       float: left;
+  //       width: 25%;
+  //       text-align: center;
+  //       font-size: 18px;
+  //       span { cursor: pointer; padding: 1.5em 0; display: block; }
+  //     }
+  //   }
+  //   .tabs-content {
+  //     margin: 2.5em;
+  //   }
+  //   &.modal-tabs-active {
+  //     ul.tabs-header li {
+  //       color: @light-gray;
+  //       &.active {
+  //         color: @dtv-blue;
+  //         span {  
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+}
+// @media all and (orientation:portrait) {
+//   .modal {
+//     // top: 30%;
+//     .modal-content {
+//       top: 30%;
+//       width: 80%;
+//     }
+//     .modal-start-watching-content {
+//       .start-watching-info {
+//         font-size: 0.7em;
+//       }
+//     }
+//   }
+// }
+// @media (min-width: 800px) and (max-width:1599px) {
+//   .desktop header {
+//     #main_nav_tup .nav {
+//       margin-left: 1em;
+//       font-size: .9em;
+//       a { 
+//         right: 0; left: 0;
+//         line-height: 4.7;
+//       }
+//     }
+//   }
+// }
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-width: 1200px) 
+  and (max-width: 1600px) { 
+    .modal {
+      .modal-content {
+        top: 140px;
+        width: 80%;
+      }
+    }
+}
+
+/* Portrait and Landscape */
+@media screen 
+  and (min-width: 920px) 
+  and (max-width: 1200px) {
+    .modal {
+      .modal-content {
+        top: 250px;
+        width: 80%;
+        height: 88%;
+      }
+    }
+}
+/* ----------- iPad mini ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (min-width: 650px) 
+  and (max-width: 920px) {
+    .modal {
+      .modal-content {
+        top: 350px;
+        width: 80%;
+        height: 88%;
+      }
+    }
+}
+
+@media screen 
+  and (min-width: 536px) 
+  and (max-width: 650px) { 
+    .modal {
+      .modal-content {
+        top: 310px;
+        width: 80%;
+        height: 87%;
+        .white-details-bar {
+          height: 31%;
+        }
+        .title-row {
+          height: 62%;
+        }
+        .description-container {
+          span {
+            display: none;
+          }
+        }
+      }
+      .series-info {
+        display: none;
+      }
+    }
+}
+/* ----------- iPhone 6+ ----------- */
+
+/* Portrait and Landscape */
+// @media screen 
+//   and (min-width: 414px) 
+//   and (max-width: 536px) { 
+//     .modal {
+//       .modal-content {
+//         top: 238px;
+//         width: 80%;
+//         height: 88%;
+//       }
+//       .series-info {
+//         display: none;
+//       }
+//       .description-container {
+//         display: none;
+//       }
+//       .modal-tabs {
+//         display: none;
+//       }
+//     }
+// }
+
+/* Portrait and Landscape */
+@media screen 
+  and (max-width: 536px) { 
+    .modal {
+      .modal-content {
+        top: 250px;
+        width: 80%;
+        height: 87%;
+        .btn-close-modal {
+          padding: 0.13em 0.3em 0 0;
+          font-size: 1.3em;
+          .icon-dtv2-close-thin {
+            margin-right: 0;
+          }
+        }
+        .modal-start-watching-content {
+          border-radius: 50%;
+          width: 4.6em;
+          height: 4.6em;
+          .icon-dtv2-play {
+            font-size: 2.3em;
+            left: 7px;
+            padding: 0.55em;
+          }
+          .start-watching-info {
+            display: none;
+          }
+        }
+        h3 {
+          padding: 0.2em 1em;
+        }
+        .white-details-bar {
+          height: 19%;
+        }
+      }
+      .series-info {
+        display: none;
+      }
+      .description-container {
+        display: none;
+      }
+      .modal-tabs {
+        display: none;
+      }
+    }
+}

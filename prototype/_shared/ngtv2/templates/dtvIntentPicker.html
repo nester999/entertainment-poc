@@ -1,0 +1,12 @@
+<ul class="intent">
+  <li ng-repeat="intent in intentItems" ng-class="{ active: intent.active }" ng-style="intentOptions.style">
+    <a href="#" ng-click="intentChanged($index)">
+      <i class="icon icon-dtv2-{{intent.iconClass}}"></i>
+      <span>{{intent.label}}</span>
+    </a>
+  </li>
+  <li class="intent-pill {{intentItems[currentIntentIndex].iconClass}}" ng-style="intentPill.style">
+    <i class="icon icon-dtv2-{{intentItems[currentIntentIndex].iconClass}}"></i>
+    <span>{{intentItems[currentIntentIndex].label}}</span>
+  </li>
+</ul>

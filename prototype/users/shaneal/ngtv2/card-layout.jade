@@ -1,0 +1,34 @@
+extends layout/layout
+
+block head-styles
+  link(rel="stylesheet", href="assets/css/card-layout.css")
+
+- var n = 0
+
+block content
+  div(ng-controller="AppCtrl", ng-click="clicked()")
+    div(dtv-card-layout layout="{{layout}}")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+      div(class="something")
+
+block append bottom-scripts
+  script(src="assets/js/cardLayoutApp.js")
+  script(type="text/javascript").

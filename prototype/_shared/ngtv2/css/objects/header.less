@@ -1,0 +1,300 @@
+//Common
+
+#dtv_header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+//** Desktop Header
+// Logo
+.desktop header {
+  #logo_tup {
+    padding: .56em 0;
+    color: #fff;
+    font-family: 'DIN-LIGHT';
+    .icon-dtv2-logo {
+      width: .77em;
+      height: .285em;
+      &:before {
+        position: relative;
+        top: -0.33em;
+        font-size: 6.5em;
+      }
+    }
+    .menu-tup {
+      float: right;
+      li {
+        margin-right: 1.3em;
+        &:last-child { margin-right: 0; }
+        display: inline-block;
+        span { margin-left: -.2em; }
+        a {
+          font-family: inherit; 
+          color: inherit; 
+        }
+      }
+      .icon {
+        position: relative;
+        font-size: 1.5em;
+        &.icon-dtv2-arrow-down { font-size: .75em; }
+      }
+    }
+    .container:after { .clearfix(); }
+    background: #182027;
+  }
+}
+
+
+// Navigation
+@nav-tup-height: 80px;
+
+.desktop header {
+  #main_nav_tup {
+    background: rgba(252,252,252, .91);
+    .intent, .nav, .search {
+      position: relative;
+      min-width: 355px;
+      height: @nav-tup-height;
+    }
+    .intent {
+      justify-content: space-between;
+      text-transform: uppercase;
+      line-height: 5.15;
+      letter-spacing: 1px;
+      li {
+        &.active a {
+          background: #147dff;
+          color: #fff;
+        }
+      }
+      .icon {
+        position: relative;
+        font-size: 1.4em;
+        &.icon-dtv2-cast { 
+          font-size: 1.3em;
+        }
+      }
+      a {
+        padding: .55em .7em;
+        border-radius: 1000px;
+        background: transparent;
+        color: #147dff;
+      }
+      span {
+        margin-left: .2em;
+        font-size: .9em;
+      }
+    }
+    .nav {
+      display: -webkit-flex;
+      width: 69%;
+      li {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        &.web-series-clips {
+          min-width: 13em;
+        }
+        &.active a {
+          border-color: #147dff;
+          color: #147dff;
+        }
+      }
+      a {
+        position: absolute;
+        top: 0; right: 5%; bottom: 0; left: 5%;
+        border-bottom: 4px solid transparent;
+        line-height: 4.3;
+        color: #464b55;
+        font-size: 1.2em;
+      }
+    }
+    .search {
+      position: relative;
+      width: 28%;
+      box-shadow: -4px 0 4px 0 rgba(0,0,0, .10);
+      input {
+        padding: 1.8em;
+        padding-right: 4em;
+        margin: 0;
+        width: 100%;
+        height: @nav-tup-height;
+        border: 0;
+        color: #464b55;
+        font-family: DIN-LIGHT;
+        font-style: italic;
+        box-sizing: border-box;
+        outline: 0;
+      }
+      .icon {
+        position: absolute;
+        top: 50%;
+        right: .7em;
+        transform: translateY(-50%);
+        color: #464b55;
+        font-size: 1.6em;
+      }
+    }
+    li { display: inline-block; }
+    .container {
+      display: -webkit-flex;
+    }
+  }
+}
+
+@media (min-width: 800px) and (max-width:1599px) {
+  .desktop header {
+    #main_nav_tup .nav {
+      margin-left: 1em;
+      font-size: .9em;
+      a { 
+        right: 0; left: 0;
+        line-height: 4.7;
+      }
+    }
+  }
+}
+
+// Dark Overrides
+.dark-theme .desktop header {
+  #main_nav_tup {
+    background: rgba(46, 51, 56, .91);
+    .nav a { color: #dddddd; }
+    .search {
+      input {
+        background: #3c4148;
+        color: #ffffff;
+      }
+      .icon {
+        color: #fff;
+      }
+    }
+  }
+}
+
+//** intent picker variables
+
+@option-padding: 10%;
+@pill-width: 12%;
+
+//** Mobile Header
+.mobile #dtv_header {
+  padding: 0 1em;
+  display: -webkit-flex;
+  justify-content: space-between;
+  height: 50px;
+  background: rgba(243, 243, 243, 1);
+  #account_tup,
+  #intent_tup,
+  #search_tup {
+    width: 100%;
+    height: 100%;
+  }
+  #intent_tup {
+    font-size: 12px;
+    margin-top: 24px;
+    .intent {
+      position: relative;
+      top: 50%; left: 50%;
+      height: 65%;
+      width: 40%;
+      padding: .5em .8em;
+      margin-top: -.1em;
+      display: table;
+      background: #fff;
+      border-radius: 1000px;
+      -webkit-transform: translate(-50%, -50%);
+      box-shadow: 0px 1px 1px 0px rgba(0,0,0, .5);
+    }
+    li {
+      display: table-cell;
+      vertical-align: middle;
+      padding-right: @option-padding;
+      height: 100%;
+      white-space: nowrap;
+      &:first-child {
+        // padding-right: 12%;
+      }
+      &:nth-last-child(2) {
+        padding-right: 2px;
+      }
+      &:last-child {
+        position: absolute;
+        top: 0; left: 0;
+        padding-right: @option-padding;
+        background: #1d84ff;
+        border-radius: 1000px;
+        color: #fff;
+        .icon {
+          color: #fff;
+        }
+      }
+      a {
+        color: #4c4c4c;
+        span {
+          margin-left: .25em;
+        }
+      }
+      .icon {
+        color: #4c4c4c;
+      }
+      &.intent-pill {
+        padding: 0.5em @option-padding/4;
+        height: 100%;
+        text-align: center;
+        width: @pill-width;
+        display: table;
+        span {
+          display: table-cell;
+          vertical-align: middle;
+        }
+        .icon {
+          display: table-cell;
+          vertical-align: middle;
+        }
+        &.xcast {
+          left: @pill-width;
+        }
+        &.xlook {
+          left: @pill-width * 2;
+        }
+        &.xremote {
+          left: @pill-width * 3;
+        }
+      }
+    }
+  }
+
+  #search_tup {
+    margin-right: 2.1em;
+    .btn {
+      float: right;
+      margin: 0;
+      padding: .75em 0 ;
+    }
+    .dtv-settings-icon {
+      margin-left: 2.5em;
+    }
+  }
+
+  .icon {
+    color: #1d84ff;
+    font-size: 1.3em;
+  }
+}
+
+// Mobile Dark overrides
+
+.dark-theme .mobile #dtv_header {
+  background: #17181a;
+  #intent_tup .intent {
+    background: #2e2f34;
+    li, li a, .icon {
+      color: #fff;
+    }
+  }
+}
+
+//Intent

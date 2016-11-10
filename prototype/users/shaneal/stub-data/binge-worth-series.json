@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1399,
+    "poster_path": "https://image.tmdb.org/t/p/w500/jIhL6mlT7AblhbHJgEoiBIOUVl1.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/w500/aKz3lXU71wqdslC1IYRC3yHD6yw.jpg",
+    "vote_average": 9.1,
+    "heading_title": "Game of Thrones",
+    "details_title": "Game of Thrones",
+    "number_of_episodes": 50,
+    "number_of_seasons": 5,
+    "caption": "5 Seasons, 50 Episodes",
+    "card_type": "tv"
+  },
+  {
+    "id": 37680,
+    "poster_path": "https://image.tmdb.org/t/p/w500/i6Iu6pTzfL6iRWhXuYkNs8cPdJF.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/w500/dpSTckg9dzOD8JKR9iVrStK2st1.jpg",
+    "vote_average": 8.6,
+    "heading_title": "Suits",
+    "details_title": "Suits",
+    "number_of_episodes": 61,
+    "number_of_seasons": 5,
+    "caption": "5 Seasons, 61 Episodes",
+    "card_type": "tv"
+  },
+  {
+    "id": 1438,
+    "poster_path": "https://image.tmdb.org/t/p/w500/dg7NuKDjmS6OzuNy33qt8kSkPA1.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/w500/nZ9JxNFLrygdQE8TT2csBHch6Yc.jpg",
+    "vote_average": 9.4,
+    "heading_title": "The Wire",
+    "details_title": "The Wire",
+    "number_of_episodes": 60,
+    "number_of_seasons": 5,
+    "caption": "5 Seasons, 60 Episodes",
+    "card_type": "tv"
+  },
+  {
+    "id": 688,
+    "poster_path": "https://image.tmdb.org/t/p/w500/86BteoYZGuDVtgsHxVupyNanA8n.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/w500/hY0TRC5cXMqFQvm5xl5LLd9t7eX.jpg",
+    "vote_average": 7.9,
+    "heading_title": "The West Wing",
+    "details_title": "The West Wing",
+    "number_of_episodes": 154,
+    "number_of_seasons": 7,
+    "caption": "7 Seasons, 154 Episodes",
+    "card_type": "tv"
+  }
+]

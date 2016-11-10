@@ -1,0 +1,84 @@
+{
+  "slug": "stack-view",
+  "theme": "light",
+  "header": false,
+  "footer": false,
+  "navSection": "ep",
+  "loadBaseTemplate": false,
+  "data": {
+    "posters": [
+      {
+        "title": "Sucker Punch",
+        "src": "10480-movies-sucker-punch-movie-posters-sweet-pea-abbie-cornish-1092.jpg"
+      },
+      {
+        "title": "Tron",
+        "src": "17416L.jpg"
+      },
+      {
+        "title": "Teenage Muntant Ninja Turtles",
+        "src": "2014-Teenage-Muntant-Ninja-Turtles-Movie-Logo-Poster-HD-Wallpaper.jpg"
+      },
+      {
+        "title": "Gavity",
+        "src": "2cf6afce2f_gravity-detached.jpg"
+      },
+      {
+        "title": "300",
+        "src": "300-poster.jpg"
+      },
+      {
+        "title": "Transformers",
+        "src": "4144518-transformers-age-of-extinction-game.jpg"
+      },
+      {
+        "title": "Sherlock Holmes",
+        "src": "4202962-sherlock-holmes-movie-poster-normal.jpg"
+      },
+      {
+        "title": "Avatar",
+        "src": "4207735-official-avatar-movie-poster-normal.jpg"
+      },
+      {
+        "title": "Anna",
+        "src": "Anna-movie-poster.jpg"
+      },
+      {
+        "title": "Batman Vs. Superman",
+        "src": "Batman-v-Superman-2016-Movie-Poster-Wallpaper.jpg"
+      },
+      {
+        "title": "Doctor Who",
+        "src": "Doctor-who-series-7b-the-bells-of-saint-john-poster-landscape.jpg"
+      },
+      {
+        "title": "Footprint",
+        "src": "Foot-Print-Poster-Landscape-version-30x40.psd-copy-S.jpg"
+      },
+      {
+        "title": "Hands of the Ripper",
+        "src": "HANDS-OF-THE-RIPPER-landscape.jpg"
+      },
+      {
+        "title": "Klowns",
+        "src": "Klowns Landscape Poster 3 copy.jpg"
+      },
+      {
+        "title": "Macbeth",
+        "src": "Macbeth-2015-poster-IMAGE.jpg"
+      },
+      {
+        "title": "Rebirth",
+        "src": "Rebirth_PosterDesign_v5_Landscape_sm1.jpg"
+      },
+      {
+        "title": "Spartan Assault",
+        "src": "Spartan-Assault-landscape-poster.png"
+      },
+      {
+        "title": "Tarantula",
+        "src": "TARANTULA-landscape.jpg"
+      }
+    ]
+  }
+}

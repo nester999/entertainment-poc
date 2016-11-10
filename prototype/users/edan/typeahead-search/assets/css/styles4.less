@@ -1,0 +1,218 @@
+@import '../../../../../_shared/ngtv2/css/objects/global.less';
+@import '../../../../../_shared/ngtv2/css/objects/cards.less';
+@import '../../../../../_shared/ngtv2/css/objects/font.less';
+@import '../../../../../_shared/ngtv2/fonts/dtv2-icons.less';
+
+
+.card {
+  width: 340px;
+  height: 265px;
+  opacity: 0;
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin: 1em 0.6em;
+}
+
+.disable-scrollbar {
+  overflow: hidden;
+}
+
+[ng-cloak] {
+  display: none !important;
+}
+
+// .clearfix:after {
+//   visibility: hidden;
+//   display: block;
+//   font-size: 0;
+//   content: " ";
+//   clear: both;
+//   height: 0;
+// }
+body {
+  background: #F4F4F4;
+  overflow: scroll;
+  font-family: "DTV-DIN";
+}
+
+input {
+  position: relative;
+  background: #F4F4F4;
+  margin: 0;
+  left: 12%;
+  width: 100%;
+  font: 100 18px "DTV-DIN-BOLD";
+  color: #4C4C4C;
+  // padding: 0 0.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  overflow: hidden;
+  outline: none;
+  border: 1px solid #E4E4E4;
+  border-top: transparent;
+  border-right: transparent;
+  border-left: transparent;
+  // border-width: 1px solid;
+}
+
+::-webkit-input-placeholder {
+  font: 200 15px "DTV-DIN";
+  text-transform: none;
+  // padding: 0 0.5em;
+  // height: 200px;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  
+  text-transform: none;
+  font: 22px "DTV-DIN";
+  // padding: 0 0.5em;
+  // height: 200px;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  
+  text-transform: none;
+  font: 18px "DTV-DIN";
+  // padding: 0 0.5em;
+  // height: 200px;
+}
+
+:-ms-input-placeholder {
+  text-transform: none;
+  font: 18px "DTV-DIN";
+  // padding: 0 0.5em;
+  // height: 200px;
+}
+
+h2 {
+  padding-bottom: 5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+  color: #5193d7;
+  font: 100 28px "DTV-DIN";
+  opacity: 1;
+  transition: 1s;
+  left: 0;
+  bottom: 0;
+  position: relative;
+}
+
+h6 {
+  color: #ccc;
+}
+
+.container {
+  overflow-y: auto;
+}
+
+.p2-searchbar {
+  display: inline-block;
+  width: 67%;
+  margin: 0 auto;
+  left: 22%;
+  position: relative;
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-transform: uppercase;
+    padding: 0.6em 0.5em;
+    // display: inline-block;
+  }
+  ul {
+    position: absolute;
+    overflow: hidden;
+    display: none;
+    width: 100%;
+    margin-left: -31px;
+    height: 24px;
+    top: -10px;
+    left: 0;
+  }
+  ul li {
+    position: relative;
+    z-index: 15;
+    list-style-type: none;
+    display: inline-block;
+    color: #4C4C4C;
+    font: 100 18px "DTV-DIN";
+    padding-right: 2em;
+    margin-bottom: 1em;
+  }
+}
+
+.selected-list-item {
+  display: inline-block;
+}
+
+#posters li {
+  list-style-type: none;
+}
+
+#search-arrow {
+  font-size: 1.5em;
+  float: left;
+  position: relative;
+  top: 8px;
+  left: -40px;
+  display: inline;
+  color: #8595B5;
+}
+
+#search-arrow:hover {
+  color: #85BBB3;
+}
+
+#search-arrow:active {
+  color: #4595B5;
+  font-size: 1.55em;
+}
+
+b.fake-cursor {
+  position: relative;
+}
+
+.fake-cursor:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: '';
+  height: 100%;
+  width: 1px;
+  background-color: #4C4C4C;
+
+}
+
+
+
+@media screen and (max-width: 1027px) {}
+
+@media screen and (max-width: 569px) {
+  .stacked-view-container {
+    .movie-poster {
+      top: 50%;
+      img {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 10em;
+        height: 6em;
+        margin-top: -15em;
+        margin-left: 1em;
+        // transform: rotateY(40deg);
+      }
+    }
+  }
+}

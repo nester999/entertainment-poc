@@ -1,0 +1,16 @@
+{
+  "name": "ngtv2Poc",
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-ui-router": "latest",
+    "ui-router-extras": "latest",
+    "lodash": "latest",
+    "jquery": "~2.1.4",
+    "angular-material": "~0.9.7",
+    "oclazyload": "~1.0.1",
+    "normalize.css": "~3.0.3"
+  },
+  "resolutions": {
+    "angular": "1.4.0"
+  }
+}

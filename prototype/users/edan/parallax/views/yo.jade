@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	.hsContainer
+		.scrollOne(data-400-top='opacity: 0', data-300-top='opacity: 1', data-100-top='opacity: 1', data-50-top='opacity: 0', data-anchor-target='.hsContainer')
+			img(src='../images/directv-banner.png', alt='dtv banner')
+			h1= title
+			p #{title}
+

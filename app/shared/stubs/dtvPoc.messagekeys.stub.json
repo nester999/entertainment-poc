@@ -1,0 +1,8 @@
+{
+  "PUT DTVS MESSAGES HERE IF THE CONTENT TEAM ISN'T READY YET" : { 
+    "value": "used by default if small and medium is empty",
+    "mediumValue": "tablets mostly - used by default if this is populated and small is empty",
+    "smallValue": "used by phones and maybe small tablets in portrait",
+    "level": "optional - ERROR, WARN or INFO - ignored usually unless in a contingency container"
+  }
+}

@@ -1,0 +1,65 @@
+.details-content {
+  .dtv-checkbox-tup {
+    margin-left: 2em;
+  }
+}
+
+.episodes {
+  .unstyled-list();
+  > li {
+    padding: .75em 2em;
+    border-top: 1px solid #cccccc;
+    .tmb { 
+      position: relative;
+      float: left; 
+      width: 30%;
+      height: auto;
+      line-height: 0;
+      i {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        opacity: .7;
+        color: #fff;
+        font-size: 1.6em;
+      }
+    }
+    .episode-detail {
+      position: relative;
+      padding-left: 1em;
+      box-sizing: border-box;
+      float: right;
+      width: 70%;
+    }
+    .title-bar {
+      li {
+        display: inline;
+        &:first-child {
+          font-weight: bold;
+        }
+        &:not(:last-child) {
+          &:after {
+            content: '|';
+            margin: 0 .3em;
+            display: inline;
+            font-weight: normal;
+          }
+        }
+      }
+      span {
+        font-size: .8em;
+      }
+    }
+    p {
+      margin: .5em 0;
+      font-size: .75em;
+      line-height: 1.4em;
+    }
+    &:last-child {
+      border-bottom: 1px solid #cccccc;
+    }
+    &:after { .clearfix(); }
+  }
+}
+

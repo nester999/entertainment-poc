@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    meta(name="viewport", content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    base(href="/users/edan/stacked-view/")
+
+    title= title
+    link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+    link(rel='stylesheet', href='assets/css/styles3.css')
+
+  body(ng-app="NgtvPhase2", ng-controller="StackedViewController", ng-cloak ng-class="{'disable-scrollbar' : disableScrollbar}" ng-style="style(stack)")
+    h2.category-title Stacked View
+    h5.category-title Horizon:  
+      #horizon 
+
+    
+    .stacked-view-container(hm-swipedown="scrollCardsDown($event)" hm-swipe-up="scrollCardsUp($event)")
+      .movie-poster(ng-repeat="movie in movieLinks" ) 
+        img(src='{{movie.imgPath}}', alt='{{movie.title}}', ng-style="{'transform': movie.style.transform}")
+
+
+
+
+    script(src="http://code.jquery.com/jquery-2.1.4.min.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.js")
+    script(src="assets/js/angular-hammer.js")
+    script(src="assets/js/hammer.min.js")
+    script(src="assets/js/gestures.js")
+    script(src="app/app.js")
+    script(src="app/components/stacked-view/stackedViewController3.js")

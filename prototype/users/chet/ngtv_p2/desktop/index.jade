@@ -1,0 +1,100 @@
+doctype html
+html(ng-app="dtvModule")
+  head
+    meta(name="viewport", content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+    title Demo
+    //- link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.0/angular-material.min.css")
+    //- link(rel='stylesheet', href='http://www.directv.com/_generated/assets/css/dtve/dtve.css')
+    link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+    link(rel='stylesheet', href='http://www.directv.com/_generated/assets/css/_framework/dtv-light.css')
+    link(rel='stylesheet', href='/_shared/ngtv2/css/styles.css')
+    link(rel='stylesheet', href='assets/desktop.css')
+    link(rel='stylesheet', href='assets/less/modal.css')
+    link(rel='stylesheet', href='assets/less/videoPlayer.css')
+
+  body(ng-controller="homeController")
+    //include /../prototype/_shared/ngtv2/partials/header.jade
+    //- div(dtv-video-player)
+    //- .modal(style="position: absolute; top: 0; left: 0; z-index: 10000;")
+    //-   .modal-overlay(style="opacity: 1;")
+    //-   .videoPlayer(ng-mousemove="revealVideoTabNav()" ng-mouseleave="hideVideoTabNav()")
+    //-     video.video(controls)
+    //-       source(src="assets/video/big_buck_bunny_720p_stereo.ogg" type="video/ogg")
+    //-     .controls(ng-style="videoTabNav.controls.style")
+    //-       .right-sidebar-nav(ng-style="videoTabNav.style")
+    //-         ul.tab-nav
+    //-           li(ng-repeat="tab in videoPlayerSideBarNav" ng-click="revealVideoTabNavContent(tab)" ng-class="{'active': tab.active}" ng-mouseenter="videoTabNavTabMouseEnter(tab)" ng-mouseleave="videoTabNavTabMouseLeave(tab)" ng-style="tab.style")
+    //-             i.fa.fa-angle-left(ng-style="tab.icon.style")
+    //-             {{tab.name}}
+    //-         ul.tab-content(ng-style="videoTabNav.content.style")
+    //-           li(ng-repeat="tab in videoPlayerSideBarNav" ng-class="{'active': tab.active}" ng-if="tab.active")
+    //-             .tab-content-header.clearfix
+    //-               select.pull-left
+    //-                 option(value="") Season 1
+    //-                 option(value="") Season 2
+    //-                 option(value="") Season 3
+    //-                 option(value="") Season 4
+    //-                 option(value="") Season 5
+    //-               .pull-right
+    //-                 i.fa.fa-times.cursor-pointer(ng-click="closeVideoTabNavContent(tab)")
+    //-             ul.video-list(ng-style="videoTabNav.videoList.style")
+    //-               li(ng-repeat="video in tab.items")
+    //-                 .video-thumbnails
+    //-                   img(src="{{video.backdrop_path}}")
+    //-                 .video-info
+    //-                   .clearfix
+    //-                     .episode.bold.pull-left S5 E1
+    //-                     i.fa.fa-ellipsis-h.pull-right
+    //-                   .video-title The Wars to Come
+
+
+    .mock-header-branding
+    .mock-header-topnav
+      img(src="assets/mocks/mock-header-branding.png")
+      img(src="assets/mocks/mock-header-topnav.png")
+    .mock-hero
+      img(src="http://www.directv.com/rwd/ent/premiums/2015_06/hdr_lg__Rogue_S3_2.jpg")
+
+    div(dtv-modal ng-model="dtvModal.ngModel" active="dtvModal.active" type="dtvModal.type")
+
+    #dtv_tup(ui-view)
+      .dtve-list.dtve-title-list.is-carousel(ng-repeat="category in categoriesList", ng-style="{'font-size': cardStack.style.fontSize}")
+        .clearfix
+            h2.category-title.pull-left {{category.name}}
+            .pull-right.btn(ng-click="category.viewAllCards = !category.viewAllCards") View All
+        .carousel-container(ng-if="!category.viewAllCards")
+          .carousel-slider
+            ul.carousel-items(dtv-carousel)
+              li.carousel-item(dtv-asset-card, ng-repeat="card in category.items" data="card" ng-style="card.style" ng-click="playVideo()")
+        ul.category-cards-grid-view(ng-if="category.viewAllCards")
+          li.carousel-item.pull-left(dtv-asset-card, ng-repeat="card in category.items" data="card" ng-style="card.style")
+
+
+
+    
+    //Libraries
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-animate.min.js")
+    //- script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js")
+    //- script(src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js")
+    //- script(src="assets/vendor/iscroll-probe.js")
+    //- script(src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.min.js")
+
+    //Scripts
+    script(src="assets/home.js")
+    script(src="http://www.directv.com/assets/js/vendor/jquery.iosslider.src.js")
+    script(src="http://www.directv.com/assets/js/dtve/directives/carousel/carousel.js")
+    script(src="http://www.directv.com/assets/js/global/iosslider-carousel.js")
+    script(src="http://www.directv.com/assets/js/global/services/environmentService.js")
+
+    script(src="/_shared/ngtv2/js/directives/dtvBackground.js")
+    script(src="/_shared/ngtv2/js/directives/dtvDetailsCarousel.js")
+    script(src="/_shared/ngtv2/components/asset-card/dtvAssetCard.js")
+    //- script(src="/_shared/ngtv2/components/program-details/dtvProgramDetails.js")
+
+    script(src="assets/js/directives/modal/dtvModal.js")
+

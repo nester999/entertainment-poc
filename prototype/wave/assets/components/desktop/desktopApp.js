@@ -1,0 +1,1 @@
+var desktop = angular.module('ngtvApp.desktop', ['ngAnimate']);

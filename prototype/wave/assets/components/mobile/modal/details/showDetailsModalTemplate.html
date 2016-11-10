@@ -1,0 +1,170 @@
+<div class="modal tablet-view">
+  <div class="backdrop" ng-click="close()"></div>
+  <div class="modal-body" ng-style="modalBody.style">
+    <div class="modal-content series-detail details series" ng-style="modalDetails.style">
+      <div class="modal-content-body">
+        <div class="heading">
+          <span class="program-title ng-binding">{{details.title}}</span>
+          <a href="#" ng-click="closeMainTab()" ng-style="closeTabBtn.style">
+            <i class="icon icon-dtv2-chevron-up"></i>
+          </a>
+          <span ng-style="detailsBtn.style" class="details-btn">
+            <button class="btn fab" type="button">
+              <i class="icon icon-dtv2-follow"></i>
+            </button>
+            <button class="btn fab" type="button">
+              <i class="icon icon-dtv2-watchlist"></i>
+            </button>
+<!--             <button class="btn fab" type="button" ng-click="closeModal()">
+              <i class="icon icon-dtv2-close"></i>
+            </button> -->
+          </span>
+        </div>
+        <div class="body" ng-style="modalDetails.body.style">
+          <div class="program-metadata">
+            <ul class="summary">
+              <li>{{details.air_dates}}</li>
+              <li>{{details.number_of_seasons}} Seasons, {{details.number_of_episodes}} Episodes</li>
+              <li>
+                <span ng-repeat="genre in details.genres">{{genre}}{{$last ? '' : ', '}}</span>
+              </li>
+              <li>{{details.rating}}</li>
+            </ul>
+          </div>
+          <div>
+            <div class="poster-container">
+              <div dtv-background-cover="" src="imgSrc" class="dtv-background-cover loaded" style="background-image: url({{details.backdrop_path}});"></div>
+            </div>
+            <div class="info">
+              <p class="ng-binding">{{details.description}}</p>
+              <button class="btn action" ng-click="toggleMoreWaysToWatchNav()">More Ways to Watch</button>
+            </div>
+            <div class="awards" layout="row">
+              <div class="award" layout="row">
+                <i class="icon icon-dtv2-trophy"></i>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>16</td>
+                      <td>Emmys</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Golden Globes</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="award" layout="row">
+                <i class="icon icon-dtv2-ribbon"></i>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>108</td>
+                      <td>Emmys</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-tup">
+          <ul class="nav nav-tabs" ng-class="{'nav-stacked': vertical, 'nav-justified': justified}" ng-style="modalTabs.header.style">
+            <li ng-class="{'active': tab.active, 'disabled': tab.disabled}" ng-repeat="tab in modalTabs.tabs" heading="{{tab.name}}" select="change(tab.href)">
+              <a href="" ng-click="mainTabSelection(modalTabs.tabs)">{{tab.name}}</a>
+              <!-- <a href="" ng-click="tabSelect(modalTabs.tabs)">{{tab.name}}</a> -->
+            </li>
+          </ul>
+          <div class="spinner active">
+            &nbsp;
+          </div>          
+          <div ng-if="modalTabs.activeTab === 'allEpisodes'">
+            <ul class="list-inline options">
+              <li class="season-select-dropdown">
+                <select name="seasonNumber" ng-model="selectedSeasonNumber" ng-change="selectSeasonData(selectedSeasonNumber)">
+                  <option ng-repeat="option in details.seasons" value="{{option.season_number}}">Season {{option.season_number}}</option>
+                </select>
+              </li>
+              <li>
+              <label for="onlySubscribedOption" class="custom-checkbox">
+                Only Subscribed <input type="checkbox" ng-model="onlySubscribedOption" id="onlySubscribedOption"><span class="checkbox"></span>
+              </label>
+              </li>
+            </ul>
+            <div class="dtv-scroll" ng-style="modalDetails.scroll.style">
+              <ul class="episodes">
+                <li ng-repeat="episode in episodes">
+                  <div class="tmb">
+                    <img ng-if="episode.still_img" src="{{episode.still_img}}"/>
+                    <div ng-if="!episode.still_img" class="placeholder"></div>
+                    <i class="icon icon-dtv-play"></i>
+                  </div>
+                  <div class="episode-detail">
+                    <div layout="row" layout-align="space-between center" class="title-bar">
+                      <ul>
+                        <li>S{{episode.season_number}} E{{episode.episode_number}}</li>
+                        <li>{{episode.title}}</li>
+                      </ul>
+                      <span>{{episode.duration}} min</span>
+                    </div>
+                    <p>{{episode.description}}</p>
+                    <i ng-if="episode.description" class="icon icon-dtv2-dots"></i>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div ng-if="modalTabs.activeTab === 'clips'">
+            <!-- change to ul li's -->
+            <div class="dtv-scroll" ng-style="modalDetails.scroll.style">
+              <ul dtv-list id="{{details.id}}Clips" break-points="breakPoints" layout="'grid'" class="clips">
+                <li ng-repeat="data in clipData" ng-repeat-done="{{details.id}}Clips">
+                  <div dtv-asset-card data="data"></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div ng-if="modalTabs.activeTab === 'similarShows'">
+            <!-- change to ul li's -->
+            <div class="dtv-scroll" ng-style="modalDetails.scroll.style">
+              <ul dtv-list id="{{details.id}}similarShows" break-points="breakPoints" layout="'grid'" class="clips">
+                <li ng-repeat="data in clipData" ng-repeat-done="{{details.id}}similarShows">
+                  <div dtv-asset-card data="data"></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-content more-ways-to-watch-nav">
+      <div class="modal-content-body" ng-style="moreWaysToWatchNav.style">
+        <ul class="list-inline tabs-menu">
+          <li ng-repeat="tab in moreWaysToWatchTabs.tabs" ng-click="moreWaysToWatchNavTabSelection(moreWaysToWatchTabs.tabs)" ng-class="{'active': tab.active}">
+            {{tab.name}}
+          </li>
+        </ul>
+        <ul class="tab-content">
+          <li ng-if="moreWaysToWatchTabs.activeTab === 'ipad'">
+            <ul>
+              <li>
+                <p>1239 AMC On Demand<br/>
+                Available Until 2/15</p>
+                <button class="btn play">Watch on TV</button>
+              </li>
+              <li>
+                <p>1239 AMC On Demand<br/>
+                Available Until 2/15</p>
+                <button class="btn record" ng-click="recordEpisode = !recordEpisode" ng-class="{'active': recordEpisode }">Record</button>
+              </li>
+            </ul>
+          </li>
+          <li ng-if="moreWaysToWatchTabs.activeTab === 'tv'">
+            TV
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+**CLEAN UP FOLDER STRUCTURE**
+
+Taro:
+
+desktop
+  header
+  home
+
+mobile
+  header - needs home view and grid view (header changes and has back button)
+  home
+
+
+shared
+  $dtvIntent - intent picker service (for now just appends class ”dark-theme” to body)
+  $dtvNavigation - (movies, shows, web series, music, live, playlist) - used in cab and on web
+  $dtvApi
+    getCarousels - get stub data
+    getTvDetails - use id from stub to get details (fake awards)
+    getMoviesDetails - use id from stub to get details (fake awards)
+
+  details
+    all episodes
+    similar
+    something else
+
+
+
+- routes
+/ (home view)
+/carousel/:id (grid view)
+  /carousel/:id/details/all-episodes
+  /carousel/:id/details
+  /carousel/:id/details/clips
+  /carousel/:id/details/similar-shows
+
+
+
+
+//index.jade
+
+if mobile
+  include mobile-js
+else
+  include desktop-js
+
+
+//dtvCommon.js
+angular.module('dtvModule', [
+  'ui-router',
+  'ui-bootstrap',
+  'ngAnimate'
+])
+
+
+//app-desktop.js
+angular.module('dtvDesktop', [
+  'dtvModule',
+  'movies',
+  'shows'
+  // other desktop specific stuff
+])
+
+
+//app-mobile.js
+angular.module('dtvDesktop', [
+  'dtvModule',
+  'movies',
+  'shows'
+  // other desktop specific stuff
+])
+
+

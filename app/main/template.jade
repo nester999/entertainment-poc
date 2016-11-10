@@ -1,0 +1,15 @@
+ul.list(layout="row")
+  li(ng-repeat="item in items", flex-gt-sm="33", flex-sm="100")
+    .list-container(layout="row")
+      .title(flex="item.subPages.length > 1 ? 90 : 100", ng-click="handleClick(item)")
+        i.fa.fa-folder-open-o(ng-if="item.type == 'folder'")
+        i.fa.fa-bookmark-o(ng-if="item.type == 'prototype'")
+        i.fa.fa-folder-css3(ng-if="item.type == 'css'")
+        i.fa.fa-file-o(ng-if="item.type == 'file'")
+        span {{item.name}}
+      .dropdown(ng-if="item.subPages.length > 1", flex="10")
+        i.fa.fa-caret-down
+        select(ng-model="page", ng-change="selectChanged(page)", ng-options="page.url as page.name for page in item.subPages")
+          option ---
+.no-items(ng-if="items.length == 0")
+  .lead No Items Found

@@ -1,0 +1,61 @@
+// Our uiRouterSample module defined here
+div
+  // using twitter bootstrap, but of course
+  link(rel="stylesheet", type="text/css", href="vendor/bootstrap.min.css")
+  // styles for ng-animate are located here
+  link(rel="stylesheet", type="text/css", href="css/styles.css")
+  // Include angular.js, angular-animate.js and angular-ui-router.js
+  script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular.min.js")
+  script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular-animate.min.js")
+  script(src="//angular-ui.github.io/ui-router/release/angular-ui-router.js")
+  //
+     app.js declares the uiRouterSample module and adds items to $rootScope, and defines
+           the "home" and "about" states
+      
+  script(src="app/app.js")
+  //
+     contacts.js declares the uiRouterSample.contacts module, and adds a number of contact
+           related states 
+      
+  script(src="app/contacts/contacts.js")
+  //
+     contacts-service.js, and utils-service.js define services for use by the 
+           uiRouterSample.contacts module.
+      
+  script(src="app/contacts/contacts-service.js")
+  script(src="common/utils/utils-service.js")
+  .navbar.navbar-fixed-top
+    .navbar-inner
+      .container
+        //
+           ui-sref is a great directive for linking a state location with an anchor link.
+                     You should almost always use ui-sref instead of href on your links when you want
+                     then to navigate to a state. When this link is clicked it will take the application
+                     to the 'home' state. Behind the scenes the directive also adds the correct href attr
+                     and url. 
+        a.brand(ui-sref="home") ui-router
+        ul.nav
+          //
+             Here you can see ui-sref in action again. Also notice the use of $state.includes, which
+                       will set the links to 'active' if, for example on the first link, 'contacts' or any of
+                       its descendant states are activated. 
+          li(ng-class="{active: $state.includes('contacts')}")
+            a(ui-sref="contacts.list") Contacts
+          li(ui-sref-active="active")
+            a(ui-sref="about") About
+        //
+           Here is a named ui-view. ui-views don't have to be named, but we'll populate this
+                     one from various different child states and we want a name to help us target. 
+        p.navbar-text.pull-right(ui-view="hint")
+  //
+     Here is the main ui-view (unnamed) and will be populated by its immediate children's templates
+           unless otherwise explicitly named views are targeted. It's also employing ng-animate. 
+  .container.slide(ui-view="", style="padding-top: 80px;")
+  hr
+  pre.
+    \n            
+        $state = {{$state.current.name}}
+        $stateParams = {{$stateParams}}
+        $state full url = {{ $state.$current.url.source }}
+                
+              

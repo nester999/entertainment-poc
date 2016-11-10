@@ -1,0 +1,155 @@
+@import 'fonts.less';
+@import '../fonts/dtv-icons.less';
+
+.disable-scrollbar { overflow: hidden; }
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+body {
+  background-color: #F3F3F3; overflow-y: hidden; margin: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+.float-left { float: left; }
+.float-right { float: right; }
+
+.header {
+  position: fixed;
+  font-size: 10px;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  .header-container { margin: 3.125em;
+    .intent-picker { font-size: 1.3em; margin: .5em 0;
+      button.btn.raised.large { font-size: 12px; padding: 1em 1.2em 1em 1.2em;
+        i.icon-dtv-play {  line-height: .5em; font-size: 2em; }
+      }
+    }
+    .options, .search {
+      font-size: 2.5em; color: #7b8aaa; margin-left: 2.6em; padding: .35em 0;
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: .35em .7em .15em .7em;
+  margin-bottom: 0;
+  font-size: .9em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  letter-spacing: 0.09em;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  background: #fff;
+  border: 1px solid #d5d5d6;
+  white-space: nowrap;
+  color: #6f7a95;  
+  position: relative;
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  background: -webkit-linear-gradient(top, #fff 0, #f7f7f7 100%);
+}
+
+.category-scroller{
+  position: relative;
+  h2{ 
+    text-align: center; 
+    color: #5193d7; 
+    font: 100 1.750em "DTV-DIN"; 
+    opacity: 1;
+    // transition: 1s; 
+    left: 0;
+    bottom: 0;
+    position: relative;
+    margin-top: 0;
+    z-index: 1;
+    &.selected-category-title {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 0;
+      opacity: 0;
+    }
+  }
+  .category-scroller-container {
+    .category-items {
+      position: relative; float: left; margin: 0 3.125em 3.125em 3.125em; 
+      // transition: 2s; 
+      left: 0; bottom: 0;
+      .category-list {
+        position: relative; 
+        width: 42.5em; 
+        height: 31.875em;
+        .list-item {
+          position: absolute; 
+          width: 42.5em; 
+          height: 29.375em; 
+          background-color: #FFF; 
+          box-shadow: 0px 2px 2px 0px #EEE; 
+          // transition: 1s; 
+          left: 0; 
+          bottom: 0;
+          overflow: hidden;
+          .details { 
+            color: #4c4c4c; font-family: "DTV-DIN"; font-weight: 100; padding: 1em; background-color: #FFF;
+          }
+          &:not(.card-type-movie){
+            .details { 
+              .title { font-size: 1.5em; line-height: 1em; margin-bottom: .3em; }
+              .ratings { color: #999; font-size: 1.25em; }
+              .overview { color: #999; font-size: 1.25em; }
+            }
+            img {width: 100%; height: auto;}
+          }
+          &.card-type-movie {
+            > div { height: 100%; }
+            .img { height: 100%; width: Auto; float: left; padding-right: 1em; }
+            .details {
+              .title { font-size: 2em; padding: .3em; line-height: 1em; margin-bottom: .3em; }
+              .ratings { font-size: 1.25em; padding: .3em; }
+              .overview { font-size: 1.25em; line-height: 1.25em; padding: .3em; }
+            }
+          }
+          &.card-type-continue-watching {  
+            .details {
+              .continue-playtime-bar { position: absolute; left: 0; height: 0.625em; background-color: #3efb8a; display: none; }
+              .title { float: left; }
+              .continue-playtime-display { float: right; color: #999; font-size: 1.25em; }
+            }
+          }
+          &:nth-child(1) { z-index: 10; }
+          &:nth-child(2) { z-index: 9; margin: 0 1.9em 3.5em 1.9em; width: 39em; height: 27em; }
+          &:nth-child(3) { z-index: 8; margin: 0 2.8em 6em 2.8em; width: 37em; height: 25.5em; }
+          &:nth-child(4) { z-index: 7; margin: 0 3.8em 8em 3.8em; width: 35em; height: 24.2em; }
+          &:nth-child(5) { z-index: 1; margin: 0 3.8em 8em 3.8em; width: 35em; height: 24.2em; }
+          &:nth-child(n+5) { z-index: 1; margin: 0 3.8em 8em 3.8em; width: 35em; height: 24.2em; display: none; }
+        }
+      }
+      &.fly-out {
+        position: relative;
+        &.top { bottom: 1000px; }
+        &.right { left: 4000px; }
+        &.bottom { bottom: -1000px; }
+        &.left { left: -4000px; }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1027px) {
+  .header{
+    font-size: 10px;
+  }
+}
+

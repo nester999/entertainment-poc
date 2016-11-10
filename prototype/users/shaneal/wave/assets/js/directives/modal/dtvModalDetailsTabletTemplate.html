@@ -1,0 +1,159 @@
+<div ng-if="active" class="modal tablet-view">
+  <div class="modal-overlay" ng-style="modalOverlay.style"></div>
+  <div class="modal-content series-detail details series" ng-style="modal.style">
+    <li>
+      <div class="heading">
+        <span class="program-title ng-binding">Breaking Bad</span>
+        <a href="#" ng-click="closeTab()" ng-style="closeTabBtn.style">
+          <i class="icon icon-dtv2-chevron-up"></i>
+        </a>
+        <span ng-style="detailsBtn.style" class="details-btn">
+          <button class="btn fab" type="button">
+            <i class="icon icon-dtv2-follow"></i>
+          </button>
+          <button class="btn fab" type="button">
+            <i class="icon icon-dtv2-watchlist"></i>
+          </button>
+        </span>
+      </div>
+      <div class="body" ng-style="modalBody.style">
+        <div class="program-metadata">
+          <ul class="description">
+            <li>2008-2013</li>
+            <li>5 Seasons, 62 Episodes</li>
+            <li>Crime, Drama</li>
+            <li>TV-MA</li>
+          </ul>
+        </div>
+        <div>
+          <div class="poster-container">
+            <div dtv-background-cover="" src="imgSrc" class="dtv-background-cover loaded" style="background-image: url(https://image.tmdb.org/t/p/w1000/88Z0fMP8a88EpQWMCs1593G0ngu.jpg);"></div>
+          </div>
+          <div class="info">
+            <p class="ng-binding">Breaking Bad is an American crime drama television series created and produced by Vince Gilligan. Set and produced in Albuquerque, New Mexico, Breaking Bad is the story of Walter White, a struggling high school chemistry teacher who is diagnosed with inoperable lung cancer at the beginning of the series. He turns to a life of crime, producing and selling methamphetamine, in order to secure his family's financial future before he dies, teaming with his former student, Jesse Pinkman. Heavily serialized, the series is known for positioning its characters in seemingly inextricable corners and has been labeled a contemporary western by its creator.</p>
+            <button class="btn action">More Ways to Watch</button>
+          </div>
+          <div class="awards" layout="row">
+            <div class="award" layout="row">
+              <i class="icon icon-dtv2-trophy"></i>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>16</td>
+                    <td>Emmys</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Golden Globes</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="award" layout="row">
+              <i class="icon icon-dtv2-ribbon"></i>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>108</td>
+                    <td>Emmys</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-tup">
+        <div>
+          <ul class="nav nav-tabs" ng-class="{'nav-stacked': vertical, 'nav-justified': justified}">
+            <li ng-class="{'active': tab.active, 'disabled': tab.disabled}" ng-repeat="tab in modalTabs.tabs" heading="{{tab.name}}" select="change(tab.href)">
+              <a href="" ng-click="tabSelect(tab)">{{tab.name}}</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+          </div>
+        </div>
+        <div class="dtv-scroll">
+          <div ng-if="modalTabs.activeTab === 'allEpisodes'">
+            <ul class="episodes">
+              <li ng-repeat="data in episodeData">
+                <div class="tmb">
+                  <img src="{{data.img}}"/>
+                  <i class="icon icon-dtv-play"></i>
+                </div>
+                <div class="episode-detail">
+                  <div layout="row" layout-align="space-between center" class="title-bar">
+                    <ul>
+                      <li>S1 E{{data.episode_number}}</li>
+                      <li>{{data.name}}</li>
+                    </ul>
+                    <span>{{data.duration}} min</span>
+                  </div>
+                  <p>{{data.description}}</p>
+                  <i class="icon icon-dtv-dots"></i>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div ng-if="modalTabs.activeTab === 'clips'">
+            <!-- change to ul li's -->
+            <div class="clips">
+              <div dtv-asset-card ng-repeat="data in clipData" data="data"></div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+<!--         <div class="bottom-bar"></div>
+        <div ui-view dtv-scroll="" scroll-y="true" momentum="true" class="dtv-scroll"></div>
+ -->
+      </div>
+    </li>
+  </div>
+</div>
+
+
+<!-- 
+
+<div ng-if="active" class="modal tablet-view">
+  <div class="modal-overlay" ng-style="modalOverlay.style"></div>
+  <div class="modal-content series-detail" ng-style="modal.style">
+    <div class="details movie">
+      <div class="header">
+        <span class="program-title">The Imitation Game</span>
+        <ul class="description">
+          <li>2014</li>
+          <li>1hr 54 mins</li>
+          <li>Biography, Drama, Thriller</li>
+          <li>PG-13</li>
+        </ul>
+        <button type="button" class="btn fab">
+          <i class="icon icon-dtv-follow"></i></button>
+          <button type="button" class="btn fab"><i class="icon icon-dtv-watchlist"></i></button>
+        </div>
+        <div layout="row" class="body"><div flex="40" class="poster-container">
+          <img src="http://thescorecardreview.com/wp-content/uploads/2014/12/benedict-cumberbenedict-the-imitation-game-movie-poster.jpg">
+        </div>
+        <div class="info">
+          <ul class="metadata">
+            <li class="tomato-score">97%</li>
+            <li class="flixster-score">89%</li>
+          </ul>
+          <p>In 1939, newly created British intelligence agency MI6 recruits Cambridge mathematics alumnus Alan Turing (Benedict Cumberbatch) to crack Nazi codes, including Enigma -- which cryptanalysts had thought unbreakable. Turing's team, including Joan Clarke (Keira Knightley), analyze Enigma messages while he builds a machine to decipher them. Turing and team finally succeed and become heroes, but in 1952, the quiet genius encounters disgrace when authorities reveal he is gay and send him to prison.</p>
+          <button type="button" class="btn action">More Ways to Watch</button>
+        </div>
+      </div>
+      <div class="tab-tup">
+        <ul layout="row" layout-align="start center" class="tab-menu">
+          <li> <a href="#" class="btn">Clips</a></li>
+          <li><a href="#" class="btn">Similar Movies</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="video-player" ng-if="showVideoPlayer">
+    <div class="video-menu-overlay">
+      
+    </div>
+    <div class="video"></div>
+  </div>
+</div> -->

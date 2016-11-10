@@ -1,0 +1,236 @@
+{
+	"awardNominees": [
+		{
+			"image": "images/stack/test5.jpg",
+			"duration": "28:33",
+			"eid": "S2 E4",
+			"etitle": "Veep",
+			"edescription": "Get Off My Jump"
+		},{
+      "image": "images/stack/test2.jpg",
+      "duration": "",
+      "eid": "",
+      "etitle": "Glee",
+      "edescription": "6 Seasons, 100 Episodes"
+    }, {
+			"image": "images/stack/test3.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "House of Cards",
+			"edescription": "2 Seasons, 20 Episodes"
+		}, {
+			"image": "images/stack/test4.jpg",
+			"duration": "48:10",
+			"eid": "S4 E8",
+			"etitle": "Louie",
+			"edescription": "Jeopardy"
+		},  {
+			"image": "images/stack/test1.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "Jane The Virgin",
+			"edescription": "1 Season, 12 Episodes"
+		}, {
+			"image": "images/stack/test6.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "Empire",
+			"edescription": "1 Season, 12 Episodes"
+		}],
+
+	"movies": [
+		{
+			"image": "images/stack/test8.jpg",
+			"duration": "28:33",
+			"eid": "S2 E4",
+			"etitle": "Veep",
+			"edescription": "Get Off My Jump"
+		},  {
+			"image": "images/stack/test7.jpg",
+			"duration": "48:10",
+			"eid": "S4 E8",
+			"etitle": "Louie",
+			"edescription": "Jeopardy"
+		}, {
+			"image": "images/stack/test9.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "Glee",
+			"edescription": "6 Seasons, 100 Episodes"
+		},{
+			"image": "images/stack/test10.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "Jane The Virgin",
+			"edescription": "1 Season, 12 Episodes"
+		}, {
+			"image": "images/stack/test11.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "Empire",
+			"edescription": "1 Season, 12 Episodes"
+		}, {
+			"image": "images/stack/test12.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "The Office",
+			"edescription": "9 Seasons, 201 Episodes"
+		}],
+
+	"shows": [
+		{
+			"image": "images/stack/test13.jpg",
+			"duration": "28:33",
+			"eid": "S2 E4",
+			"etitle": "Veep",
+			"edescription": "Get Off My Jump"
+		}, {
+			"image": "images/stack/test14.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "House of Cards",
+			"edescription": "2 Seasons, 20 Episodes"
+		}, {
+			"image": "images/stack/test15.jpg",
+			"duration": "48:10",
+			"eid": "S4 E8",
+			"etitle": "Louie",
+			"edescription": "Jeopardy"
+		}, {
+      "image": "images/stack/test16.jpg",
+      "duration": "",
+      "eid": "",
+      "etitle": "Empire",
+      "edescription": "1 Season, 12 Episodes"
+    }, {
+			"image": "images/stack/test17.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "Glee",
+			"edescription": "6 Seasons, 100 Episodes"
+		}, {
+			"image": "images/stack/test18.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "Jane The Virgin",
+			"edescription": "1 Season, 12 Episodes"
+		}] ,
+
+	"series": [
+		 {
+			"image": "images/stack/test19.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "House of Cards",
+			"edescription": "2 Seasons, 20 Episodes"
+		}, {
+			"image": "images/stack/test20.jpg",
+			"duration": "48:10",
+			"eid": "S4 E8",
+			"etitle": "Louie",
+			"edescription": "Jeopardy"
+		}, {
+			"image": "images/stack/test21.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "Glee",
+			"edescription": "6 Seasons, 100 Episodes"
+		},{
+      "image": "images/stack/test22.jpg",
+      "duration": "28:33",
+      "eid": "S2 E4",
+      "etitle": "Veep",
+      "edescription": "Get Off My Jump"
+    },{
+			"image": "images/stack/test23.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "Jane The Virgin",
+			"edescription": "1 Season, 12 Episodes"
+		}, {
+			"image": "images/stack/test24.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "Empire",
+			"edescription": "1 Season, 12 Episodes"
+		}] ,
+
+	"clips": [
+		{
+			"image": "images/stack/series_veep.jpg",
+			"duration": "28:33",
+			"eid": "S2 E4",
+			"etitle": "Veep",
+			"edescription": "Get Off My Jump"
+		}, {
+			"image": "images/stack/series_house_of_cards.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "House of Cards",
+			"edescription": "2 Seasons, 20 Episodes"
+		}, {
+			"image": "images/stack/series_louie.jpg",
+			"duration": "48:10",
+			"eid": "S4 E8",
+			"etitle": "Louie",
+			"edescription": "Jeopardy"
+		},{
+      "image": "images/stack/series_the_office.jpg",
+      "duration": "",
+      "eid": "",
+      "etitle": "The Office",
+      "edescription": "9 Seasons, 201 Episodes"
+    }, {
+			"image": "images/stack/test20.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "Glee",
+			"edescription": "6 Seasons, 100 Episodes"
+		}, {
+			"image": "images/stack/series_jane_the_virgin.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "Jane The Virgin",
+			"edescription": "1 Season, 12 Episodes"
+		}] ,
+
+	"music": [
+		{
+			"image": "images/stack/test4.jpg",
+			"duration": "28:33",
+			"eid": "S2 E4",
+			"etitle": "Veep",
+			"edescription": "Get Off My Jump"
+		}, {
+			"image": "images/stack/series_house_of_cards.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "House of Cards",
+			"edescription": "2 Seasons, 20 Episodes"
+		}, {
+      "image": "images/stack/series_the_blacklist.jpg",
+      "duration": "28:33",
+      "eid": "S3 E2",
+      "etitle": "The Blacklist",
+      "edescription": "James Is A Criminal"
+    }, {
+			"image": "images/stack/test20.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "Glee",
+			"edescription": "6 Seasons, 100 Episodes"
+		}, {
+			"image": "images/stack/series_jane_the_virgin.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "Jane The Virgin",
+			"edescription": "1 Season, 12 Episodes"
+		}, {
+			"image": "images/stack/series_empire.jpg",
+			"duration": "",
+			"eid": "",
+			"etitle": "Empire",
+			"edescription": "1 Season, 12 Episodes"
+		}
+	]
+}

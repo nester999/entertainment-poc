@@ -1,0 +1,90 @@
+extends layout/layout
+
+block append head-styles
+  link(rel="stylesheet", href="_docs/modal.css")
+  | <style>
+  |   body, html { background: #fff !important; }
+  |   #details > li:first-child { height: 140px; }
+  |   #details>li:nth-child(2) { left: 205px; top: 222px; padding: 0; }
+  |   
+  | </style>
+ 
+block content
+  //- md-switch.toggle-theme
+  include assets/partials/header
+  
+  ul#details(style="touch-action:none;")
+    li
+      .details.movie
+        .header
+          span.program-title The Imitation Game
+          ul.description
+            li 2014
+            li 1hr 54 mins
+            li Biography, Drama, Thriller
+            li PG-13
+          button.btn.fab(type="button")
+            i.icon.icon-dtv-follow
+          button.btn.fab(type="button")
+            i.icon.icon-dtv-watchlist
+        .details-content
+          .dtv-dropdown
+            select
+              option Season 1
+              option Season 2
+              option Season 3
+              option Season 4
+              option Season 5
+              option Season 6
+            i.icon.icon-dtv-arrow-down
+          .dtv-checkbox-tup
+            label
+              | Only Subscribed
+              input(type="checkbox", checked)
+              i.icon.icon-dtv-checkmark
+    li.details.movie
+      ul.episodes
+        li
+          .tmb
+            img(src="https://image.tmdb.org/t/p/w300/88Z0fMP8a88EpQWMCs1593G0ngu.jpg")
+            i.icon.icon-dtv-play
+          .episode-detail
+            .title-bar(layout="row", layout-align="space-between center")
+              ul
+                li S1 E1
+                li Seven Thirty-Seven
+              span 42 min
+            p Walt and Jesse are vividly reminded of tuco's volatile nature, and try to figure a way out of their business partnership.
+            i.icon.icon-dtv-dots
+        li
+          .tmb
+            img(src="https://image.tmdb.org/t/p/w300/88Z0fMP8a88EpQWMCs1593G0ngu.jpg")
+            i.icon.icon-dtv-play
+          .episode-detail
+            .title-bar(layout="row", layout-align="space-between center")
+              ul
+                li S1 E1
+                li Seven Thirty-Seven
+              span 42 min
+            p Walt and Jesse are vividly reminded of tuco's volatile nature, and try to figure a way out of their business partnership.
+            i.icon.icon-dtv-dots
+
+
+
+
+
+
+
+
+
+block append bottom-scripts
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.min.js")
+  script(type="text/javascript").
+    var app = angular.module('dtvApp', ['dtv.background', 'ngMaterial', 'ui.bootstrap']);
+
+    $(function() {
+      FastClick.attach(document.body);
+      $('.toggle-theme').click(function() {
+        $('html').toggleClass('dark-theme');
+      });
+    });

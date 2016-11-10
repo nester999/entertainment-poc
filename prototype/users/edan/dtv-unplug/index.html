@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Directv Lake Scene</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Cabin+Sketch' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/lakeScene.css">
+</head>
+
+<body>
+  <div id="container" class="container">
+    <ul id="scene" class="scene">
+      <img id="woodFrame" src="images/woodFrame.png">
+      <li class="layer" data-depth="0.07"><img src="images/bg.jpg"></li>
+      <li class="layer" data-depth="0.09"><img src="images/drawingOverlay.png"></li>
+      <li class="layer" data-depth="0.1"><img src="images/dtvArrows.svg" alt="Kiwi standing on oval"></li>
+      <li class="layer" data-depth="0.12"><img src="images/canoe.png"></li>
+      
+
+      <li class="layer" data-depth="0.4"><img src="images/dtvLogo.png"></li>
+      <li class="layer" data-depth="0.3"><h1 >Unplug your cabin...</h1>
+        <h6>with wireless receivers, take HD wherever</h6>
+      </li>
+    </ul>
+    
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/parallax.js"></script>
+  <script>
+  // Pretty simple huh?
+  var scene = document.getElementById('scene');
+  var parallax = new Parallax(scene);
+  </script>
+</body>
+
+</html>

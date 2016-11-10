@@ -1,0 +1,29 @@
+<div class="card" ng-class="class" ui-sref="modal.details({media_type:mediaType, id:id})">
+  <div class="poster">
+    <span ng-if="hashTag" class="tag">#{{hashTag}}</span>
+    <div ng-if="cardType == 'in-progress' && mediaType != 'show' || mediaType == 'clip' || mediaType == 'music-video' || mediaType == 'live-content'" class="progress">
+      <div class="bar" ng-style="{width: {{progress}} + '%'}"></div>
+      <span class="tag">{{time}}</span>
+    </div>
+    <div dtv-background-cover src="imgSrc">
+      <i class="icon icon-dtv2-placeholder"></i>
+    </div>
+  </div>
+  <div class="details">
+    <ul>
+      <li class="program-title">{{programTitle}}</li>
+      <li ng-if="isNotSubscribed" class="tag">Out of Subscription</li>
+      <li ng-if="ppv" class="ppv">
+        <i class="icon icon-dtv2-coin"></i>
+      </li>
+    </ul>
+    <ul>
+      <li class="description">{{description}}</li>
+      <li ng-if="recomendedBy" class="recomended-by">
+        <i class="icon icon-dtv2-look"></i>
+        <span>{{::recomendedBy}}</span>
+      </li>
+    </ul>
+    <div ng-if="::channelLogo" class="channel-logo" dtv-background-contain src="https://www.directv.com/images/logos/channels/dark/medium/313.png"></div>
+  </div>
+</div>

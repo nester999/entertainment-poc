@@ -1,0 +1,22 @@
+doctype html
+html(ng-app="dtvApp")
+  head
+    meta(name="viewport", content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    base(href="/users/shaneal/router-demos/dynamic-ui-router/")
+
+    title Demo
+    link(rel='stylesheet', href='assets/css/styles.css')
+
+  body(ng-controller="AppCtrl")
+    header(ui-view="header")
+    div(ui-view="content")
+    footer(ui-view="footer")
+    
+    //Libraries
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js")
+    script(src="/_shared/vendor/js/ct-ui-router-extras.js")
+    script(src="/_shared/ngtv2/js/dtvRouter.js")
+    script(src="assets/js/app.js")

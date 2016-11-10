@@ -1,0 +1,98 @@
+extends layout/layout
+
+block head-styles
+  |<style>
+  |.bg { background: url(https://s.yimg.com/os/publish-images/movies/2014-10-29/6e73ac60-5fa3-11e4-b8cf-3717d54e7e80_imitation-game-splash.jpg) no-repeat center center fixed !important; background-size: cover; top: 0; right: 0; bottom: 0; left: 0; position: fixed; }
+  |  header .icon { color: #fff !important; }
+  |</style>
+ 
+block content
+  //- md-switch.toggle-theme
+  .bg
+  include assets/partials/header
+  .modal-tup
+    .modal-content
+      include assets/partials/details-movie.jade
+
+    //- .modal-drawer
+    //-   p In 1939, newly created British intelligence agency MI6 recruits Cambridge mathematics alumnus Alan Turing (Benedict Cumberbatch) to crack Nazi codes, including Enigma -- which cryptanalysts had thought unbreakable. Turing's team, including Joan Clarke (Keira Knightley), analyze Enigma messages while he builds a machine to decipher them. Turing and team finally succeed and become heroes, but in 1952, the quiet genius encounters disgrace when authorities reveal he is gay and send him to prison.
+
+block append bottom-scripts
+  script(type="text/javascript").
+    var app = angular.module('dtvApp', ['dtv.background', 'ngMaterial']);
+
+    $(function() {
+      FastClick.attach(document.body);
+      $('.toggle-theme').click(function() {
+        $('html').toggleClass('dark-theme');
+      });
+    });
+
+    $(function() {
+      var modalContent = $('.scrollable-content')[0];
+      modalContent.addEventListener('touchstart', function (event) {
+        this.allowUp = (this.scrollTop > 0);
+        this.allowDown = (this.scrollTop < this.scrollHeight - this.clientHeight);
+        this.y = event.pageY;
+      });
+
+      modalContent.addEventListener('touchmove', function (event) {
+        var up = (event.pageY > this.y);
+        var down = (event.pageY < this.y);
+        this.y = event.pageY;
+        if((up && this.allowUp) || (down && this.allowDown)) {
+          event.stopPropagation();
+        }
+        else {
+          event.preventDefault();
+        }
+      });
+
+      $('html')[0].addEventListener("touchstart", function(e) {
+        ts = e.touches[0].clientY;
+      }, false);
+
+      $('html')[0].addEventListener("touchmove", function(e) {
+        e.preventDefault();
+      }, false);
+    });
+
+    $(function() {
+      $('.tab-menu li a').click(function(e) {
+        e.preventDefault();
+
+        var tup = $('.tab-tup');
+        var modalContent = $('.modal-content');
+
+        var my = modalContent.position().top;
+        var mh = modalContent.height();
+        var dy = document.documentElement.clientHeight;
+
+        TweenMax.to(tup, 1, {
+          position: 'absolute',
+          top: '63px',
+          bottom: '0',
+          force3D: true,
+          ease: Power2.easeOut
+        });
+
+
+        TweenMax.to(modalContent, 1, {
+          position: 'absolute',
+          height: (dy - my) + 'px',
+          force3D: true,
+          ease: Power2.easeOut
+        });
+
+        setTimeout(function(){
+          window.scrollTo(0,0);
+        }, 1000);
+
+
+
+
+
+        console.log('HELLO');
+      });
+    });
+

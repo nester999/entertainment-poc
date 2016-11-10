@@ -1,0 +1,42 @@
+extends ../layouts/layout.jade
+
+block head
+  link(rel='stylesheet', href='assets/css/styles.css')
+
+block content
+  div(ng-app="NgtvP2", ng-controller="homeController")
+
+    include ../../shared/ipad_header/ipad_header.jade
+
+    .category-scroller
+      h2.selected-category-title {{selectedCategory.name}}
+      .card-stack-container.clearfix(ng-style="{'width': cardStackContainerWidth}")
+        .card-stack-list(ng-repeat="category in categoriesList", ng-style="{'font-size': cardStack.style.fontSize}")
+          h2.category-title(ng-click="categoryZoom($event, category, 'grid-view')") {{category.name}}
+          .card-stack(hm-swipe-down="getNextCardStackCard(category)", hm-swipe-up="getPrevCardStackCard(category)", hm-drag="getCardInStackCard(category, $event)")
+            .card(ng-repeat="card in category.items", class="card-type-{{card.card_type}}", ng-style="card.animation")
+              div(ng-if="card.card_type !== 'movie'")
+                img(src="{{card.backdrop_path}}").img
+                .details(style="{{card.testingStyle}}")
+                  div(ng-switch on="card.card_type")
+                    div(ng-switch-when="tv")
+                      .title{{card.details_title}}
+                      .overview {{"S" + card.season + " E" + card.episode}} | {{card.episode_title}}
+                    div(ng-switch-when="continue-watching")
+                      .continue-playtime-bar(ng-style="{'width': '23%', 'top': categoryListStyle.cards.progressBar.locationTop }")
+                      .title{{card.details_title}}
+                      .continue-playtime-display {{card.runtime | timeFormatting }}
+                      .clearfix
+                      .ratings {{card.vote_average * 10 }}%
+                    div(ng-switch-default)
+                      .title{{card.details_title}}
+                      .overview {{card.overview}}
+              div(ng-if="card.card_type === 'movie'")
+                img(src="{{card.poster_path}}").img
+                .details
+                  .title {{card.details_title}}
+                  .ratings {{card.vote_average * 10}}%
+                  .overview {{card.overview}}
+
+block scripts 
+  script(src="app/components/home/homeController.js")

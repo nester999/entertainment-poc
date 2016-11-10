@@ -1,0 +1,17 @@
+{
+  "slug": "ngtv_p2",
+  "theme": "dark",
+  "header": false,
+  "footer": false,
+  "navSection": "entertainment",
+  "loadBaseTemplate": false,
+  "headStyles": {
+    "prepend": [],
+    "append": []
+  },
+  "bottomScripts": {
+    "prepend": [],
+    "append": []
+  },
+  "data": {}
+}

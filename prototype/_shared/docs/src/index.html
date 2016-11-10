@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Page Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/_shared/docs/dist/assets/css/docs.css" rel="stylesheet">
+    <link href="/_shared/docs/dist/assets/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.5/styles/default.min.css"> 
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="bs-docs-section">
+          <p class="lead">The poc/sandbox environment is a finely crafted home for all your prototypes. It's built using the same stack that powers <a href="#">directv.com/entertainment</a>.</p>
+        </div>
+        <div class="bs-docs-section">
+          <h1 id="setup" class="page-header">Sandbox Setup</h1>
+          <p>First checkout dtv-poc in stash.</p>
+<pre>
+  <code class="bash">git clone http://YOUR_DTV_USER_ID@stash.directv.com:8080/scm/dot/dtv-poc.git</code>
+</pre>
+          <p>Go into the folder</p>
+<pre>
+  <code class="bash">cd dtv-poc</code>
+</pre>
+          <p>Checkout dtv-app-framework</p>
+<pre>
+  <code class="bash">git clone http://YOUR_DTV_USER_ID@stash.directv.com:8080/scm/dot/dtv-app-framework.git</code>
+</pre>
+          <p>After you've cloned dtvAppFramework rename the folder <code>dtv-app-framework</code> to <code>lib</code>.</p>
+          <p>Copy <code>/lib/grunt/package.json</code> to <code>/</code></p>
+          <p>You should now have a <code>poc.package.json</code> and a <code>package.json</code> in you root directory.</p>
+          <p>Next your going to install all the npm dependecies by running <code>npm install</code></p>
+          <hr>
+          <h2>Setup Yeoman</h2>
+          <p>We've built a <a href="http://yeoman.io/">yeoman</a> generator that makes it easy to create prototypes. Let's set that up! (Make sure you install yeoman globally!)</p>
+          <p>Paste this in terminal:</p>
+<pre>
+  <code class="bash">cd yo/generator-proto && npm install && npm link && cd ../../</code>
+</pre>
+          <br>
+          <h3>Using Yeoman</h3>
+          <p>The yeoman generator is a small utility that scaffolds out a project for you. Let's create one. Paste below into terminal.</p>
+<pre>
+  <code class="bash">yo proto</code>
+</pre>
+          <p>If you've setup yeoman correctly you should see a prompt in terminal that says:</p>
+<pre>
+  <code class="bash">What's your projects name?</code>
+</pre>
+          <p>Im going to call this project <code>Smart Water</code>. Type your project name in terminal and hit enter.</p>
+          <p>The next prompt is going to ask you which folder you want to create your project in? <code>prototype</code> is the root. To keep things organized im going to create a project in the <code>users</code> folder. Im going to select the option <code>prototype/users</code>.</p>
+          <p>After you select the <code>users</code> folder the next prompt asks:</p>
+<pre>
+  <code class="bash">Create a new directory inside prototype/users ?</code>
+</pre>
+          <p>This maybe seem a bit confusing, but it's asking you if you want to create a <code>New Folder</code> inside <code>prototype/users</code>. I'm going to type <code>y</code> in terminal and hit enter because I want to create a folder inside <code>prototype/users</code> called <code>shaneal</code> that <code>Smart Water</code> will go inside of. Hopefully that makes sense...</p>
+          <p>The next promt is going to ask you to type the name of your folder. In my case it's going to be <code>shaneal</code>.
+          <p>Yeoman will create my project(<code>Smart Water</code>) inside <code>prototype/users/shaneal/smart-water</code>. Nifty!</p>
+          <p>The next 2 promts will ask if you want to include the DIRECTV Header &amp; Footer.</p>
+          <p>The last prompt will ask you to choose which templating engine you would like to use. The options are <a href="http://jade-lang.com/">jade</a> or <a href="http://www.embeddedjs.com/">ejs</a>.</p>
+          <p>
+          <br>
+          <h1 class="footer-heading">Happy Coding!</h1>
+        </div>
+      </div>
+    </div>
+    <script src="//cdn.jsdelivr.net/highlight.js/8.5/highlight.min.js"></script>
+    <script type="application/javascript">
+      function $init() {return true;}
+    </script>    
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>3d Transforms</title>
+  <script type="text/javascript">
+  var angle = 0;
+  var count = 0;
+
+  function clicked(e) {
+    count++;
+    console.log(e.style.webkitTransform);
+    console.log(count);
+
+    if(count % 2 === 1)
+      angle += 180;
+    else
+      angle -= 180;
+    e.style.webkitTransform = "rotateY(" + angle + "deg)";
+  }
+  </script>
+  <style type="text/css">
+  #wrapper {
+    -webkit-perspective: 500px;
+    -webkit-perspective-origin: 50% 50%;
+    display: inline-block;
+    padding: 2px 10px;
+  }
+
+  .container {
+    display: inline;
+  }
+  
+  .card {
+    position: relative;
+    margin: 100px auto;
+    width: 223px;
+    height: 310px;
+    -webkit-transition: -webkit-transform 0.7s cubic-bezier(.19,-0.31,.77,1.2);
+    -webkit-transform-style: preserve-3d;
+  }
+  
+  .side {
+    position: absolute;
+    height: 310px;
+    width: 223px;
+  }
+  
+  .back {
+    -webkit-transform: rotateY(-180deg);
+  }
+  
+  .front {
+    -webkit-transform: translateZ(2px);
+  }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+     <div id="wrapper">
+    <div class="card" onclick="clicked(this)">
+      <div class="side back">
+        <img src="http://gatherer.wizards.com/Handlers/Image.ashx?size=small&type=card&name=The%20Ultimate%20Nightmare%20of%20Wizards%20of%20the%20Coast%20Customer%20Service&options=" alt="" />
+      </div>
+      <div class="side front">
+        <img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=141857&type=card" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div id="wrapper">
+    <div class="card" onclick="clicked(this)">
+      <div class="side back">
+        <img src="http://gatherer.wizards.com/Handlers/Image.ashx?size=small&type=card&name=The%20Ultimate%20Nightmare%20of%20Wizards%20of%20the%20Coast%20Customer%20Service&options=" alt="" />
+      </div>
+      <div class="side front">
+        <img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=249815&type=card" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div id="wrapper">
+    <div class="card" onclick="clicked(this)">
+      <div class="side back">
+        <img src="http://gatherer.wizards.com/Handlers/Image.ashx?size=small&type=card&name=The%20Ultimate%20Nightmare%20of%20Wizards%20of%20the%20Coast%20Customer%20Service&options=" alt="" />
+      </div>
+      <div class="side front">
+        <img src="http://blogs-images.forbes.com/danieltack/files/2012/09/Demigod.jpg" alt="" />
+      </div>
+    </div>
+  </div>
+  </div>
+ 
+</body>
+
+</html>

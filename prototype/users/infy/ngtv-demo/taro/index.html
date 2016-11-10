@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html><![endif]-->
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Hello Chennai</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="keywords" content="ngtv movies">
+
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <!-- TODO: apply some lazy loading for posters
+  http://ressio.github.io/lazy-load-xt/
+  -->
+
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!-- angular -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
+  <!-- icon fonts -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="assets/ngtv-demo.css" />
+</head>
+<body ng-app="demoApp">
+  <header>
+    <div class="header-wrapper">
+      <div class="header-logo">DIRECTV</div>
+      <div class="header-user">Hi Vanessa</div>
+      <div class="header-intent">
+        <a href="#">Watch Online</a>
+        <a href="#">Browse for TV</a>
+      </div>
+      <div class="header-search">
+        <i class="fa fa-search"></i>
+        <input class="header-search-input" type="text" placeholder="Search for movies, tv shows...">
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">Shows</a></li>
+        <li><a href="#">Web Series &amp; Clips</a></li>
+        <li><a href="#">Music</a></li>
+        <li><a href="#">Live</a></li>
+        <li><a href="#">Playlist</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="hero-wrapper" style="background:url(https://www.directv.com/rwd/ent/movies/201509/hdr_lg__Cinderella.jpg) no-repeat"> 
+  </div>
+
+  <div ng-controller="demoAppCtrl" class="ngtv-main">
+    <div ng-repeat="carousel in moviesData | limitTo:5" class="carousel-module">
+      <h2>{{carousel.name}}</h2>
+      <div class="carousel-container">
+        <ul>
+          <li ng-repeat="item in carousel.items | limitTo:5" class="asset-card">
+            <div class="card-image">
+              <img ng-src="{{item.backdrop_path}}" class="card-img">
+            </div>
+            <div class="card-meta">
+              <div class="card-title">{{item.title}}</div>
+              <div class="card-subtitle">
+                {{item.description}}
+              </div>            
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/ngtv-demo.js"></script>
+
+</body>
+</html>

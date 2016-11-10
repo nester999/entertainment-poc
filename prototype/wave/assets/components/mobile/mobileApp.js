@@ -1,0 +1,1 @@
+var mobileApp = angular.module('ngtvApp.mobile', ['dtv.cab']);

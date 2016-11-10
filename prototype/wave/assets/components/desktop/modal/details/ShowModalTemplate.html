@@ -1,0 +1,123 @@
+<div ng-if="active" class="details-modal modal" ng-click="close()">
+  <div class="embed-responsive embed-responsive-16by9">
+    <div class="modal-content series-detail" ng-style="modal.style" ng-click="$event.stopPropagation();">
+      <div class="btn-close-modal" ng-click="close()">
+        <i class="icon icon-dtv2-close-thin"></i>
+      </div>
+      <dtv-start-watching></dtv-start-watching>
+      <!--here's where all the series info starts-->
+      <div class="white-details-bar" ng-style="modalWhiteBar.style">
+        <div class="title-row" ng-style="titleRow.style">
+          <h3 class="series-title" ng-style="seriesTitle.style">{{card.title}}</h3>
+          <span ng-if="!modalTabs.active">
+            <i class="icon" ng-class="isFavorite ? 'icon-dtv2-favorite' : 'icon-dtv2-favorite-o'" ng-click="isFavorite = !isFavorite" id="favorite" ></i>
+            <i class="icon icon-dtv2-dots"></i>
+          </span>
+          <span ng-if="modalTabs.active">
+            <i class="icon icon-dtv2-chevron-down" ng-click="minimizeModalTabs()"></i>
+            <i class="icon icon-dtv2-close-thin" ng-click="close()"></i>
+          </span>
+        </div>
+        <div class="info-container" ng-style="infoContainer.style">
+          <div class="series-info">
+            <span class="episode-info">{{card.number_of_seasons}} Seasons, {{card.number_of_episodes}} Episodes</span>
+            <span class="genre">{{genres}}</span>
+            <span class="mature-rating">TV-PG</span>
+            <i class="icon icon-dtv2-common-circle" style="color: forestgreen">
+                <i class="icon icon-dtv2-common-check" style="color: black"></i>
+            </i>
+            <span class="common-sense-media">age 13+</span>
+          </div>
+          <div class="description-container">
+            <span class="description">{{description}}</span>
+          </div>
+        </div>
+        
+        <div class="modal-tabs" ng-style="modalTabs.style" ng-if="isShow" id="tabContent">
+          <ul>
+            <li ng-repeat="tab in modalTabs.tabs" ng-click="selectTab(tab)" ng-class="{'active': tab.active}" ng-style="tabWidth.style">{{tab.name}}</li>
+          </ul>
+          <div class= "tab-content" ng-if="modalTabs.activeTab === 'allEpisodes'">
+            <div class="all-episodes-container">
+              <div class="season-container">
+                <div class="blue-bar"></div>
+                <select name="seasonNumber" ng-model="selectedSeasonNumber", ng-change="selectSeasonData(selectedSeasonNumber)">
+                  <option ng-repeat="option in details.seasons" value="{{option.season_number}}">Season {{option.season_number}}</option>                
+                </select>
+                <i class="icon icon-dtv2-arrow-down"></i>
+                <h5 class="filter"><i class="icon icon-dtv2-equalizer"></i>Filter</h5>
+              </div>
+              <div class="ep-container">
+                <div ng-repeat="episode in episodesTab.data.episodes" class="episodes-container">
+                  <div class="episode">
+                    <div class="episode-image" ng-click="launchVideoPlayerModal()">
+                      <img src="{{episode.still_img}}">
+                      <i class="icon icon-dtv2-play-o"></i>
+                      
+                    </div>
+                    <div class="episode-info-container">
+                      <div class="episode-title-row">
+                        <span>{{episode.title}}</span>
+                        <i class="icon" ng-class="episode.isFavorite ? 'icon-dtv2-favorite' : 'icon-dtv2-favorite-o'" ng-click="episode.isFavorite = !episode.isFavorite"></i>
+                        <i class="icon icon-dtv2-dots"></i>
+                      </div>
+                      <div class="episode-info">
+                        <span>Season {{episode.season_number}} Episode {{episode.episode_number}}</span>
+                      </div>
+                      <div class="episode-description">
+                        <span>{{episode.description}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" ng-if="modalTabs.activeTab === 'clips'">
+            <h3>Clips</h3>
+            <div class="clips-container">
+              <div class="dtv-scroll">
+                <ul dtv-list id="{{details.id}}Clips" break-points="breakPoints" layout="'grid'" class="clips">
+                  <li ng-repeat="data in clipData" ng-repeat-done="{{details.id}}Clips">
+                    <div dtv-asset-card data="data"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+          <div class="tab-content" ng-if="modalTabs.activeTab === 'castCrew'">
+            <h3>Cast &amp; Crew</h3>
+            <div class="cast-crew-container">
+              <div class="dtv-scroll">
+                <ul dtv-list id="{{details.id}}Clips" break-points="breakPoints" layout="'grid'" class="clips">
+                  <li ng-repeat="data in actors" ng-repeat-done="{{details.id}}Clips">
+                    <div dtv-asset-card data="data"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" ng-if="modalTabs.activeTab === 'similarShows'">
+            <h3>Similar Shows</h3>
+            <div class="similar-shows-container">
+              <div class="dtv-scroll">
+                <ul dtv-list id="{{details.id}}Clips" break-points="breakPoints" layout="'grid'" class="clips">
+                  <li ng-repeat="data in clipData" ng-repeat-done="{{details.id}}Clips">
+                    <div dtv-asset-card data="data"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="video-player" ng-if="showVideoPlayer">
+    <div class="video-menu-overlay">
+    </div>
+    <div class="video"></div>
+  </div>
+</div>

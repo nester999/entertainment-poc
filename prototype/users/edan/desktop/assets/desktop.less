@@ -1,0 +1,45 @@
+// .mock-header-branding {
+//   position:relative;
+//   img {
+//     display:block;
+//   }
+// }
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.mock-header-topnav {
+  position:fixed;
+  top: 0;
+  z-index: 9999;
+  opacity: 0.95;
+  img {
+    display:block;
+  }
+}
+.mock-hero {
+}
+
+.is-carousel {
+  font-size: 16px;
+
+  .carousel-container { 
+    height: 236px !important; 
+    min-height: 236px !important;
+  }
+  .carousel-item, .card { 
+    width: 340px; 
+    height: 236px;
+  }
+  .carousel-item {
+    margin-left: 1em;    
+  }
+
+  h2 { 
+    margin-left: 1em; 
+    font-size: 1em;
+  }
+  div[dtv-asset-card] { width: 340px; height: 236px; margin-left: 25px; float: left; }  
+}

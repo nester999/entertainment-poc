@@ -1,0 +1,57 @@
+// .mock-header-branding {
+//   position:relative;
+//   img {
+//     display:block;
+//   }
+// }
+
+.mock-header-topnav {
+  position:fixed;
+  top: 0;
+  z-index: 9999;
+  opacity: 0.95;
+  img {
+    display:block;
+  }
+}
+.mock-hero {
+  margin-bottom: 1em;
+}
+
+.is-carousel {
+  font-size: 16px;
+  .carousel-container { 
+    height: 236px !important; 
+    min-height: 236px !important;
+    .carousel-item {
+      margin-left: 1em;
+    }
+  }
+  .carousel-item, .card {
+    font-size: 16px;
+    width: 340px; 
+    height: 236px;
+  }
+  .carousel-container {
+    .prev, 
+    .next {
+      display: none;
+      background: rgba(255,255,255,0.8);
+      box-shadow: none;
+    }
+    &:hover .next, 
+    &:hover .prev {
+      display: block;
+    }
+    .carousel-arrow:after{
+      color: #000;
+    }
+  }
+
+  h2 { 
+    margin-left: 1em; 
+    font-size: 1em;
+  }
+
+}
+

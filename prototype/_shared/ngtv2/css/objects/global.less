@@ -1,0 +1,81 @@
+// Find Somewhere to put these
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.dtv-background-cover {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.dtv-background-contain {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.clearfix() {
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  font-size: 0;
+  clear: both;
+}
+
+.truncate-text() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.unstyled-list() {
+  padding: 0;
+  margin: 0;
+  list-style: none; 
+}
+
+// Metadata, Tomato & Flickster Score
+.critic-metadata {
+  display: -webkit-flex;
+  -webkit-flex-flow: flex-start;
+  -webkit-align-items: center;
+  
+  li:not(:first-child) {
+    margin-left: .9em;
+  }
+}
+
+.tomato-score,
+.flixster-score {
+  display: inline-block;
+  &:before {
+    content: '';
+    position: relative;
+    top: -.15em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    overflow: visible;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+  }
+  + li.dtv-icon {
+    margin-left: .6em;
+  }
+}
+
+.tomato-score:before {
+  margin-right: .2em;
+  background-image: url(/_shared/ngtv2/img/rotten-tomatos-logo.png);
+}
+
+.flixster-score:before {
+  background-image: url(/_shared/ngtv2/img/flixster-logo.png);
+}

@@ -1,0 +1,57 @@
+html body.desktop {
+  width: 100%;
+  overflow-x: hidden;
+  height: auto; 
+}
+
+html, body {
+  background: #f3f3f3;
+    // background-image: url('/_shared/ngtv2/img/dtv-dark-bg.png'), -webkit-linear-gradient(top, rgba(32,33,39,1) 0%,rgba(18,20,21,1) 100%); /* Chrome10+,Safari5.1+ */
+    // background-attachment: fixed;
+}
+
+html.dark-theme {
+  background: #17181a;
+  body {
+    background: #17181a;
+  }
+}
+
+body {
+  font-family: 'DTV-DIN', sans-serif;
+}
+
+.mobile.mobile-overflow {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding: 0 1.5em;
+  margin: 0 auto;
+  max-width: 1920px;
+}
+
+ul {
+  .unstyled-list();
+}
+
+.mobile div[ui-view="body"] {
+  position: relative;
+  top: 45px;
+  width: 100%;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+#open_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  background: red;
+  z-index: 9999;
+}

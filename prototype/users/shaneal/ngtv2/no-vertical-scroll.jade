@@ -1,0 +1,84 @@
+extends layout/layout
+
+block head-styles
+  link(rel="stylesheet", href="_docs/modal.css")
+  | <style>
+  |   html { background: yellow !important; height: 100% !important; }
+  |   body { width: 100%; height: 100% !important; overflow: hidden; background: aqua !important; }
+  |   .modal p:first-of-type { margin-top: 0; }
+  |   .modal-content { bottom: 0 !important; height: auto !important; background: green;  }
+  | </style>
+
+block content
+  include assets/partials/header
+  .modal
+    .modal-backdrop
+    .modal-content
+      .modal-header
+      .modal-body
+        p Body is aqua
+        p html is yellow
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+      .modal-footer
+
+block append bottom-scripts
+  script(type="text/javascript").
+    var app = angular.module('dtvApp', ['dtv.background', 'ngMaterial']);
+
+    $(function() {
+      FastClick.attach(document.body);
+      $('.toggle-theme').click(function() {
+        $('html').toggleClass('dark-theme');
+      });
+    });
+
+    $(function() {
+      var modalContent = $('.modal-content')[0];
+      modalContent.addEventListener('touchstart', function (event) {
+        this.allowUp = (this.scrollTop > 0);
+        this.allowDown = (this.scrollTop < this.scrollHeight - this.clientHeight);
+        this.y = event.pageY;
+      });
+
+      modalContent.addEventListener('touchmove', function (event) {
+        var up = (event.pageY > this.y);
+        var down = (event.pageY < this.y);
+        this.y = event.pageY;
+        if((up && this.allowUp) || (down && this.allowDown)) {
+          event.stopPropagation();
+        }
+        else {
+          event.preventDefault();
+        }
+      });
+
+      $('html')[0].addEventListener("touchstart", function(e) {
+        ts = e.touches[0].clientY;
+      }, false);
+
+      $('html')[0].addEventListener("touchmove", function(e) {
+        e.preventDefault();
+      }, false);
+    });
+

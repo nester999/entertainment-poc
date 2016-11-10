@@ -1,0 +1,36 @@
+extends layout/layout
+
+block append head-styles
+  link(rel="stylesheet", href="_docs/modal.css")
+  | <style>
+  |   body, html { background: #fff !important; overflow: scroll; }
+  | </style>
+ 
+block content
+  //- md-switch.toggle-theme
+  include ../../../_shared/ngtv2/partials/header
+  
+  ul#details
+    li
+      include assets/partials/details-movie.jade
+    li
+      include assets/partials/details-series.jade
+    li
+      include assets/partials/details-movie.jade
+    li
+      include assets/partials/details-series.jade
+    li
+      include assets/partials/details-movie.jade
+    li
+
+
+block append bottom-scripts
+  script(type="text/javascript").
+    var app = angular.module('dtvApp', ['dtv.background', 'ngMaterial']);
+
+    $(function() {
+      FastClick.attach(document.body);
+      $('.toggle-theme').click(function() {
+        $('html').toggleClass('dark-theme');
+      });
+    });

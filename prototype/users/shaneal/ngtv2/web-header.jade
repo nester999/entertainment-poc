@@ -1,0 +1,12 @@
+extends layout/layout
+
+block append head-styles
+ 
+block content
+  //- md-switch.toggle-theme
+  include ../../../_shared/ngtv2/partials/header-web
+
+
+block append bottom-scripts
+  script(type="text/javascript").
+    var app = angular.module('dtvApp', ['dtv.background']);

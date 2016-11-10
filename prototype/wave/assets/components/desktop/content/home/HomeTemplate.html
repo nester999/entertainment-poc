@@ -1,0 +1,56 @@
+<div class="non-carousel-row">
+  <div ng-repeat="carousel in livestreamingCarousel" class="dtv-carousel-tup initalized">
+    <a ui-sref="app.entertainment.grid({id:carousel.id})" href class="dtv-carousel-title">
+      <h3>{{carousel.name}}</h3>
+      <i class="icon icon-dtv2-arrow-right-medium"></i>
+    </a>
+
+    <ul id="{{carousel.id}}" break-points="breakPoints" layout="layout" class="dtv-list" style="width: 720px; height: 236px;">
+      <li ng-repeat="card in carousel.items" ng-repeat-done="{{carousel.id}}" style="width: 340px; height: 236px; transform: translate3d(0px, 0px, 0px);">
+        <div dtv-asset-card data="card"></div>
+      </li>
+      <li style="width: 340px; height: 234px; transform: translate3d(339px, 0px, 0px);">
+        <div class="dtv-asset-card">
+          <div class="card favorite-channels">
+            <div class="card-label">
+              Favorite Channels
+            </div>
+            <ul class="channels-list">
+              <li ng-repeat="channel in livestreamingCarouselFavorites" class="channel" ng-click="selectFavoriteChannel(channel)">
+                <div class="network-logo"><img src="{{channel.network_logo}}" alt=""></div>
+                <div class="currently-playing"><div class="vertical-align-center"><span class="ellipsis">{{channel.currently_playing.original_name}}</span></div></div>
+                <div class="air-time"><div class="vertical-align-center">{{channel.currently_playing.air_time}}</div></div>
+              </li>
+            </ul>
+          </div>
+        </div>      
+      </li>
+    </ul>
+  </div>
+
+  <div class="dtv-carousel-tup">
+    <a ui-sref="app.entertainment.grid({id:continueWatchingCarousel.id})" href class="dtv-carousel-title">
+      <h3>{{continueWatchingCarousel.name}}</h3>
+      <i class="icon icon-dtv2-arrow-right-medium"></i>
+    </a>
+
+    <ul dtv-list id="{{carousel.id}}" break-points="continueWatchingCarouselLayoutBreakPoints" layout="continueWatchingCarouselLayout" scrollable="false">
+      <li ng-repeat="card in continueWatchingCarousel.items | limitTo:2" ng-repeat-done="{{carousel.id}}">
+        <div dtv-asset-card data="card"></div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div ng-repeat="carousel in carousels | limitTo:limitToCount" class="dtv-carousel-tup">
+  <a ui-sref="app.entertainment.grid({id:carousel.id})" href class="dtv-carousel-title">
+    <h3>{{carousel.name}}</h3>
+    <i class="icon icon-dtv2-arrow-right-medium"></i>
+  </a>
+
+  <ul dtv-list id="{{carousel.id}}" break-points="breakPoints" layout="layout">
+    <li ng-repeat="card in carousel.items" ng-repeat-done="{{carousel.id}}">
+      <div dtv-asset-card data="card"></div>
+    </li>
+  </ul>
+</div>

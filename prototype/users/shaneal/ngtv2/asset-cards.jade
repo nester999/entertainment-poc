@@ -1,0 +1,506 @@
+extends layout/layout
+
+block head-styles
+  link(rel="stylesheet", href="_docs/docs.css")
+
+block content
+  div
+    section.cards-yo
+      md-switch.toggle-theme
+      h2 Poster Types
+      .row
+        h4.card-type.text Movie
+        .card-container
+          .top-title-container
+            h4.top-title.text BOWYW Recomendation
+          .card.portrait.movie.recomendation
+            .poster
+              div(dtv-background-cover, src="https://image.tmdb.org/t/p/w300/9gm3lL8JMTTmc3W4BmNMCuRLdL8.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              span.program-title Guardians of the Galaxy
+              ul.metadata
+                li.tomato-score 96%
+                li.flixster-score 96%
+                li
+                  i.icon.icon-dtv-coin
+              p Larger-than-life and dangerously explosive, they're so funny that boys and girls will love the film in equal measure.
+              .recomended-by
+                .icon.icon-dtv-look
+                span Agents of s.h.e.l.d
+        .card-container.two
+          .top-title-container
+            h4.top-title.text Normal
+          .card.portrait.movie
+            .poster
+              div(dtv-background-cover, src="https://image.tmdb.org/t/p/w300/9gm3lL8JMTTmc3W4BmNMCuRLdL8.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              span.program-title Guardians of the Galaxy
+              ul.metadata
+                li.tomato-score 96%
+                li.dtv-icon
+                  i.icon.icon-dtv-coin
+              p Larger-than-life and dangerously explosive, they're so funny that boys and girls will love the film in equal measure.
+        .card-container.three
+          .top-title-container
+            h4.top-title.text Following
+          .card.portrait.movie.following
+            .poster
+              span.tag #Marvel
+              div(dtv-background-cover, src="https://image.tmdb.org/t/p/w300/9gm3lL8JMTTmc3W4BmNMCuRLdL8.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              span.program-title Guardians of the Galaxy
+              ul.metadata
+                li.tomato-score 96%
+                li.dtv-icon
+                  i.icon.icon-dtv-coin
+              p Larger-than-life and dangerously explosive, they're so funny that boys and girls will love the film in equal measure.
+        .card-container.four
+          .top-title-container
+            h4.top-title.text In Progress
+          .card.movie.in-progress
+            .poster
+              .progress
+                .bar
+                span.tag 31:32/ 1:45:43
+              div(dtv-background-cover, src="https://image.tmdb.org/t/p/w500/1eh71zFRnblNsnb2NCU7plqFfd3.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Guardians of the Galaxy
+      .row
+        h4.card-type.text Show
+        .card-container
+          .card.show.recomendation
+            .poster
+              div(dtv-background-cover, src="http://www.theetherdesign.com/wp-content/uploads/2013/12/TRU_look2_gk_01w.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title True Detective
+                li.tag Out of Subscription
+              ul
+                li.description 1 Season, 8 Episodes
+                li.recomended-by
+                  .icon.icon-dtv-look
+                  span The Americans
+        .card-container.two
+          .card.show
+            .poster
+              div(dtv-background-cover, src="http://www.theetherdesign.com/wp-content/uploads/2013/12/TRU_look2_gk_01w.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title True Detective
+                li.tag Out of Subscription
+              ul
+                li.description 1 Season, 8 Episodes
+        .card-container.three
+          .card.show.following
+            .poster
+              span.tag #matthewmcconaughey
+              div(dtv-background-cover, src="http://www.theetherdesign.com/wp-content/uploads/2013/12/TRU_look2_gk_01w.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title True Detective
+                li.tag Out of Subscription
+              ul
+                li.description 1 Season, 8 Episodes
+        .card-container.four
+          .card.show.in-progress
+            .poster
+              span.tag New Season
+              div(dtv-background-cover, src="http://www.theetherdesign.com/wp-content/uploads/2013/12/TRU_look2_gk_01w.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title True Detective
+              ul
+                li.description 1 Season, 8 Episodes
+      .row
+        h4.card-type.text Episode
+        .card-container
+          .card.clip.recomendation
+            .poster
+              div(dtv-background-cover, src="https://image.tmdb.org/t/p/w300/yoT8gRTjGRcxWLHYtFC8Arep2gN.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Key &amp; Peele
+              ul
+                li.description S3 E8 | McCringleberry's Excessive Celebration
+                li.recomended-by
+                  .icon.icon-dtv-look
+                  span Tim &amp; Eric's Awesome Show
+        .card-container.two
+          .card.clip
+            .poster
+              div(dtv-background-cover, src="https://image.tmdb.org/t/p/w300/yoT8gRTjGRcxWLHYtFC8Arep2gN.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Key &amp; Peele
+              ul
+                li.description S3 E8 | McCringleberry's Excessive Celebration
+        .card-container.three
+          .card.clip.following
+            .poster
+              span.tag #keyandpeele
+              div(dtv-background-cover, src="https://image.tmdb.org/t/p/w300/yoT8gRTjGRcxWLHYtFC8Arep2gN.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Key &amp; Peele
+              ul
+                li.description S3 E8 | McCringleberry's Excessive Celebration
+        .card-container.four
+          .card.clip.in-progress
+            .poster
+              .progress
+                .bar
+                span.tag 1:32/ 5:43
+              div(dtv-background-cover, src="https://image.tmdb.org/t/p/w300/yoT8gRTjGRcxWLHYtFC8Arep2gN.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Key &amp; Peele
+              ul
+                li.description S3 E8 | McCringleberry's Excessive Celebration
+      .row
+        h4.card-type.text Clip
+        .card-container
+          .card.clip.recomendation
+            .poster
+              .progress
+                span.tag 1:32
+              div(dtv-background-cover, src="https://deepestdream.com/wp-content/uploads/2015/01/AntMan1-672x372.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Ant-Man Teaser Trailer
+              ul
+                li.description Paul Rudd as Ant-Man in Marvel's Highly Anticipated Summer Blockbuster Movie
+                li.recomended-by
+                  .icon.icon-dtv-look
+                  span The Avengers
+        .card-container.two
+          .card.clip
+            .poster
+              .progress
+                span.tag 1:32
+              div(dtv-background-cover, src="https://deepestdream.com/wp-content/uploads/2015/01/AntMan1-672x372.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Ant-Man Teaser Trailer
+              ul
+                li.description Paul Rudd as Ant-Man in Marvel's Highly Anticipated Summer Blockbuster Movie
+        .card-container.three
+          .card.clip.following
+            .poster
+              .progress
+                span.tag 1:32
+              span.tag #paulrudd
+              div(dtv-background-cover, src="https://deepestdream.com/wp-content/uploads/2015/01/AntMan1-672x372.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Ant-Man Teaser Trailer
+              ul
+                li.description Paul Rudd as Ant-Man in Marvel's Highly Anticipated Summer Blockbuster Movie
+        .card-container.four
+          .card.clip.in-progress
+            .poster
+              .progress
+                .bar
+                span.tag 1:32/ 5:43
+              div(dtv-background-cover, src="https://deepestdream.com/wp-content/uploads/2015/01/AntMan1-672x372.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Ant-Man Teaser Trailer
+              ul
+                li.description Paul Rudd as Ant-Man in Marvel's Highly Anticipated Summer Blockbuster Movie
+      .row
+        h4.card-type.text Music Video
+        .card-container
+          .card.music-video.recomendation
+            .poster
+              .progress
+                span.tag 3:23
+              div(dtv-background-cover, src="http://www.ryanseacrest.com/wp-content/uploads/2014/11/Bruno-Mars-Mark-Ronson.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Uptown Funk!
+              ul
+                li.description Mark Ronson Ft Bruno Mars
+                li.recomended-by
+                  .icon.icon-dtv-look
+                  span The Weeknd
+        .card-container.two
+          .card.music-video
+            .poster
+              .progress
+                span.tag 3:23
+              div(dtv-background-cover, src="http://www.ryanseacrest.com/wp-content/uploads/2014/11/Bruno-Mars-Mark-Ronson.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Uptown Funk!
+              ul
+                li.description Mark Ronson Ft Bruno Mars
+        .card-container.three
+          .card.music-video.following
+            .poster
+              .progress
+                span.tag 3:23
+              span.tag #toptenmusicvideos
+              div(dtv-background-cover, src="http://www.ryanseacrest.com/wp-content/uploads/2014/11/Bruno-Mars-Mark-Ronson.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Uptown Funk!
+              ul
+                li.description Mark Ronson Ft Bruno Mars
+        .card-container.four
+          .card.music-video.in-progress
+            .poster
+              .progress
+                .bar
+                span.tag 1:32/ 5:43
+              div(dtv-background-cover, src="http://www.ryanseacrest.com/wp-content/uploads/2014/11/Bruno-Mars-Mark-Ronson.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Uptown Funk!
+              ul
+                li.description Mark Ronson Ft Bruno Mars
+      .row
+        h4.card-type.text Sporting Event
+        .card-container
+          .card.sporting-event.recomendation
+            .poster
+              div(dtv-background-cover, src="http://www.mmaedition.com/wp-content/uploads/2015/02/diaz_silva32323.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title BKB: Silva vs. Diaz
+              ul
+                li.description Anderson Silva Vs. Nick Diaz
+                li.recomended-by
+                  .icon.icon-dtv-look
+                  span Lucha Underground
+        .card-container.two
+          .card.sporting-event
+            .poster
+              div(dtv-background-cover, src="http://www.mmaedition.com/wp-content/uploads/2015/02/diaz_silva32323.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title BKB: Silva vs. Diaz
+                li.ppv
+                  .icon.icon-dtv-coin
+              ul
+                li.description Anderson Silva Vs. Nick Diaz
+        .card-container.three
+          .card.sporting-event.following
+            .poster
+              span.tag #BKB
+              div(dtv-background-cover, src="http://www.mmaedition.com/wp-content/uploads/2015/02/diaz_silva32323.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title BKB: Silva vs. Diaz
+              ul
+                li.description Anderson Silva Vs. Nick Diaz
+        .card-container.four
+          .card.sporting-event.in-progress
+            .poster
+              .progress
+                .bar
+                span.tag 12:32/ 55:43
+              div(dtv-background-cover, src="http://www.mmaedition.com/wp-content/uploads/2015/02/diaz_silva32323.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title BKB: Silva vs. Diaz
+              ul
+                li.description Anderson Silva Vs. Nick Diaz
+      .row
+        h4.card-type.text Actor/ Personality
+        .card-container
+          .card.portrait.actor-personality.recomendation
+            .poster
+              div(dtv-background-cover, src="http://upload.wikimedia.org/wikipedia/commons/9/99/Tom_Hiddleston_Thor_2_cropped.png")
+            .details
+              ul
+                li.name Tom Hiddleston
+                li.title Actor
+              ul
+                li Muppets Most Wanted
+                li The Great Escapo
+              ul
+                li Thor: The Dark World
+                li Loki
+              ul
+                li Exhibition
+                li Estate Agent
+              ul
+                li Only Lovers Left Alive
+                li Estate Agent
+              .recomended-by
+                .icon.icon-dtv-look
+                span Agents of s.h.e.l.d
+        .card-container.two
+          .card.portrait.actor-personality
+            .poster
+              div(dtv-background-cover, src="http://upload.wikimedia.org/wikipedia/commons/9/99/Tom_Hiddleston_Thor_2_cropped.png")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.name Tom Hiddleston
+                li.title Actor
+              ul
+                li Muppets Most Wanted
+                li The Great Escapo
+              ul
+                li Thor: The Dark World
+                li Loki
+              ul
+                li Exhibition
+                li Estate Agent
+              ul
+                li Only Lovers Left Alive
+                li Estate Agent
+        .card-container.three
+          .card.portrait.actor-personality.following
+            .poster
+              span.tag #LOKI
+              div(dtv-background-cover, src="http://upload.wikimedia.org/wikipedia/commons/9/99/Tom_Hiddleston_Thor_2_cropped.png")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.name Tom Hiddleston
+                li.title Actor
+              ul
+                li Muppets Most Wanted
+                li The Great Escapo
+              ul
+                li Thor: The Dark World
+                li Loki
+              ul
+                li Exhibition
+                li Estate Agent
+              ul
+                li Only Lovers Left Alive
+                li Estate Agent
+      .row
+        h4.card-type.text Live Content
+        .card-container
+          .card.live-content.recomendation
+            .poster
+              .progress
+                span.tag LIVE
+              div(dtv-background-cover, src="https://image.tmdb.org/t/p/w300/4ADdHbxdIg4KeMWW0SNigCFb6Ih.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Better Call Saul
+              ul
+                li.description 9:00 - 10:00PM | S1 E1 Uno
+                li.recomended-by
+                  .icon.icon-dtv-look
+                  span Breaking Bad
+        .card-container.two
+          .card.live-content
+            .poster
+              .progress
+                span.tag LIVE
+              div(dtv-background-cover, src="https://image.tmdb.org/t/p/w300/4ADdHbxdIg4KeMWW0SNigCFb6Ih.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Better Call Saul
+              ul
+                li.description 9:00 - 10:00PM | S1 E1 Uno
+              .channel-logo(dtv-background-contain, src="https://www.directv.com/images/logos/channels/dark/medium/313.png")
+        .card-container.three
+          .card.live-content.following
+            .poster
+              .progress
+                span.tag LIVE
+              span.tag #breakingbad
+              div(dtv-background-cover, src="https://image.tmdb.org/t/p/w300/4ADdHbxdIg4KeMWW0SNigCFb6Ih.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Better Call Saul
+              ul
+                li.description 9:00 - 10:00PM | S1 E1 Uno
+              .channel-logo(dtv-background-contain, src="https://www.directv.com/images/logos/channels/dark/medium/313.png")
+      .row
+        h4.card-type.text Overlay
+        .card-container
+          .card.music-video.recomendation
+            .poster
+              .progress
+                span.tag 3:23
+              div(dtv-background-cover, src="http://www.ryanseacrest.com/wp-content/uploads/2014/11/Bruno-Mars-Mark-Ronson.jpg")
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title Uptown Funk!
+              ul
+                li.description Mark Ronson Ft Bruno Mars
+                li.recomended-by
+                  .icon.icon-dtv-look
+                  span The Weeknd
+            .overlay
+              span.title Uptown Funk!
+      .row
+        h4.card-type.text Placeholder
+        .card-container
+          .card.show.recomendation
+            .poster
+              div(dtv-background-cover)
+                i.icon.icon-dtv-placeholder
+            .details
+              ul
+                li.program-title True Detective
+                li.tag Out of Subscription
+              ul
+                li.description 1 Season, 8 Episodes
+                li.recomended-by
+                  .icon.icon-dtv-look
+                  span The Americans
+        .card-container.two
+          .card.portrait.movie.recomendation
+            .poster
+              div(dtv-background-cover)
+                i.icon.icon-dtv-placeholder
+            .details
+              span.program-title Guardians of the Galaxy
+              ul.metadata
+                li.tomato-score 96%
+                li
+                  i.icon.icon-dtv-coin
+              p Larger-than-life and dangerously explosive, they're so funny that boys and girls will love the film in equal measure.
+              .recomended-by
+                .icon.icon-dtv-look
+                span Agents of s.h.e.l.d
+
+block append bottom-scripts
+  script(type="text/javascript").
+    var app = angular.module('dtvApp', ['dtv.background', 'ngMaterial']);
+
+    $(function() {
+      FastClick.attach(document.body);
+      $('.toggle-theme').click(function() {
+        $('html').toggleClass('dark-theme');
+      });
+    });
+

@@ -1,0 +1,15 @@
+<div dtv-stack-view-layout id="stacks">
+  <div ng-repeat="carousel in ::carousels" class="dtv-stack-view-tup" ng-repeat-done="stacks">
+    <a ui-sref="app.entertainment.grid({id:carousel.id})" href class="dtv-stack-view-title">
+      <h3>{{carousel.name}}</h3>
+      <i class="icon icon-dtv2-arrow-right-medium"></i>
+    </a>
+
+    <ul dtv-stack-view id="{{::carousel.id}}" class="dtv-stack-view">
+      <li ng-repeat="card in ::carousel.items | limitTo:3" ng-repeat-done="{{::carousel.id}}">
+        <!-- <div class="tablet-view-btn" ng-click="activateModal(card)">Tablet View</div> -->
+        <div dtv-asset-card data="::card"></div>
+      </li>
+    </ul>
+  </div>
+</div>

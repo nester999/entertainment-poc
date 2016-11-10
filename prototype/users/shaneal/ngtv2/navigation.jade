@@ -1,0 +1,86 @@
+extends layout/layout
+
+block head-styles
+  link(rel="stylesheet", href="_docs/docs.css")
+
+block content
+  div
+    section
+      md-switch.toggle-theme
+      h2 Navigation
+      h4 Buttons
+      .dtv-example
+        button.btn.large.raised(type="button")
+          i.icon.icon-dtv-play
+          | Watching on iPad
+        button.btn.action(type="button") More Ways to Watch
+        button.btn.fab(type="button")
+          i.icon.icon-dtv-follow
+        button.btn.default(type="button") Guide
+        button.btn.default.small(type="button") Guide
+    section
+      h4 Cab Menu
+      .dtv-example
+        button.btn.cab(type="button")
+          i.icon.icon-dtv-dots
+        button.btn.cab(type="button")
+          i.icon.icon-dtv-close
+        br
+        br
+        ul.cab-menu
+          li.filters
+            ul
+              li
+                a(href="#")
+                  span.heading Refine To
+                  span.name All Programs
+                  i.icon.icon-dtv-arrow-down
+              li
+                a(href="#")
+                  span.heading Sort By
+                  span.name Best Match
+                  i.icon.icon-dtv-arrow-down
+              li
+                a(href="#")
+                  span.heading Sort By
+                  span.name Best Match
+                  i.icon.icon-dtv-arrow-down
+          li
+            ul
+              li
+                a(href="#")
+                  span.heading Home
+        br
+        br
+        ul.cab-menu
+          li
+            a(href="#")
+              span.heading Live TV Streaming
+          li
+            a(href="#")
+              span.heading Shows
+          li
+            a(href="#")
+              span.heading Movies
+          li
+            a(href="#")
+              span.heading Web Series & Clips
+          li
+            a(href="#")
+              span.heading Music
+          li
+            a(href="#")
+              span.heading Networks
+
+
+block append bottom-scripts
+  script(type="text/javascript").
+    var app = angular.module('dtvApp', ['dtv.background', 'ngMaterial']);
+
+    $(function() {
+      FastClick.attach(document.body);
+      $('.toggle-theme').click(function() {
+        $('html').toggleClass('dark-theme');
+      });
+    });
+

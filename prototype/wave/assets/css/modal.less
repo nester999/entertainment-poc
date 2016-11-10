@@ -1,0 +1,619 @@
+@import 'variables.less';
+@import 'modalDetails.less';
+
+
+.modal{
+  font-size: 16px;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  bottom: 0; 
+  right: 0;
+  margin: 0 auto;
+  -webkit-transition: 0.5s;
+  width: 100%;
+  z-index: 9999;
+  .movie {
+    opacity: 1;
+    .no-content {
+      font-size: 12px;
+    }
+  }
+  &.ng-enter {
+    -webkit-transition: 0.75s;
+    opacity: 0;
+  }
+  &.ng-enter-active {
+    opacity: 1;
+  }
+  &.ng-leave {
+    -webkit-transition: 0.75s;
+    opacity: 1;
+  }
+  &.ng-leave-active {
+    opacity: 0;  
+  }
+  .embed-responsive {
+    z-index: 101;
+  }
+  .btn {
+    font-size: 1em;
+    text-transform: inherit;
+    font-weight: 100;
+    letter-spacing: inherit;
+    color: #FFF;
+    text-shadow: none;
+    border: none;
+    box-shadow: none;
+    padding: .85em 1em;
+    border-radius: 3px;
+    margin-right: 15px;
+    &.blue-btn { background-color: #147cff;
+      &:hover { background-color: #147cff; background-image: none; }
+    }
+    &.general-btn { background-color: #FFF; color: #777;
+      &:hover { background-color: #FFF; background-image: none; }
+    }
+  }
+  .aspect-ratio-wrapper {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+
+    .aspect-content {
+      position:  absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      padding-top: 56.25%
+    }
+  }
+  .modal-overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 100;
+    // opacity: 0;
+    transition: .1s;
+  }
+  .btn-close-modal {
+    position: absolute;
+    right: 0;
+    color: #FFF;
+    top: 0;
+    padding: 0.4em 0.4em 0 0;
+    font-size: 1.6em;
+    cursor: pointer;
+  }
+  .modal-content {
+    position: absolute;
+    font-size: 16px;
+    top: 64px;
+    left: 50%;
+    margin: auto;
+    width: 100%;
+    max-width: 800px;
+    background: rgba(0,0,0,0);
+    z-index: 101;
+    background-size: contain;
+    overflow: hidden;
+    padding: 0;
+    transition: 0.25s;
+    opacity: 1;
+    -webkit-box-shadow: 0px 6px 10px 0px #555;;
+    box-shadow: 0px 6px 10px 0px #555;
+    .movie-start-watching {
+      width: 17px;
+      .icon-dtv2-play {
+        font-size: 1.4em;
+        padding: 0.9em 0.6em 0.8em .92em;
+      }
+    }
+    h3 { font-size: 1.2em;
+      padding: 0.7em 0.53em;
+      display: inline-block; 
+      margin-top: 0; 
+      color: #444;
+      font-family: 'DIN-light';}
+    .series-info,.movie-info { font-size: 0.75em; padding: 1em 0; color: #777; white-space: nowrap;
+      .icon-dtv2-common-circle {
+        position: relative;
+        color: forestgreen;
+        font-size: 1.5em;
+        margin-left: 0.3em;
+        margin-right: 0;
+        padding-right: 0;
+        .icon-dtv2-common-check {
+          position: absolute;
+          color: black;
+          top: 0;
+          left: 3px;
+        }
+      }
+      span { padding: 0 1em; border-right: 1px solid #777;
+        &:first-child { padding-left: 1em; }
+        &:last-child {border: 0;}
+      }
+      .common-sense-media { padding-right: 0; border: 0; font-family: 'DTV-DIN-bold';}
+    }
+    .series-description { font-size: 1em; line-height: 1.5em; color: #CCC; text-shadow: 1px 1px 7px #000; margin-bottom: 2em; }
+    .background-overlay {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#adadad+0,000000+99&amp;0+0,1+100 */
+      /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNhZGFkYWQiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC45OSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+      background: -moz-radial-gradient(center, ellipse cover,  rgba(173,173,173,0) 0%, rgba(0,0,0,0.99) 99%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+      background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(173,173,173,0)), color-stop(99%,rgba(0,0,0,0.99)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+      background: -webkit-radial-gradient(center, ellipse cover,  rgba(173,173,173,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-radial-gradient(center, ellipse cover,  rgba(173,173,173,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* Opera 12+ */
+      background: -ms-radial-gradient(center, ellipse cover,  rgba(173,173,173,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* IE10+ */
+      background: radial-gradient(ellipse at center,  rgba(173,173,173,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00adadad', endColorstr='#000000',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+    .modal-header {
+      padding: 2.5em 2.5em 0 2.5em;
+    }
+    .modal-body {
+      position: relative;
+      margin: 0;
+      table {
+        color: #e59a08 !important;
+      }
+    }
+    .movie.no-content {
+      font-size: 12px;
+      border-radius: 50%;
+      top: 160px;
+      left: 12px;
+      .icon-dtv2-play {
+        padding: 0.7em 0.6em 0.8em .92em;
+      }
+    }
+
+    .no-content{
+      width: 4em;
+      height: 4em;
+      border-radius: 50%;
+      .icon-dtv2-play {
+        font-size: 1.7em;
+        padding: 0.7em 0.6em 0.8em .92em;
+      }
+    }
+    .has-content {
+      height: 3em;
+      border-radius: 27px;
+      .icon-dtv2-play {
+        font-size: 1.3em;
+        padding: 0.8em 0.8em 0.8em 1.1em;
+      }
+    }
+    .modal-start-watching-content.movie-start-watching {
+      font-size: 12px;
+    }
+    .modal-start-watching-content {
+      position: relative;
+      display: table;
+      padding: 0 1.3em;
+      top: 146px;
+      left: 0; 
+      bottom: 0; 
+      right: 0;
+      margin: auto;
+      background: #111;
+      color: #bbb;
+      cursor: pointer;
+      opacity: 0.9;
+      border: 1px solid white;
+      
+      .icon-dtv2-play {
+        position: absolute;
+        color: #fff;
+        margin: 0 auto;
+        top: 0;
+        right: 0;
+        left: 0;
+      }
+      .start-watching-info {
+          margin-left: 3.2em;
+          font-size: 0.7em;
+          line-height: 1.6em;
+          padding-top: 0.5em;
+          font-family: 'DIN-light';
+          white-space: nowrap;
+      }
+      .series-episode {
+        width: 3em;
+        color: #fff;
+        font-size: 1.3em;
+        font-family: 'DIN-light';
+        text-transform: uppercase;
+        display: inline-block;
+      }
+      .episode-title{
+        position: relative;
+        display: inline-block;
+        color: #ddd;
+        font-size: 1.3em;
+        margin-left: 0;
+        font-family: 'DIN-light';
+      }
+    }
+    
+
+    .white-details-bar, .movie-details-bar {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 40%;
+      background: #FDFDFD;
+      transition: 0.5s cubic-bezier(.39,.01,.26,1.02);
+      span {
+        opacity: 1;
+        .icon-dtv2-favorite-o, .icon-dtv2-favorite {
+          padding-left: 0.65em;
+          padding-right: 0.8em;
+          color: #147DFF;
+          -webkit-user-select: none;
+          cursor: pointer;
+        }
+        .icon-dtv2-dots {
+          cursor: pointer;
+          color: #147DFF;
+        }
+        
+      }
+      
+      .actor-profile-tup {
+        img {
+          padding: 1px 0 0 1px;
+          width: 122px;
+          float: left;
+        }
+        .channel-logo-tup {
+          background: #333;
+          padding: 1px 0 0 1px;
+          float: left;
+          height: 81%;
+          width: 186px;
+          img {
+            width: 171px;
+            top: 8px;
+            position: relative;
+            padding: 0;
+            float: none;
+            margin: auto;
+            display: block;
+            -webkit-filter: drop-shadow(5px 5px 5px #222);
+          }
+        }
+      }
+      
+      .title-row {
+        position: relative;
+        width: 100%;
+        height: 19%;
+        white-space: nowrap;
+
+        // border: 1px solid red;
+        span {
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          -o-user-select: none;
+          user-select: none;
+
+          .icon-dtv2-favorite-o {
+            padding-right: 1%;
+            color: #147DFF;
+          }
+          .icon-dtv2-favorite {
+            padding-right: 1%;
+            color: #147DFF;
+          }
+          .icon-dtv2-dots {
+            padding-right: 1%;
+            color: #147DFF;
+          }
+          .icon-dtv2-chevron-down {
+            color: #444;
+          }
+          .icon-dtv2-close-thin {  
+            color: #444;        
+            float: right;
+            padding: 0.8em 1em;
+            font-size: 1.4em;
+          }
+        }
+      }
+      
+      .actor-description-container {
+        position: relative;
+        // width: 83%;
+        height: 97px;
+        overflow: hidden;
+        line-height: 1em;
+        margin-right: 5%;
+        padding: 0 0.7em 3em 0.7em;
+        // border: 1px solid orange;
+        .description {
+          color: #999;
+          font-size: 0.75em;
+        }
+      }
+      .description-container {
+        position: relative;
+        width: 95%;
+        height: 97px;
+        overflow: hidden;
+        line-height: 1em;
+        padding: 0 0.7em 3em 0.7em;
+        // border: 1px solid orange;
+        .description {
+          color: #999;
+          font-size: 0.75em;
+        }
+      }
+      .ratings-tup {
+        padding-top: 18px;
+        padding-left: 0.53em;
+        height: 54%;
+        ul li {
+          padding-right: 1em;
+        }
+      }
+      .modal-tabs {
+        position: relative;
+        width: 100%;
+        height: 30%;
+        border-top: 1px solid #eee;
+        > ul {
+          transition: .25s;
+          padding: 1em 0;
+          font-size: 0.9em;
+          color: #555;
+          .active {
+            color: #147DFF;
+          }
+          > li {
+            float: left;
+            text-align: center;
+            cursor: pointer; 
+            font-family: 'DIN-Medium';
+            &:hover {
+              color: cornflowerblue;
+            }
+            
+            > span { padding: 1.5em 0; display: block; }
+          }
+        }
+        .tab-content {
+          height: 84%;
+          h3 {
+            color: #555;
+            display: block;
+            border-bottom: 1px solid #ddd;
+            padding: 0.3em 0.5em 0.5em 1em;
+            margin: 0.3em 0.5em 0.7em 0.5em;
+          }
+          .all-episodes-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            .season-container {
+              margin: 0 1em 0 1em;
+              position: relative;
+              height: 2.9em;
+              border-bottom: #ddd 1px solid;
+              .blue-bar {
+                width: 2px;
+                cursor: pointer;
+                height: 0.87em;
+                margin-right: 0.5em;
+                display: inline-block;
+                background-color: #147DFF;
+              }
+              select {
+                padding-top: 1em;
+                padding-right: 0;
+                cursor: pointer;
+                :before {
+                  content: '';
+                  border-left: 2px solid #147DFF;
+                }
+              }
+              h5 {
+                color: #555;
+                display: inline-block;
+                border-left: 2px solid #147DFF;
+                padding: 0 0.5em 0 1em;
+                cursor: pointer;
+              }
+              .icon-dtv2-arrow-down {
+                color: #555;
+                font-size: 0.7em;
+                cursor: pointer;
+              }
+              .icon-dtv2-equalizer {
+                float: left;
+                padding-right: 0.3em;
+                display: inline-block;
+                cursor: pointer;
+              }
+              .filter {
+                cursor: pointer;
+                display: inline-block;
+                color: #777;
+                border-left: none;
+                float: right;
+                right: 0;
+              }
+            }
+            .episodes-container {
+              width: 100%;
+              height: 130px;
+              margin-top: 1em;
+              padding: 0 0 0em 1em;
+              .episode {
+                position: relative;
+                color: #555;
+                .episode-image {
+                  position: relative;
+                  display: inline-block;
+                  width: 25%;
+                  height: 100%;
+                  img {
+                    cursor: pointer;
+                  }
+                  .icon-dtv2-play-o {
+                    position: absolute;
+                    cursor: pointer;
+                    color: #fff;
+                    opacity: 0.7;
+                    z-index: 111;
+                    left: 2.1em;
+                    top: 1em;
+                    margin: 0 auto;
+                    font-size: 2.4em;
+                  }
+                }
+                .episode-info-container, .movie-info-container {
+                  width: 75%;
+                  position: absolute;
+                  overflow: hidden;
+                  padding: 0 1em;
+                  float: right;
+                  display: inline-block;
+                  height: 100%;
+                  .episode-title-row {
+                    position: relative;
+                    display: inline-block;
+                    margin-top: 0.5em;
+                    padding-left: 0;
+                    width: 100%;
+                    height: 20px; 
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    -o-user-select: none;
+                    user-select: none;
+                    .icon-dtv2-favorite-o {
+                      padding-right: 1%;
+                      color: #147DFF;
+                    }
+                    .icon-dtv2-favorite {
+                      padding-right: 1%;
+                      color: #147DFF;
+                    }
+                    .icon-dtv2-dots {
+                      padding-right: 1%;
+                      color: #147DFF;
+                    }
+                    span {
+                      color: #333;
+                      margin-right: 1em;
+
+                    }
+
+                  }
+                  .episode-info, .movie-year {
+                    position: relative;
+                    display: inline-block;
+                    padding-top: 0.3em;
+                    padding-left: 0;
+                    padding-bottom: 2em;
+                    width: 100%;
+                    height: 20px;
+                    font-size: 0.8em;
+                    color: #999;
+                  }
+                  .episode-description {
+                    font-size: 0.6em;
+                  }
+                }
+              }
+            }
+          }
+          .clips-container {
+            margin: 0.4em;
+            position: relative;
+            width: 100%;
+            height: 86%;
+            overflow-y: auto;
+            ul {
+              li {
+                margin: 0.1em 0 1.4em 0;
+                float: left;
+                .clip-content {
+                  width: 180px;
+                  height: 122px;
+                  background: #fff;
+                  overflow: hidden;
+                  color: white;
+                  display: inline-block;
+                  -webkit-box-shadow: 0px 6px 10px 0px #555;;
+                  box-shadow: 0px 6px 10px 0px #555;
+                  .icon-dtv2-play-o {
+                    position: absolute;
+                    color: #fff;
+                    opacity: 0.7;
+                    z-index: 111;
+                    margin: 0 auto;
+                    font-size: 2.4em;
+                  }
+                  span {
+                    margin-top: 2.8em;
+                    padding-top: 0.3em;
+                    background-color: white;
+                    color: #555;
+                  }
+                }
+              }
+            }
+          }
+          .cast-crew-container {
+            position: relative;
+            width: 100%;
+            height: 86%;
+            overflow-y: auto;
+          }
+          .similar-shows-container {
+            position: relative;
+            width: 100%;
+            height: 86%;
+            overflow-y: auto;
+          }
+        }
+      }
+    }
+
+    .modal-body-content {
+      padding: 0 2.5em;
+      overflow: hidden;
+      transition: .25s;
+    }
+  }
+}
+.web-series-modal .modal-tabs {
+  > ul {
+    > li {
+      width: 33%;
+    }
+  } 
+}
+
+.modal .backdrop {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+}

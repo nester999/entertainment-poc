@@ -1,0 +1,8 @@
+{
+  "slug": "ngtv2Demo",
+  "theme": "light",
+  "header": false,
+  "footer": false,
+  "loadBaseTemplate": false,
+  "data": {}
+}

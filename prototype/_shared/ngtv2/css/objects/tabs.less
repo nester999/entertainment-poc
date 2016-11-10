@@ -1,0 +1,38 @@
+.tab-tup {
+  .nav-tabs {
+    .unstyled-list();
+    position: relative;
+    width: 100%;
+    > li {
+      position: relative;
+      display: inline-block;
+      > a {
+        position: relative;
+        display: block;
+        padding: 1em 2em;
+        color: #335e88;
+        font-size: .75em;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: .15em;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          outline: none;
+        }
+      }
+      &.active a {
+        font-weight: bold;
+        border-bottom: 1px solid #0179b5;
+      }
+    }
+  }
+  .bottom-bar {
+    position: absolute;
+    height: 1px;
+    top: 2.45em; right: 0; left: 0;
+    background: #ccc;
+    z-index: -1;
+    opacity: 0;
+  }
+}

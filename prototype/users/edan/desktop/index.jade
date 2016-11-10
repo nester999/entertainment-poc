@@ -1,0 +1,128 @@
+doctype html
+html(ng-app="dtvModule")
+  head
+    meta(name="viewport", content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    base(href="/users/edan/desktop/")
+
+    title WAVE - desktop
+    //- link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.0/angular-material.min.css")
+    //- link(rel='stylesheet', href='http://www.directv.com/_generated/assets/css/dtve/dtve.css')
+    link(rel='stylesheet', href='/_generated/assets/css/_framework/dtv-light.css')
+    link(rel='stylesheet', href='/_shared/ngtv2/css/styles.css')
+    
+    link(rel='stylesheet', href='assets/css/desktop.css')
+    link(rel='stylesheet', href='assets/css/modal.css')
+    link(rel='stylesheet', href='assets/css/header.css')
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+
+  body(ng-controller="AppCtrl")
+    //include /../prototype/_shared/ngtv2/partials/header.jade
+    //- .header-branding
+    //-   ul.nav.nav-tabs
+    //-     li(href="#")
+    //-       i.icon.icon-dtv2-logo
+    //-     li
+    //-       span Hi Vanessa
+    //- .header-topnav
+      //- ul.nav
+      //-   li 
+      //-     i.icon.icon-dtv2-cast BROWSE FOR TV
+      //-   li 
+      //-     i.icon.icon-dtv2-play-o WATCH ONLINE
+      //-   li Movies
+      //-   li Shows
+      //-   li Sports
+      //-   li Networks
+      //-   li Guide
+      //-   li Playlist
+    //-   #search-bar
+    .header-branding
+      ul
+        li
+          i.icon.icon-dtv2-logo#dtv-logo
+
+      ul.navbar-right
+        li
+          i.icon.icon-dtv2-my-account#myaccount
+        li#salutation
+          | Hello, Vanessa
+        li
+          i.icon.icon-dtv2-arrow-down#account-dropdown
+        li#branding-help
+          i.icon.icon-dtv2-help
+            | Help
+
+    .header-topnav
+      nav
+        .container-fluid
+          // Brand and toggle get grouped for better mobile display
+          
+          // Collect the nav links, forms, and other content for toggling
+          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+            ul.nav
+              li.intent
+                i.icon.icon-dtv2-cast BROWSE FOR TV
+              li.intent 
+                i.icon.icon-dtv2-play-o WATCH ONLINE
+              li#movies-tab
+                | Movies
+              li Shows
+              li Web Series & Clips
+              li Music
+              li Live
+              li Playlist
+              
+            ul.nav.navbar-nav.navbar-right
+              li
+                a(href='#') Link
+              li
+                
+              
+          // /.navbar-collapse
+        // /.container-fluid
+
+    .mock-hero
+      img(src="http://www.directv.com/rwd/ent/premiums/2015_06/hdr_lg__Rogue_S3_2.jpg")
+
+    //- .div(dtv-modal ng-model="selectedSeries" active="modalActive")
+
+    #dtv_tup(ui-view="dtvTup")
+      .dtve-list.dtve-title-list.is-carousel(ng-repeat="category in categoriesList", ng-style="{'font-size': cardStack.style.fontSize}")
+        .clearfix
+            h2.category-title.pull-left {{category.name}}
+            .pull-right.btn(ng-click="category.viewAllCards = !category.viewAllCards") View All
+        .carousel-container(ng-if="!category.viewAllCards")
+          .carousel-slider
+            ul.carousel-items(dtv-carousel)
+              li.carousel-item(dtv-asset-card, ng-repeat="card in category.items" data="card" ng-style="card.style" ng-click="viewSeriesDetailsModal(card)")
+        ul.category-cards-grid-view(ng-if="category.viewAllCards")
+          li.carousel-item.pull-left(dtv-asset-card, ng-repeat="card in category.items" data="card" ng-style="card.style")
+
+
+
+    
+    //- Libraries
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-animate.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js")
+    //- script(src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js")
+    //- script(src="assets/vendor/iscroll-probe.js")
+    //- script(src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.min.js")
+
+    //- Scripts
+    script(src="assets/js/home.js")
+    script(src="http://www.directv.com/assets/js/vendor/jquery.iosslider.src.js")
+    script(src="http://www.directv.com/assets/js/dtve/directives/carousel/carousel.js")
+    script(src="http://www.directv.com/assets/js/global/iosslider-carousel.js")
+    script(src="http://www.directv.com/assets/js/global/services/environmentService.js")
+
+    script(src="/_shared/ngtv2/js/directives/dtvBackground.js")
+    script(src="/_shared/ngtv2/js/directives/dtvDetailsCarousel.js")
+    script(src="/_shared/ngtv2/components/asset-card/dtvAssetCard.js")
+    //- script(src="/_shared/ngtv2/components/program-details/dtvProgramDetails.js")
+
+    //- script(src="assets/js/directives/modal/dtvModal.js")
+

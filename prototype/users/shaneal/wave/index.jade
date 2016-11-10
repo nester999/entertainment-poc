@@ -1,0 +1,62 @@
+doctype html
+html(ng-app="dtvModule")
+  head
+    meta(name="viewport", content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    base(href="/users/shaneal/wave/")
+
+    title WAVE - desktop
+    link(rel='stylesheet', href='/_shared/ngtv2/css/styles.css')
+    //- link(rel='stylesheet', href='assets/css/carousel.css')
+    link(rel='stylesheet', href='assets/css/desktop.css')
+    link(rel='stylesheet', href='assets/css/modal.css')
+    link(rel='stylesheet', href='assets/css/modalVideo.css')
+
+  body(ng-controller="AppCtrl", class="#{browser}")
+    div(dtv-modal)
+
+    header(ui-view="header")
+    div(ui-view="body")
+    
+    //Libraries
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js")
+    script(src="assets/vendor/iscroll.js")
+
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js")
+    //- script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-animate.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js")
+    //- script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.min.js")
+    script(src="/_shared/vendor/js/ct-ui-router-extras.js")
+
+    // Components
+    script(src="/_shared/ngtv2/components/asset-card/dtvAssetCard.js")
+    script(src="/_shared/ngtv2/js/directives/dtvUtils.js")
+    script(src="/_shared/ngtv2/js/directives/dtvBackground.js")
+    script(src="/_shared/ngtv2/js/directives/dtvList.js")
+
+    // Services
+    script(src="/_shared/ngtv2/js/services/dtvApi.js")
+    script(src="assets/js/services/env.js")
+
+    // Common files for Mobile and Desktop
+    script(src="assets/js/app.js")
+    script(src="assets/js/services/intent.js")
+    script(src="assets/js/directives/modal/dtvModal.js")
+    script(src="assets/js/directives/modal/dtvModalVideoPlayerLink.js")
+    script(src="assets/js/directives/modal/dtvModalDetailsTabletLink.js")
+    script(src="assets/js/directives/modal/dtvModalDetailsLink.js")
+
+    if browser === 'desktop'
+      script(src="assets/components/desktop/header/header.controller.js")
+      script(src="assets/components/desktop/home/home.controller.js")
+      script(src="assets/components/desktop/home/grid/grid.controller.js")
+    else
+      script(src="assets/components/mobile/header/header.controller.js")
+      script(src="assets/components/mobile/home/home.controller.js")
+
+    //- script(src="http://www.directv.com/assets/js/vendor/jquery.iosslider.src.js")
+    //- script(src="http://www.directv.com/assets/js/dtve/directives/carousel/carousel.js")
+    //- script(src="http://www.directv.com/assets/js/global/iosslider-carousel.js")
+    //- script(src="http://www.directv.com/assets/js/global/services/environmentService.js")

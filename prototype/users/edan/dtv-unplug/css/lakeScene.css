@@ -1,0 +1,168 @@
+/* IE Users */
+
+@font-face {
+  font-family: REIS;
+  src: local(REIS), url('../fonts/REIS-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: REIS;
+  src: local(REIS), url('../fonts/REIS- regular.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: Monthoers;
+  src: local(Monthoers), url('../fonts/Monthoers.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: Timber;
+  src: local(Timber), url('../fonts/Timber.ttf') format('opentype');
+}
+
+body {
+  font-family: monospace;
+  font-size: 18px;
+  background-size: cover; 
+  width: 100%;
+  height: 100%;
+  background: #333;
+  /*background-repeat:repeat;*/
+  color: #111;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.container {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding-top: 9%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+}
+
+.shadow {
+  position: absolute;
+  width: 1030px;
+  height: 650px;
+  z-index: -1;
+  background: black;
+  opacity: 0.2;
+}
+
+
+.scene {
+  padding: 0;
+  margin: 0;
+}
+
+.coolFont {
+  font-family: Monthoers, Arial, Helvetica, sans-serif;
+  color: white;
+  word-spacing: 1px;
+  letter-spacing: 2px;
+
+  -webkit-text-shadow: 2px 1px 2px #333;
+  -moz-text-shadow: 2px 1px 2px #333;
+  -ms-text-shadow: 2px 1px 2px #333;
+  -o-text-shadow: 2px 1px 2px #333;
+  text-shadow: 2px 1px 2px #333;
+  text-align: center;
+  
+  top: 80%;
+  margin: 0 auto;
+}
+
+
+/*woodFrame*/
+#woodFrame {
+  position: absolute;
+  width: 125%;
+  top: -20%;
+  left: -13%;
+  z-index: 5;
+}
+
+
+/*background*/
+.layer:nth-child(2) {
+  padding-left: 0%;
+  padding-top: 0%;
+  z-index: 2;
+}
+
+/*drawingOverlay*/
+.layer:nth-child(3) {
+  padding-left: 0%;
+  padding-top: 0%;
+  width: 100%;
+  z-index: 3;
+}
+
+/*dtvArrows*/
+.layer:nth-child(4) {
+  z-index: 4;
+  width: 62%;
+  padding-left: 42%;
+  padding-top: 24%;
+}
+
+/*canoe*/
+.layer:nth-child(5) {
+  z-index: 4;
+  padding-left: 80%;
+  padding-top: 37%;
+}
+
+/*dtvLogo*/
+.layer:nth-child(6) {
+  z-index: 4;
+  padding-left: 41%;
+  padding-top: 5%;
+}
+
+/*unplug*/
+.layer:nth-child(7) {
+  z-index: 4;
+  padding-left: 4%;
+  padding-top: 42%;
+  font-family: 'Cabin Sketch';
+  color: white;
+  word-spacing: 1px;
+  letter-spacing: 2px;
+}
+
+.layer:nth-child(7) h6 {
+  padding-left: 6%;
+}
+
+h1 {
+  font-size: 3.5em;
+}
+
+#dtvLogo {
+  text-align: center;
+  padding-top: 10%;
+  padding-left: 45%;
+  position: absolute;
+  -webkit-filter: drop-shadow(5px 5px 5px #555);
+    filter:         drop-shadow(5px 5px 5px #555); 
+}
+
+#centered {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  padding-top: 80%;
+  left: -50%;
+}

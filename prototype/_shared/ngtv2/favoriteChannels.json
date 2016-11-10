@@ -1,0 +1,217 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "id": 49,
+      "network": "HBO",
+      "network_logo": "/_shared/ngtv2/img/channel-logos/hbo-logo.png",
+      "currently_playing": {
+        "number_of_episodes": 50,
+        "card_type": "following",
+        "number_of_seasons": 5,
+        "hash_tag": "awesome",
+        "description": "5 Seasons, 50 Episodes",
+        "description": " Seasons,  Episodes",
+        "media_type": "show",
+        "first_air_date": "2011-04-17",
+        "air_time": "4:00 - 5:00P",
+        "genre_ids": [
+          10765,
+          18
+        ],
+        "id": 1399,
+        "original_language": "en",
+        "original_name": "Game of Thrones",
+        "title": "Game of Thrones",
+        "poster_path": "https://image.tmdb.org/t/p/w300/jIhL6mlT7AblhbHJgEoiBIOUVl1.jpg",
+        "backdrop_path": "https://image.tmdb.org/t/p/w500/aKz3lXU71wqdslC1IYRC3yHD6yw.jpg",
+        "overview": "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.\n\n",
+        "origin_country": [
+          "US"
+        ],
+        "popularity": 36.072708,
+        "name": "Game of Thrones",
+        "vote_average": 9.1,
+        "vote_count": 273
+      }
+    },
+    {
+      "network": "CBS",
+      "network_logo": "/_shared/ngtv2/img/channel-logos/cbs-logo.png",
+      "currently_playing": {
+        "backdrop_path": "https://image.tmdb.org/t/p/w500/nGsNruW3W27V6r4gkyc3iiEGsKR.jpg",
+        "first_air_date": "2007-09-24",
+        "air_time": "4:00 - 6:00P",
+        "genre_ids": [
+          35
+        ],
+        "number_of_episodes": 186,
+        "number_of_seasons": 9,
+        "description": "9 Seasons, 186 Episodes",
+        "id": 1418,
+        "original_language": "en",
+        "original_name": "The Big Bang Theory",
+        "title": "The Big Bang Theory",
+        "overview": "The Big Bang Theory is centered on five characters living in Pasadena, California: roommates Leonard Hofstadter and Sheldon Cooper; Penny, a waitress and aspiring actress who lives across the hall; and Leonard and Sheldon's equally geeky and socially awkward friends and co-workers, mechanical engineer Howard Wolowitz and astrophysicist Raj Koothrappali. The geekiness and intellect of the four guys is contrasted for comic effect with Penny's social skills and common sense.",
+        "origin_country": [
+          "US"
+        ],
+        "poster_path": "https://image.tmdb.org/t/p/w500/8SUIoe1ENMHWLZ0fe2sMqMP3eZD.jpg",
+        "popularity": 21.903248,
+        "name": "The Big Bang Theory",
+        "vote_average": 8,
+        "vote_count": 181,
+        "media_type": "show"
+      }
+    },
+    {
+      "network": "TBS",
+      "network_logo": "/_shared/ngtv2/img/channel-logos/tbs-logo.png",
+      "currently_playing": {
+        "backdrop_path": "https://image.tmdb.org/t/p/w500/tacmO3UpPX26bb1EQz8c11lQezR.jpg",
+        "first_air_date": "2015-06-16",
+        "air_time": "4:00 - 5:00P",
+        "genre_ids": [
+          35
+        ],
+        "number_of_episodes": 10,
+        "number_of_seasons": 1,
+        "description": "1 Seasons, 10 Episodes",
+        "id": 62771,
+        "original_language": "en",
+        "original_name": "Clipped",
+        "title": "Clipped",
+        "overview": "Clipped centers on a group of barbershop coworkers who all went to high school together but ran in very different crowds. Now they find themselves working together at Buzzy's, a barbershop in Charlestown, Massachusetts.",
+        "origin_country": [
+          "US"
+        ],
+        "poster_path": "https://image.tmdb.org/t/p/w500/a7Tp2hVM3aMINT9L5blINV6AweY.jpg",
+        "popularity": 18.628063,
+        "name": "Clipped",
+        "vote_average": 2.3,
+        "vote_count": 2,
+        "media_type": "show"
+      }
+    },
+    {
+      "network": "Disney Channel",
+      "network_logo": "/_shared/ngtv2/img/channel-logos/disneychannel-logo.png",
+      "currently_playing": {
+        "backdrop_path": "https://image.tmdb.org/t/p/w500/bYjc2HolyI2HWGhftWsyo5HgqTC.jpg",
+        "first_air_date": "2014-06-27",
+        "air_time": "4:00 - 5:00P",
+        "genre_ids": [
+          10751,
+          35
+        ],
+        "number_of_episodes": 39,
+        "number_of_seasons": 2,
+        "description": "2 Seasons, 39 Episodes",
+        "id": 46028,
+        "original_language": "en",
+        "original_name": "Girl Meets World",
+        "title": "Girl Meets World",
+        "overview": "Based on ABC's hugely popular 1993-2000 sitcom, this comedy, set in New York City, tells the wonderfully funny, heartfelt stories that \"Boy Meets World\" is renowned for – only this time from a tween girl's perspective – as the curious and bright 7th grader Riley Matthews and her quick-witted friend Maya Fox embark on an unforgettable middle school experience. But their plans for a carefree year will be adjusted slightly under the watchful eyes of Riley's parents – dad Cory, who's also a faculty member (and their new History teacher), and mom Topanga, who owns a trendy afterschool hangout that specializes in pudding.",
+        "origin_country": [
+          "US"
+        ],
+        "poster_path": "https://image.tmdb.org/t/p/w500/yeRT4hAVoCz6RjLUiwdZ8Of34Th.jpg",
+        "popularity": 18.319562,
+        "name": "Girl Meets World",
+        "vote_average": 7.5,
+        "vote_count": 1,
+        "media_type": "show"
+      }
+    },
+    {
+      "network": "AMC",
+      "network_logo": "/_shared/ngtv2/img/channel-logos/amc-hd.png",
+      "currently_playing": {
+        "backdrop_path": "https://image.tmdb.org/t/p/w500/eSzpy96DwBujGFj0xMbXBcGcfxX.jpg",
+        "first_air_date": "2008-01-19",
+        "air_time": "4:00 - 7:00P",
+        "genre_ids": [
+          18
+        ],
+        "number_of_episodes": 62,
+        "number_of_seasons": 5,
+        "description": "5 Seasons, 62 Episodes",
+        "id": 1396,
+        "original_language": "en",
+        "original_name": "Breaking Bad",
+        "title": "Breaking Bad",
+        "overview": "Breaking Bad is an American crime drama television series created and produced by Vince Gilligan. Set and produced in Albuquerque, New Mexico, Breaking Bad is the story of Walter White, a struggling high school chemistry teacher who is diagnosed with inoperable lung cancer at the beginning of the series. He turns to a life of crime, producing and selling methamphetamine, in order to secure his family's financial future before he dies, teaming with his former student, Jesse Pinkman. Heavily serialized, the series is known for positioning its characters in seemingly inextricable corners and has been labeled a contemporary western by its creator.",
+        "origin_country": [
+          "US"
+        ],
+        "poster_path": "https://image.tmdb.org/t/p/w500/4yMXf3DW6oCL0lVPZaZM2GypgwE.jpg",
+        "popularity": 18.095686,
+        "name": "Breaking Bad",
+        "vote_average": 8.9,
+        "vote_count": 245,
+        "media_type": "show"
+      }
+    },
+    {
+      "network": "Fox",
+      "network_logo": "/_shared/ngtv2/img/channel-logos/fox-logo.png",
+      "currently_playing": {
+        "backdrop_path": "https://image.tmdb.org/t/p/w500/lnnrirKFGwFW18GiH3AmuYy40cz.jpg",
+        "first_air_date": "1989-12-16",
+        "air_time": "4:00 - 5:00P",
+        "genre_ids": [
+          16,
+          35,
+          10751
+        ],
+        "number_of_episodes": 577,
+        "number_of_seasons": 27,
+        "description": "27 Seasons, 577 Episodes",
+        "id": 456,
+        "original_language": "en",
+        "original_name": "The Simpsons",
+        "title": "The Simpsons",
+        "overview": "The Simpsons is an American animated sitcom created by Matt Groening for the Fox Broadcasting Company. The series is a satirical parody of a middle class American lifestyle epitomized by its family of the same name, which consists of Homer, Marge, Bart, Lisa, and Maggie. The show is set in the fictional town of Springfield and parodies American culture, society, television, and many aspects of the human condition.",
+        "origin_country": [
+          "US"
+        ],
+        "poster_path": "https://image.tmdb.org/t/p/w500/yTZQkSsxUFJZJe67IenRM0AEklc.jpg",
+        "popularity": 15.360667,
+        "name": "The Simpsons",
+        "vote_average": 8.6,
+        "vote_count": 94,
+        "media_type": "show"
+      }
+    },
+    {
+      "network": "ABC Family",
+      "network_logo": "/_shared/ngtv2/img/channel-logos/abc-logo.png",
+      "currently_playing": {
+        "backdrop_path": "https://image.tmdb.org/t/p/w500/trypBo0ldWAZ4ULeQDjkzzW7To3.jpg",
+        "first_air_date": "2010-06-08",
+        "air_time": "4:00 - 5:00P",
+        "genre_ids": [
+          9648,
+          18
+        ],
+        "number_of_episodes": 132,
+        "number_of_seasons": 6,
+        "description": "6 Seasons, 132 Episodes",
+        "id": 31917,
+        "original_language": "en",
+        "original_name": "Pretty Little Liars",
+        "title": "Pretty Little Liars",
+        "overview": "Based on the Pretty Little Liars series of young adult novels by Sara Shepard, the series follows the lives of four girls — Spencer, Hanna, Aria, and Emily — whose clique falls apart after the disappearance of their queen bee, Alison. One year later, they begin receiving messages from someone using the name \"A\" who threatens to expose their secrets — including long-hidden ones they thought only Alison knew. ",
+        "origin_country": [
+          "US"
+        ],
+        "poster_path": "https://image.tmdb.org/t/p/w500/2rOLNdUPahiAq6VuoA1I6sA45cs.jpg",
+        "popularity": 15.188609,
+        "name": "Pretty Little Liars",
+        "vote_average": 6.8,
+        "vote_count": 27,
+        "media_type": "show"
+      }
+    }
+  ]
+}

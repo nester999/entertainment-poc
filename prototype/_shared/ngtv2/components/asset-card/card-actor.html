@@ -1,0 +1,21 @@
+<div class="card" ng-class="class">
+  <div class="poster">
+    <span ng-if="hashTag" class="tag">#{{hashTag}}</span>
+    <div dtv-background-cover src="imgSrc">
+      <i class="icon icon-dtv2-placeholder"></i>
+    </div>
+  </div>
+  <div class="details">
+    <ul>
+      <li class="name">{{name}}</li>
+      <li class="title">{{title}}</li>
+    </ul>
+    <ul ng-repeat="data in metadata">
+      <li ng-repeat="info in data">{{info}}</li>
+    </ul>
+    <div ng-if="recomendedBy" class="recomended-by">
+      <i class="icon icon-dtv2-look"></i>
+      <span>{{recomendedBy}}</span>
+    </div>
+  </div>
+</div>

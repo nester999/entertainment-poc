@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<script src="Components/touch-emulator.js"></script>
+ <script> TouchEmulator(); </script>
+ <link rel="stylesheet" type="text/css" href="css/gridview.css">
+ <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
+
+ <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+</head>
+	<body>
+		<div id="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix" style="height:50px; ">
+				<div class="header" style="height:50px; border:0px solid red;">
+						<div class="header-container clearfix" >
+							<div class="intent-picker float-left">
+							    <!-- left arrow will be here -->
+							    <div id='leftPrevious' style='visibility:hidden; float:left;'>
+								    <a href='#' onclick='showPrevious();'><img alt="previous" src="images/icon/left.png" height='30px' width="40px"></a>
+								</div>
+								<button id='watchBtn' type="button" class="btn large raised" style='display:block;'>
+									<i class="fa fa-play-circle-o" style='vertical-align:middle;'></i>Watching on iPad
+								</button>
+							</div>
+													
+						    <div id='rightNext' style='visibility:hidden; padding-right:20px; padding-left:20px;' class='float-right'>
+								    <a href='#' onclick='showNext();'><img alt="next" src="images/icon/right.png" height='30px' width="40px"></a>
+							</div>
+							<div class="options float-right" >
+								<i class="fa fa-gear"></i>    <!-- settings icon-->
+							</div>
+							<div class="search float-right">  <!-- search icon-->
+								<i class="fa fa-search"></i>
+						   </div>
+					</div>
+					
+						
+				</div><!--End of header -->
+				<div id='genralTitle' style='visibility:hidden;'>
+								<div id='mainTitle' ></div> <!-- title will be here -->
+								<!--<div id='subTitle'>Popular</div>--> <!-- title will be here -->
+				</div>
+				
+		    </div>
+			<div style="clear:both;"></div> 
+			
+			<div id='subCategories' style=' height:20px; text-align:center; border-bottom:3px solid #FFFFFF; visibility:hidden;'>
+				<!--<span class="subcategory" style='margin-left:50px; padding:2px; border-bottom:3px solid #000000; color:rgb(68, 64, 64)'>POPULAR</span><span class="subcategory">JUST ADDED</span><span class="subcategory">CRITICALLY ACCLAIMED</span><span class="subcategory">GENRES</span></div>-->
+				<span class="subcategory" id='subCat1'  onclick='showSpreadImages(1);'>
+				AWARD NOMINEES</span>
+				<span class="subcategory" id='subCat2'  onclick='showSpreadImages(2);'>MOVIES</span>
+				<span class="subcategory" id='subCat3'  onclick='showSpreadImages(3);'>SHOWS</span>
+				<span class="subcategory" id='subCat4'  onclick='showSpreadImages(4);'>SERIES</span>
+				<span class="subcategory" id='subCat5'  onclick='showSpreadImages(5);'>WEB SERIES & CLIPS</span>
+				<span class="subcategory" id='subCat6'  onclick='showSpreadImages(6);'>MUSIC</span></div>
+				
+			</div>
+			     <div id="mainStackGrid" style="vertical-align:top; text-align:'center'; display:block;">
+
+        <div id="row1" style="text-align:center; width:100%; height:50%; border:0px solid green;">
+
+          <div id="set1" style="float:left;width:33%;">
+            <div  id='title1' class="title">Award Nominees</div>
+            <div id="content1" class="stack" onclick="showSingleStack('content1','set1','title1')";>
+              <div id="awardNominees" class="single_stack"></div>
+            </div> <!--end of content1 -->
+         </div><!--end of set1 -->
+         <div id="set2" style="float:left;width:33%;">
+            <div  id='title2' class="title">Movies</div>
+            <div id="content2" class="stack" onclick="showSingleStack('content2','set2','title2')";>
+              <div id="shows" class="single_stack"></div> <!-- end of single_stack-->
+            </div><!--end of content2 -->
+          </div><!--end of set2 -->
+          <div id="set3" style="float:left;width:33%;">
+            <div  id='title3' class="title">Shows</div>
+            <div id="content3" class="stack" onclick="showSingleStack('content3','set3','title3')";>
+              <div id="music" class="single_stack"></div><!-- end of single_stack-->
+            </div> <!--end of content3 -->
+          </div> <!--end of set3 -->
+         </div><!-- end of row1 -->
+       <div style="clear:both;"></div>
+       <div id="row2" style="text-align:center; width:100%; height:50%;">
+         <div id="set4" style="float:left;width:33%;">
+            <div  id='title4' class="title">Series</div>
+c           <div id="content4" class="stack" onclick="showSingleStack('content4','set4','title4')"; >
+              <div id="series" class="single_stack" ></div><!-- end of single_stack-->
+            </div><!--end of content4 -->
+          </div><!--end of set4 -->
+          <div id="set5" style="float:left;width:33%;">
+            <div  id='title5' class="title">WEB SERIES & CLIPS</div>
+            <div id="content5" class="stack" onclick="showSingleStack('content5','set5','title5')";>
+              <div id="movies" class="single_stack" ></div>
+            </div><!--end of content5 -->
+          </div><!--end of set5 -->
+         <div id="set6" style="float:left;width:33%;">
+            <div  id='title6' class="title">Music</div>
+            <div id="content6" class="stack" onclick="showSingleStack('content6','set6','title6')";>
+              <div id="clips" class="single_stack"></div>
+            </div><!--end of content6 -->
+          </div><!--end of set6 -->
+        </div><!-- end of row2 -->
+     </div>
+</div><!-- container -->
+	
+	<script src="Components/jquery.min.js"></script>
+	<script src="Components/hammer.js"></script>
+	<script src="Components/TweenMax.min.js"></script>
+	<!--<script src="Components/velocity.min.js"></script>-->
+	<script src="Components/gridview.js"></script>
+	
+	<script>
+/*	
+document.ontouchstart = function(e) { 
+	e.preventDefault(); 
+}
+
+$(document).ready(function() {
+	
+	var options = {
+	  preventDefault: true
+	};	
+	var element = document.querySelector("body");
+	var hammertime = new Hammer(element,options);
+	hammertime.get('pinch').set({enable:true});
+	
+	hammertime.on("swipeleft", function(ev){ 
+		alert('swipe left');
+	});
+	hammertime.on("swiperight", function(ev){ 
+		alert('swipe right'); 
+	
+	});
+	hammertime.on("pinchin", function(event) {
+		alert(event.type);
+    });
+	
+	hammertime.on("pinchout", function(event) {
+		alert(event.type);
+    });
+	
+});
+	
+*/	
+	
+		
+	</script>
+	</body>
+</html>

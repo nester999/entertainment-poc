@@ -1,0 +1,83 @@
+html(ng-app='ngtvApp')
+  head
+    meta(name='viewport', content='user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    base(href='/wave/')
+    title WAVE - {{platform}}
+    link(rel='stylesheet', href='/_shared/ngtv2/css/styles.css')
+    link(rel='stylesheet', href='assets/css/desktop.css')
+    link(rel='stylesheet', href='assets/css/modal.css')
+    link(rel='stylesheet', href='assets/css/modalVideo.css')
+    link(rel='stylesheet', href='/_shared/vendor/js/jquery.heroCarousel-1.3/jquery.heroCarousel.css')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+  
+  //- body(ng-controller='AppCtrl', class='{{platform}}' }")
+  // FOR POC DEMO
+  body(ng-controller='AppCtrl', class='{{platform}}', ng-class="{ 'mobile-overflow': $state.is('app.entertainment.carousel') }")
+    div(id="dtv_tup")
+      div(ui-view='header')
+      div(ui-view='body')
+      div(ui-view='modal')
+      //- div(ui-view="Footer")
+
+    // Libraries
+
+    script(src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js')
+    script(src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js")
+    script(src='assets/vendor/iscroll.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-animate.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    script(src='/_shared/vendor/js/ct-ui-router-extras.js')
+    script(src='/_shared/vendor/js/jquery.heroCarousel-1.3/jquery.easing-1.3.js')
+    script(src='/_shared/vendor/js/jquery.heroCarousel-1.3/jquery.heroCarousel-1.3.js')
+    
+    // Components
+    script(src='/_shared/ngtv2/components/asset-card/dtvAssetCard.js')
+    script(src='/_shared/ngtv2/js/directives/dtvCab.js')
+    script(src='/_shared/ngtv2/js/directives/dtvList.js')
+    script(src='/_shared/ngtv2/js/directives/dtvUtils.js')
+    script(src='/_shared/ngtv2/js/directives/dtvBackground.js')
+    script(src='/_shared/ngtv2/js/directives/dtvIntentPicker.js')
+    script(src='/_shared/ngtv2/components/start-watching/dtvStartWatching.js')
+    script(src="/_shared/ngtv2/js/directives/dtvStackView.js")
+    script(src='assets/js/directives/modal/dtvModalVideoPlayerLink.js')
+    script(src='/_shared/ngtv2/js/services/dtvEnvService.js')
+    script(src='/_shared/ngtv2/js/services/dtvApi.js')
+    
+    // Desktop Components
+    script(src='assets/components/desktop/desktopApp.js')
+    script(src='assets/components/desktop/header/base/HeaderController.js')
+    script(src='assets/components/desktop/header/hero/HeroController.js')
+    script(src='assets/components/desktop/content/home/HomeController.js')
+    script(src='assets/components/desktop/content/browse/BrowseController.js')
+    script(src='assets/components/desktop/content/grid/GridViewController.js')
+    script(src='assets/components/desktop/modal/details/ShowModalController.js')
+    script(src='assets/components/desktop/modal/details/MovieModalController.js')
+    script(src='assets/components/desktop/modal/details/WebSeriesModalController.js')
+    script(src='assets/components/desktop/modal/details/ClipModalController.js')
+    script(src='assets/components/desktop/modal/details/SportsModalController.js') 
+    script(src='assets/components/desktop/modal/details/MusicModalController.js') 
+    script(src='assets/components/desktop/modal/details/ActorPersonalityModalController.js') 
+    script(src='assets/components/desktop/modal/details/ChannelModalController.js') 
+    script(src='assets/components/desktop/modal/details/LiveContentModalController.js')   
+
+    // Mobile Components
+    script(src='assets/components/mobile/mobileApp.js')
+    script(src='assets/components/mobile/header/base/HeaderController.js')
+    script(src='assets/components/mobile/header/hero/HeroController.js')
+    script(src='assets/components/mobile/content/home/HomeController.js')
+    script(src='assets/components/mobile/content/grid/GridViewController.js')
+    script(src='assets/components/mobile/modal/details/MobileDetailsModalController.js')
+
+    // NGTV2
+    script(src='assets/app/app.module.js')
+    script(src='assets/app/app.routes.js')
+    script(src='assets/js/services/templateService.js')
+    script(src='assets/components/common/modal/base/BaseModalController.js')
+    script(src='assets/components/common/modal/videoplayer/VideoPlayerModalController.js')
+
+    

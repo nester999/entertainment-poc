@@ -1,0 +1,46 @@
+[
+  {
+    "id": 33922,
+    "poster_path": "https://image.tmdb.org/t/p/w500/nFkTruyjmdCYBlxCjB8k7Dv7GNW.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/w500/xZ3v8sU2O4TcqTCqRBEH2OeVae4.jpg",
+    "vote_average": 3,
+    "heading_title": "Portlandia",
+    "details_title": "Portlandia",
+    "number_of_episodes": 47,
+    "number_of_seasons": 5,
+    "caption": "5 Seasons, 47 Episodes",
+    "card_type": "tv"
+  },
+  {
+    "id": 60705,
+    "poster_path": "https://image.tmdb.org/t/p/w500/sxhRp6nX6TJagHtBJHImLDJQk8y.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/w500/8lwZzWMPp8oJcdz4qIOWWRxp8lr.jpg",
+    "vote_average": 6.4,
+    "heading_title": "Faking It",
+    "details_title": "Faking It",
+    "number_of_episodes": 27,
+    "number_of_seasons": 2,
+    "caption": "2 Seasons, 27 Episodes",
+    "card_type": "tv"
+  },
+  {
+    "id": 13342,
+    "poster_path": "https://image.tmdb.org/t/p/w500/lvEenO2CikD4Zo3rFK1flAU99Pr.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/w500/9O9wbBiFmFOWGPRWZV3Jv4gRP0r.jpg",
+    "vote_average": 6.8,
+    "card_type": "movie",
+    "heading_title": "Fast Times at Ridgemont High",
+    "details_title": "Fast Times at Ridgemont High",
+    "overview": "A story of a group of California teenagers who enjoy malls, sex and rock n' roll."
+  },
+  {
+    "id": 284293,
+    "poster_path": "https://image.tmdb.org/t/p/w500/4n7T0G6kNLszUyfqKAboesNTm55.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/w500/l2dMBfhJ8QadJ2dmoU6nBpeIqg2.jpg",
+    "vote_average": 7.5,
+    "card_type": "movie",
+    "heading_title": "Still Alice",
+    "details_title": "Still Alice",
+    "overview": "Alice Howland, happily married with three grown children, is a renowned linguistics professor who starts to forget words. When she receives a devastating diagnosis, Alice and her family find their bonds tested."
+  }
+]

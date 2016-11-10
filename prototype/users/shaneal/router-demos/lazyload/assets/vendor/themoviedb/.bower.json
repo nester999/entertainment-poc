@@ -1,0 +1,13 @@
+{
+  "name": "themoviedb",
+  "homepage": "https://github.com/cavestri/themoviedb-javascript-library",
+  "_release": "91c2b7526e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "91c2b7526e6f7ef2ad39a970eeb08d6aaa62e7b6"
+  },
+  "_source": "https://github.com/cavestri/themoviedb-javascript-library.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/cavestri/themoviedb-javascript-library.git"
+}

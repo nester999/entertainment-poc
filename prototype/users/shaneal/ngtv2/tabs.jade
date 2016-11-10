@@ -1,0 +1,24 @@
+extends layout/layout
+
+block append head-styles
+  | <style>
+  |   body, html { background: #fff !important; }
+  | </style>
+ 
+block content
+  div(ng-controller="MyCtrl")
+    tabset
+      tab(ng-repeat="tab in tabs", heading="{{tab.title}}", active="tab.active", disable="tab.disabled")
+
+block append bottom-scripts
+  script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.min.js")
+  script(type="text/javascript").
+    var app = angular.module('dtvApp', ['dtv.background', 'ngMaterial', 'ui.bootstrap']);
+
+    app.controller('MyCtrl', function($scope){
+      $scope.tabs = [
+        { title: 'All Episodes' },
+        { title:'Clips' },
+        { title:'Similar Shows' }
+      ];
+    });

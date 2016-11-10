@@ -1,0 +1,7 @@
+{
+  "name": "DIRECTV Web Application Framework",
+  "version": "1.5.0",
+  "dependencies": {
+    "lib": "http://dpdlabs.directv.com/deployments/dtv-nodeframework/latest-current-stable.tgz"
+  }
+}

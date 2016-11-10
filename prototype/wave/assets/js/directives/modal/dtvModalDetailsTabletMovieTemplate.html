@@ -1,0 +1,71 @@
+<div class="modal-body" ng-style="modalBody.style">
+  <div class="modal-content series-detail details series" ng-style="modalDetails.style">
+    <div class="modal-content-body">
+      <div class="heading">
+        <span class="program-title ng-binding">{{details.title}}</span>
+        <a href="#" ng-click="closeMainTab()" ng-style="closeTabBtn.style">
+          <i class="icon icon-dtv2-chevron-up"></i>
+        </a>
+        <span ng-style="detailsBtn.style" class="details-btn">
+          <button class="btn fab" type="button">
+            <i class="icon icon-dtv2-follow"></i>
+          </button>
+          <button class="btn fab" type="button">
+            <i class="icon icon-dtv2-watchlist"></i>
+          </button>
+          <button class="btn fab" type="button" ng-click="closeModal()">
+            <i class="icon icon-dtv2-close"></i>
+          </button>
+        </span>
+      </div>
+      <div class="body" ng-style="modalDetails.body.style">
+        <div class="program-metadata">
+          <ul class="summary">
+            <li>{{details.runtime}} min.</li>
+            <li>
+              <span ng-repeat="genre in details.genres">{{genre}}{{$last ? '' : ', '}}</span>
+            </li>
+            <li>{{details.rating}}</li>
+          </ul>
+        </div>
+        <div>
+          <div class="poster-container">
+            <div dtv-background-cover="" src="imgSrc" class="dtv-background-cover loaded" style="background-image: url({{details.backdrop_path}});"></div>
+          </div>
+          <div class="info">
+            <p class="ng-binding">{{details.description}}</p>
+            <button class="btn action" ng-click="toggleMoreWaysToWatchNav()">More Ways to Watch</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-content more-ways-to-watch-nav">
+    <div class="modal-content-body" ng-style="moreWaysToWatchNav.style">
+      <ul class="list-inline tabs-menu">
+        <li ng-repeat="tab in moreWaysToWatchTabs.tabs" ng-click="moreWaysToWatchNavTabSelection(moreWaysToWatchTabs.tabs)" ng-class="{'active': tab.active}">
+          {{tab.name}}
+        </li>
+      </ul>
+      <ul class="tab-content">
+        <li ng-if="moreWaysToWatchTabs.activeTab === 'ipad'">
+          <ul>
+            <li>
+              <p>1239 AMC On Demand<br/>
+              Available Until 2/15</p>
+              <button class="btn play">Watch on TV</button>
+            </li>
+            <li>
+              <p>1239 AMC On Demand<br/>
+              Available Until 2/15</p>
+              <button class="btn record" ng-click="recordEpisode = !recordEpisode" ng-class="{'active': recordEpisode }">Record</button>
+            </li>
+          </ul>
+        </li>
+        <li ng-if="moreWaysToWatchTabs.activeTab === 'tv'">
+          TV
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

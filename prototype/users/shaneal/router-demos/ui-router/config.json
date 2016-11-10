@@ -1,0 +1,10 @@
+{
+  "slug": "ui-router",
+  "theme": "light",
+  "header": false,
+  "footer": false,
+  "loadBaseTemplate": false,
+  "data": {
+    "mobile": true
+  }
+}

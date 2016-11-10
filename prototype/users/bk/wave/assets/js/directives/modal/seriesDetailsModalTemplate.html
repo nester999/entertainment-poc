@@ -1,0 +1,98 @@
+<div ng-if="active" class="details-modal modal">
+  <!-- <div class="modal-overlay" ng-style="modalOverlay.style"></div> -->
+  <div class="aspect-ratio-wrapper">
+    <div class="aspect-content">
+      <div class="modal-content series-detail" ng-style="modal.style">
+        <div class="btn-close-modal" ng-click="closeModal()">
+          <i class="icon icon-dtv2-close-thin"></i>
+        </div>
+        <!--       <div class="background-overlay"></div> -->
+        <div class="container-fluid modal-start-watching-content">
+          <div class="row-fluid" ng-click="launchVideoPlayerModal()">
+            <i class="icon icon-dtv2-play"></i>
+            <div class="start-watching-info">
+              <div class="start-watching">Start Watching</div>
+              <div class="series-episode"><strong>S1 E1</strong></div>
+              <div class="episode-title">Pilot</div>
+            </div>
+          </div>
+        </div>
+        <!--here's where all the series info starts-->
+        <div class="white-details-bar">
+          <div class="title-row">
+          	<!-- <h3 class="series-title">{{seriesInfo.title}}</h3> -->
+          	<h3 class="series-title">Agents of S.H.I.E.L.D.</h3>
+            <i class="icon icon-dtv2-favorite-o" style="color: CornflowerBlue"></i>
+          	<i class="icon icon-dtv2-dots" style="color: CornflowerBlue"></i>
+
+          </div>
+            
+
+          <div class="series-info">
+						<span class="episode-info">2 Seasons, 44 Episodes</span>
+						<span class="genre">Science Fiction, Series, Drama, Action/Adventure</span>
+						<span class="mature-rating">TV-PG</span>
+            <i class="icon icon-dtv2-common-circle" style="color: forestgreen">
+              <i class="icon icon-dtv2-common-check" style="color: black"></i>
+            </i>
+            
+						<span class="common-sense">age 13+</span>
+          </div>
+          <div class="description-container">
+          	<span class="description">After the Battle of New York, the world has changed. It now knows not only about the Avengers, but also the powerful menaces that require those superheroes and more to face them. In response, Phil Coulson of the Strategic Homeland Intervention, Enforcement and Logistics Division assembles an elite covert team to find and deal with these threats wherever they are found.</span>
+          </div>
+          <div class="modal-tabs">
+          	<ul>
+          		<li>All Episodes</li>
+          		<li>Clips</li>
+          		<li>Cast & Crew</li>
+          		<li>Similar Shows</li>
+          	</ul>
+          </div>
+        </div>
+        <!-- <div class="modal-header">
+        <h3 class="series-title">{{seriesInfo.title}}</h3>
+        
+        <div class="series-info">
+				<span class="episode-info">2 Seasons, 44 Episodes</span>
+				<span class="genre">Science Fiction, Series, Drama, Action/Adventure</span>
+				<span class="mature-rating">TV-PG</span>
+			</div>
+      </div> -->
+        <!-- <div class="modal-body">
+        <div class="modal-body-content" ng-style="modalBodyContent.style">
+          <div class="series-description">After the Battle of New York, the world has changed. It now knows not only about the Avengers, but also the powerful menaces that require those superheroes and more to face them. In response, Phil Coulson of the Strategic Homeland Intervention, Enforcement and Logistics Division assembles an elite covert team to find and deal with these threats wherever they are found. With a world rapidly becoming more bizarre and dangerous than ever before as the supervillains arise, these agents of S.H.I.E.L.D. are ready to take them on.</div>
+				<div class="cta-btn">
+					<button class="btn blue-btn" ng-click="watchVideo()">Watch This Series</button>
+					<button class="btn general-btn">More Ways to Watch</button>
+				</div>
+        </div>
+        <div class="modal-tabs" ng-style="modalTabs.style" ng-class="{'modal-tabs-active': modalTabs.activeTab !== ''}">
+          <ul class="tabs-header clearfix" ng-style="modalTabs.header.style">
+            <li ng-repeat="tab in modalTabs.tabs" ng-click="selectTab(tab.value)" ng-class="{'active': tab.value === modalTabs.activeTab}"><span>{{tab.name}}</span></li>
+          </ul>
+          <div class="tabs-content" ng-if="modalTabs.activeTab">
+            <div class="tab-content" ng-if="modalTabs.activeTab === 'allEpisodes'">
+              All Episodes
+            </div>
+            <div class="tab-content" ng-if="modalTabs.activeTab === 'clips'">
+              Clips
+            </div>
+            <div class="tab-content" ng-if="modalTabs.activeTab === 'castCrew'">
+              Cast &amp; Crew
+            </div>
+            <div class="tab-content" ng-if="modalTabs.activeTab === 'similarShows'">
+              Similar Shows
+            </div>
+          </div>
+        </div>
+      </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="video-player" ng-if="showVideoPlayer">
+    <div class="video-menu-overlay">
+    </div>
+    <div class="video"></div>
+  </div>
+</div>

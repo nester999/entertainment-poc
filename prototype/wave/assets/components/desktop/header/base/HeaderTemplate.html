@@ -1,0 +1,47 @@
+<header>
+  <nav>
+    <div id="dtv_header">
+      <div id="logo_tup">
+        <div class="container">
+          <i class="icon icon-dtv2-logo"></i>
+          <ul class="menu-tup">
+            <li>
+              <a href="#">
+                <i class="icon icon-dtv2-my-account"></i>
+                <span>Hello, Vanessa</span>
+                <i class="icon icon-dtv2-arrow-down"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-dtv2-help"></i>
+                <span>Help</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="main_nav_tup">
+        <div class="container">
+          <div dtv-intent-picker platform="{{intentPlatform}}"  animation-type="{{animationType}}"></div>
+            <a href="#" ng-click="intentChanged(intent)">
+              <i class="icon icon-dtv2-{{intent.iconClass}}"></i>
+              <span>{{intent.label}}</span>
+            </a>
+          <ul class="nav">
+            <li><a ui-sref="app.browse({data:'movies'})" href="#">Movies</a></li>
+            <li><a ui-sref="app.browse({data:'tv'})" href="#">Shows</a></li>
+            <li class="web-series-clips"><a href="#">Web Series &amp; Clips</a></li>
+            <li><a href="#">Music</a></li>
+            <li><a href="#">Live</a></li>
+            <li><a href="#">Playlist</a></li>
+          </ul>
+          <div class="search">
+            <input type="text" placeholder="Search Movies, TV Shows, Music and more...">
+            <i class="icon icon-dtv2-search"></i>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </nav>
+</header>

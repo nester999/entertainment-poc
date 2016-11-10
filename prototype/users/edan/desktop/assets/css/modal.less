@@ -1,0 +1,129 @@
+@import 'variables.less';
+
+.modal{
+  font-size: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  .btn {
+    font-size: 1em;
+    text-transform: inherit;
+    font-weight: 100;
+    letter-spacing: inherit;
+    color: #FFF;
+    text-shadow: none;
+    border: none;
+    box-shadow: none;
+    padding: .85em 1em;
+    border-radius: 3px;
+    margin-right: 15px;
+    &.blue-btn { background-color: #147cff;
+      &:hover { background-color: #147cff; background-image: none; }
+    }
+    &.general-btn { background-color: #FFF; color: #777;
+      &:hover { background-color: #FFF; background-image: none; }
+    }
+  }
+  .modal-overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,.9);
+    z-index: 100;
+    opacity: 0;
+    transition: .1s;
+  }
+  .btn-close-modal {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1em;
+    font-size: 32px;
+    cursor: pointer;
+  }
+  .modal-content {
+    font-size: 16px;
+    bottom: 0;
+    left: 0;
+    top: initial;
+    width: 80%;
+    height: 85%;
+    background: #000;
+    z-index: 101;
+    color: #FFF;
+    background-size: cover;
+    overflow: hidden;
+    padding: 0;
+    h3 { font-size: 2em; margin-bottom: .70em; margin-top: 0; }
+    .series-info { font-size: 1.125em; padding-bottom: 2em;
+      span { padding: 0 1em; border-right: 2px solid #FFF;
+        &:first-child { padding-left: 0; }
+        &:last-child { padding-right: 0; border: 0; }
+      }
+    }
+    .series-description { font-size: 1em; line-height: 1.5em; color: #CCC; text-shadow: 1px 1px 7px #000; margin-bottom: 2em; }
+    .background-overlay {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#adadad+0,000000+99&amp;0+0,1+100 */
+      /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNhZGFkYWQiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC45OSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+      background: -moz-radial-gradient(center, ellipse cover,  rgba(173,173,173,0) 0%, rgba(0,0,0,0.99) 99%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+      background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(173,173,173,0)), color-stop(99%,rgba(0,0,0,0.99)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+      background: -webkit-radial-gradient(center, ellipse cover,  rgba(173,173,173,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-radial-gradient(center, ellipse cover,  rgba(173,173,173,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* Opera 12+ */
+      background: -ms-radial-gradient(center, ellipse cover,  rgba(173,173,173,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* IE10+ */
+      background: radial-gradient(ellipse at center,  rgba(173,173,173,0) 0%,rgba(0,0,0,0.99) 99%,rgba(0,0,0,1) 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00adadad', endColorstr='#000000',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+    .modal-header {
+      padding: 2.5em 2.5em 0 2.5em;
+    }
+    .modal-body {
+      position: relative;
+      margin: 0;
+    }
+    .modal-body-content {
+      padding: 0 2.5em;
+      overflow: hidden;
+      transition: .25s;
+    }
+  }
+  .modal-tabs {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    ul.tabs-header {
+      transition: .25s;
+      li {
+        float: left;
+        width: 25%;
+        text-align: center;
+        font-size: 18px;
+        span { cursor: pointer; padding: 1.5em 0; display: block; }
+      }
+    }
+    .tabs-content {
+      margin: 2.5em;
+    }
+    &.modal-tabs-active {
+      ul.tabs-header li {
+        color: @light-gray;
+        &.active {
+          color: @dtv-blue;
+          span {  
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@import 'variables.less';
+@import 'modalDetailsTablet.less';
+
+.bold { font-weight: bold; }
+.cursor-pointer { cursor: pointer }
+.modal.video-player-view {
+  i { margin-right: .7em }
+  .video-player{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    font-size: 16px;
+    .video {
+      position: absolute;
+      height: 100%;
+      width: 100%;      
+    }
+    .controls {
+      position: fixed;
+      top: 0;
+      z-index: 2147483647;
+      opacity: 0;
+      .right-sidebar-nav {
+        position: absolute;
+        right: 0;
+        & > ul {
+          float: left; margin-top: 2em;
+        }
+        ul.close-modal { 
+          margin-right: 1em;
+          .close-modal-btn { 
+            color: #FFF;
+            display: table-cell;
+            width: 2em;
+            height: 2em;
+            background-color: rgba(000, 000, 000, .8);
+            vertical-align: middle;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: .25s;
+            &:hover {
+              background-color: @dtv-blue;
+            }
+          }
+        }
+        ul.tab-nav {
+          li {
+            cursor: pointer;
+            font-size: 1em;
+            padding: .75em;
+            margin-bottom: .5em;
+            color: #FFF;
+            background-color: rgba(000, 000, 000, .8);
+            width: 15em;
+            &.active {
+              background-color: @dtv-blue;
+              i { transform: rotate(180deg); }
+            }
+          }
+        }
+        ul.tab-content {
+          margin-top: 0;
+          vertical-align: top;
+          color: #FFF;
+          background-color: rgba(000, 000, 000, .9);
+          .tab-content-header {
+            border-bottom: 1px solid rgba(255, 255, 255, .15);
+            padding: .5em;
+          }
+          ul.video-list { opacity: 0; overflow-x: hidden; overflow-y: hidden;
+            li {
+              width: 22em;
+              padding: .5em;
+              .video-thumbnails {
+                padding-bottom: .5em;
+                margin-bottom: .5em;
+                img { display: block; }
+              }
+              .video-info {
+                font-size: 1em;
+                line-height: 1.25em;
+                i { padding: 0; }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

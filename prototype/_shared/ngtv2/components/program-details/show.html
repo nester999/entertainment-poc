@@ -1,0 +1,65 @@
+<div class="details" ng-class="class">
+  <div class="heading">
+    <span class="program-title">{{programTitle}}</span>
+    <a href="#" ng-click="close()">
+      <i class="icon icon-dtv2-chevron-up"></i>
+    </a>
+  </div>
+  <div class="body">
+    <div class="program-metadata">
+      <ul class="description">
+        <li ng-repeat="meta in headerMeta">{{meta}}</li>
+      </ul>
+      <button class="btn fab" type="button">
+        <i class="icon icon-dtv2-follow"></i>
+      </button>
+      <button class="btn fab" type="button">
+        <i class="icon icon-dtv2-watchlist"></i>
+      </button>
+    </div>
+    <div>
+      <div class="poster-container">
+        <div dtv-background-cover src="imgSrc"></div>
+      </div>
+      <div class="info">
+        <p>{{description}}</p>
+        <button class="btn action">More Ways to Watch</button>
+      </div>
+      <div ng-if="awards" class="awards" layout="row">
+        <div ng-if="awards.emmys || awards.golden_globes" class="award" layout="row">
+          <i class="icon icon-dtv2-trophy"></i>
+          <table>
+            <tbody>
+              <tr ng-if="awards.emmys">
+                <td>{{awards.emmys}}</td>
+                <td>Emmys</td>
+              </tr>
+              <tr ng-if="awards.golden_globes">
+                <td>{{awards.golden_globes}}</td>
+                <td>Golden Globes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div ng-if="awards.nominations" class="award" layout="row">
+          <i class="icon icon-dtv2-ribbon"></i>
+          <table>
+            <tbody>
+              <tr>
+                <td>{{awards.nominations}}</td>
+                <td>Emmys</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="tab-tup">
+      <tabset>
+        <tab ng-repeat="tab in tabs" heading="{{tab.title}}" select="change(tab.href)" active="tab.active" disable="tab.disabled"></tab>
+      </tabset>
+      <div class="bottom-bar"></div>
+      <div ui-view dtv-scroll scroll-y="true" momentum="true"></div>
+    </div>
+  </div>
+</div>

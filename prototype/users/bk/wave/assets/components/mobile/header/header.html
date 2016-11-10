@@ -1,0 +1,85 @@
+<div id="dtv_header">
+  <div id="account_tup"></div>
+  <div id="intent_tup">
+    <ul class="intent">
+      <li ng-repeat="intent in intentItems" ng-class="{ active: intent.active }">
+        <a href="#" ng-click="intentChanged(intent)">
+          <i class="icon icon-dtv2-{{intent.iconClass}}"></i>
+          <span>{{intent.label}}</span>
+        </a>
+      </li>
+      <li class="intent-pill {{currentIntent.iconClass}}">
+        <i class="icon icon-dtv2-{{currentIntent.iconClass}}"></i>
+        <span>{{currentIntent.label}}</span>
+      </li>
+    </ul>
+  </div>
+  <div id="search_tup">
+    <button type="button" class="btn btn-icon dtv-settings-icon"><i class="icon icon-dtv2-settings"></i></button>
+    <button type="button" class="btn btn-icon"><i class="icon icon-dtv2-search"></i></button>
+  </div>
+</div>
+
+
+
+<!--   <button type="button" class="btn btn-icon"><i class="icon icon-dtv2-back"></i></button>
+  <div>
+    <button type="button" class="btn btn-icon dtv-settings-icon"><i class="icon icon-dtv2-settings"></i></button>
+    <button type="button" class="btn btn-icon"><i class="icon icon-dtv2-search"></i></button>
+  </div> -->
+
+
+
+
+
+
+
+<!-- <div id="dtv_header">
+  <div id="logo_tup">
+    <div class="container">
+      <i class="icon icon-dtv2-logo"></i>
+      <ul class="menu-tup">
+        <li>
+          <a href="#">
+            <i class="icon icon-dtv2-my-account"></i>
+            <span>Hello, Vanessa</span>
+            <i class="icon icon-dtv2-arrow-down"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="icon icon-dtv2-help"></i>
+            <span>Help</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="main_nav_tup">
+    <div class="container">
+      <ul class="intent">
+        <li ng-repeat="intent in intentItems" ng-class="{ active: intent.active }">
+          <a href="#" ng-click="intentChanged(intent)">
+            <i class="icon icon-dtv2-{{intent.iconClass}}"></i>
+            <span>{{intent.label}}</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="nav">
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">Shows</a></li>
+        <li class="web-series-clips"><a href="#">Web Series &amp; Clips</a></li>
+        <li><a href="#">Music</a></li>
+        <li><a href="#">Live</a></li>
+        <li><a href="#">Playlist</a></li>
+      </ul>
+      <div class="search">
+        <input type="text" placeholder="Search Movies, TV Shows, Music and more...">
+        <i class="icon icon-dtv2-search"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="hero-slider">
+  <img src="http://www.directv.com/rwd/ent/premiums/2015_06/hdr_lg__Rogue_S3_2.jpg">
+</div> -->

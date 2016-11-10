@@ -1,0 +1,11 @@
+{
+  "name": "ui-router-demo",
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-bootstrap": "latest",
+    "bootstrap": "latest",
+    "lodash": "latest",
+    "jquery": "~2.1.4",
+    "angular-new-router": "~0.5.3"
+  }
+}

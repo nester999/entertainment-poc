@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+	<title>NGTV: Single Stack Animation</title>
+	
+	<link rel="stylesheet" type="text/css" href="../css/ngtv_prototypes.css">
+	<link rel="stylesheet" type="text/css" href="../css/sub_nav.css">
+	<link rel="stylesheet" type="text/css" href="../css/single_stack.css">
+	
+	<script src="../bower_components/hammerjs/hammer.min.js"></script>
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../bower_components/greensock/src/minified/TweenMax.min.js"></script>
+	<script src="../js/ngtv_prototypes.js"></script>
+</head>
+
+<body>
+
+	<!-- SINGLE STACK -->
+	<div id="single_wrapper">
+		<div id="stack_title">
+			<div id="stack_category" class="semi_large_text_reg">Shows</div>
+			<div id="stack_subcat" class="medium_text_reg">Popular</div>
+		</div>
+		<div id="stack_back"></div>
+		<div id="single_stack"></div>
+		<div id="stat_modules">
+			<a href="#" class="move_button">VELOCITY</a><span id="move_velocity"></span>
+		</div>
+	</div>
+
+	<!-- SINGLE CARD -->
+	<div id="app_wrapper">
+		<div id="topnav_wrapper">
+			<a href="#" id="search_icon_wrapper">
+				<div id="search_icon"></div>
+			</a>	
+		</div>
+		<div id="flat_view">
+			<div id="module_wrapper" class="main_module">
+				<div id="content_module">	
+					<div class="info_title large_text din_light">
+						Breaking Bad
+					</div>
+					<div id="action_subnav">
+						<a href="#" id="action_back">
+							<div id="back_icon"></div>
+						</a>
+					</div>
+					<div id="content_wrapper">
+						<div class="content_info">
+							<div class="info_meta">
+								2008 - 2013
+								<span class="info_spacer">|</span>
+								5 Seasons, 62 Episodes
+								<span class="info_spacer">|</span>
+								Crime, Drama
+								<span class="info_spacer">|</span>
+								TV MA
+							</div>
+						</div>
+						<div class="action_wrapper">
+							<a href="#" id="action_bookmark" class="action_button"> 
+								<div id="bookmark_icon">
+									<div id="icon_triangle"></div>
+								</div>
+								<div class="action_circle"></div>
+							</a>
+							<a href="#" id="action_unknown" class="action_button"> 
+								<div id="unknown_icon">
+									<div id="icon_square">
+										<div id="square_line_vertical"></div>
+										<div id="square_line_horizontal"></div>
+									</div>
+									<div id="icon_line_vertical"></div>
+									<div id="icon_line_horizontal"></div>
+								</div>
+								<div class="action_circle"></div>
+							</a>
+						</div>
+						<div id="content_image">
+							<div id="image_overlay">
+								<div id="overlay_number">S1 E1</div>
+								<div id="overlay_title">It Begins</div>
+							</div>
+							<a href="#" id="image_source">
+								<img src="../images/series/breaking_bad/breaking_bad.jpg" id="image_image" alt="Breaking Bad - S1 E1 - It Begins">
+							</a>
+						</div>
+						<div id="content_desc_wrapper">
+							<div class="content_desc">
+								Breaking Bad follows protagonist Walter White (Bryan Cranston), a chemistry teacher who lives in New Mexico with his wife (Anna Gunn) and teenage son (RJ Mitte) who has cerebral palsy.
+							</div>
+							<div class="action_button_wrapper">
+								<a href="#" class="action_more button_text din_light">
+									More ways to watch
+								</a>
+							</div>
+						</div>
+						<div id="content_awards">
+							<div class="awards_wrapper">
+								<img src="../images/assets/awards.svg" alt="Awards" class="awards_image">
+								<table class="awards_table">
+								  <tr class="awards_info">	
+								    <td class="awards_number">16</td>
+								    <td>Emmys</td>
+								  </tr>
+								  <tr class="awards_info">
+								    <td class="awards_number">2</td>
+								    <td>Golden Globes</td>
+								  </tr>
+								</table>
+							</div>
+							<div class="awards_wrapper">
+								<img src="../images/assets/nominations.svg" alt="Nominations" class="awards_image">
+								<table class="awards_table">
+								  <tr class="awards_info">
+								    <td class="awards_number">108</td>
+								    <td>Nominations</td>
+								  </tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div id="sub_navigation" class="small_text">
+						<div class="navigation_buttons din_light">
+							<a href="#" id="navigation_all" action="episode" class="navigation_item general_navigation">
+								All Episodes
+							</a>
+							<a href="#" id="navigation_clips" action="clip" class="navigation_item general_navigation">
+								Clips
+							</a>
+							<a href="#" id="navigation_similar" action="similar" class="navigation_item general_navigation">
+								Similar Shows
+							</a>
+						</div>
+					</div>
+
+				</div>
+				<div id="sub_module">
+					<div id="module_navigation" class="small_text din_light">
+						<div class="navigation_buttons">
+							<a href="#" id="subnav_selection" class="navigation_mid general_navigation">
+								Season 1
+								<div class="drop_arrow"></div>
+							</a>
+							<div id="subnav_subscribed" class="navigation_mid general_navigation">
+								Only Subscribed
+								<div class="subscribe_check">
+				     				<input type="checkbox" value="None" id="subscribe_check" name="check" checked />
+				      				<label for="subscribe_check"></label>
+						    	</div>
+					    	</div>
+						</div>
+					</div>
+					<div id="episode_navigation">
+						<div id="episode_outer">
+							<div id="episode_inner">
+								<div id="episode_inner_wrapper"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="side_wrapper" class="main_module">
+				<div id="side_module">
+					<div id="side_navigation" class="small_text">
+						<div class="side_buttons din_light">
+							<a href="#" id="watch_ipad" action="clip" class="sidenav_item general_navigation">
+								iPad
+							</a>
+							<a href="#" id="watch_tv" action="similar" class="sidenav_item general_navigation selected">
+								TV
+							</a>
+						</div>
+					</div>
+					<div id="side_content_wrapper">
+						<div class="watch_wrapper">
+							<div class="watch_description">
+								<span class="watch_channel">1239 AMC On Demand</span>
+								<br>
+								<span class="watch_availble">Available Until 2/15</span>
+							</div>
+							<a href="#" id="watch_on_tv" class="watch_button button_text din_light">
+								Watch on TV
+								<div id="tv_icon" class="button_icon"></div>
+							</a>
+						</div>
+						<div class="watch_wrapper">
+							<div class="watch_description">
+								<span class="watch_channel">1239 AMC On Demand</span>
+								<br>
+								<span class="watch_availble">Available Until 2/15</span>
+							</div>
+							<a href="#" id="record_on_tv" class="watch_button button_text din_light">
+								Record
+								<div id="record_icon" class="button_icon"></div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="cab_wrapper">
+			<div id="cab_secondary" class="cab_group">
+				<div id="secondary_wrapper" class="cab_item_wrapper">
+					<a href="#" id="cab_popular" class="cab_secondary din_medium medium_text_alt cab_item">
+						Popular
+					</a>
+					<a href="#" id="cab_added" class="cab_secondary din_medium medium_text_alt cab_item">
+						Just Added
+					</a>
+					<a href="#" id="cab_critically" class="cab_secondary din_medium medium_text_alt cab_item">
+						Critically Acclaimed
+					</a>
+					<a href="#" id="cab_genres" class="cab_secondary din_medium medium_text_alt cab_item">
+						Genres
+					</a>
+				</div>
+			</div>
+			<div id="cab_primary" class="cab_group">
+				<div id="cab_refine" class="cab_item_wrapper cab_large">
+					<a href="#" id="sort_by" class="cab_main cab_item">
+						<div class="cab_title medium_text din_light">
+							Refine To
+						</div>
+						<div class="cab_selection medium_text_reg">
+							All Programs
+						</div>
+						<div class="sort_icon"></div>
+					</a>
+				</div>		
+				<div id="cab_sort" class="cab_item_wrapper cab_large">
+					<a href="#" id="sort_by" class="cab_main cab_item">
+						<div class="cab_title medium_text din_light">
+							Sort By
+						</div>
+						<div class="cab_selection medium_text_reg">
+							Best Match
+						</div>
+						<div class="sort_icon"></div>
+					</a>
+				</div>
+			</div>
+			<a href="#" id="cab_icon">
+				<div id="circle_wrapper">
+					<div class="cab_circle_wrapper">
+						<div class="cab_circle"></div>
+					</div>
+					<div class="cab_circle_wrapper">
+						<div class="cab_circle"></div>
+					</div>
+					<div class="cab_circle_wrapper">
+						<div class="cab_circle"></div>
+					</div>
+				</div>
+				<div id="cab_close_wrapper" class="super_text larabie_reg">
+					x
+				</div>
+			</a>
+		</div>
+	</div>
+
+</body>
+
+</html>

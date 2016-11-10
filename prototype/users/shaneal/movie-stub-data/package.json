@@ -1,0 +1,6 @@
+{
+  "name": "bootstrap",
+  "devDependencies": {
+    "moviedb": "^0.2.0"
+  }
+}

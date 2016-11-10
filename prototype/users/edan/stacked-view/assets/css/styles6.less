@@ -1,0 +1,125 @@
+@import 'fonts.less';
+// .disable-scrollbar {
+//   overflow: hidden;
+// }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+html, body {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
+
+body {
+  -webkit-transition: 0.7s;
+  -o-transition: 0.7s;
+  transition: 0.7s;
+  -webkit-perspective: 600;
+  -moz-perspective: 600;
+  -ms-perspective: 600;
+  perspective: 600;
+
+  -webkit-perspective-origin: 50% 0%;
+  -moz-perspective-origin: 50% 0%;
+  -ms-perspective-origin: 50% 0%;
+  -o-perspective-origin: 50% 0%;
+  perspective-origin: 50% 0%;
+}
+
+.adjustment-slider {
+  z-index: 100;
+  display: block;
+}
+
+h2.category-title {
+  text-align: center;
+  color: #5193d7;
+  font: 100 28px "DTV-DIN";
+  opacity: 1;
+  transition: 0.2s;
+  left: 0;
+  bottom: 0;
+  position: relative;
+}
+
+h3,
+h5.category-title {
+  color: #222;
+  font: 100 18px "DTV-DIN";
+  opacity: 1;
+  transition: 0.1s;
+  position: relative;
+}
+
+.horizon-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: green;
+}
+
+#stacked-view-container {
+  width: 800px;
+  height: 900px;
+  margin: 0 auto;
+  // background: #333;
+  .movie-poster {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    top: 50%;
+    img {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 30em;
+      height: 18em;
+      margin-top: -9em;
+      margin-left: -15em;
+      -webkit-transition: 0.05s ease;
+      -o-transition: 0.05s ease;
+      transition: 0.05s ease;
+      // transform: rotateY(40deg);
+    }
+  }
+}
+
+@media screen and (max-width: 1027px) {}
+
+@media screen and (max-width: 569px) {
+  body {
+    -webkit-perspective-origin: 78% 12%;
+    -moz-perspective-origin: 78% 12%;
+    -ms-perspective-origin: 78% 12%;
+    perspective-origin: 78% 12%;
+  }
+
+  .stacked-view-container {
+    .movie-poster {
+      top: 50%;
+      img {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 10em;
+        height: 6em;
+        margin-top: -15em;
+        margin-left: 1em;
+        // transform: rotateY(40deg);
+      }
+    }
+  }
+}

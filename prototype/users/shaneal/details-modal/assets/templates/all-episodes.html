@@ -1,0 +1,19 @@
+<ul class="episodes">
+  <li ng-repeat="data in episodeData">
+    <div class="tmb">
+      <img src="{{data.img}}"/>
+      <i class="icon icon-dtv-play"></i>
+    </div>
+    <div class="episode-detail">
+      <div layout="row" layout-align="space-between center" class="title-bar">
+        <ul>
+          <li>S1 E{{data.episode_number}}</li>
+          <li>{{data.name}}</li>
+        </ul>
+        <span>{{data.duration}} min</span>
+      </div>
+      <p>{{data.description}}</p>
+      <i class="icon icon-dtv-dots"></i>
+    </div>
+  </li>
+</ul>

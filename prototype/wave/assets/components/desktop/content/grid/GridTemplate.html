@@ -1,0 +1,12 @@
+<div class="dtv-carousel-tup">
+  <a ui-sref="app.entertainment.carousel" href="#" class="dtv-carousel-title">
+    <i class="icon icon-dtv2-arrow-left-medium"></i>
+    <h3>Back</h3>
+  </a>
+
+  <ul dtv-list id="1" break-points="breakPoints" layout="layout">
+    <li ng-repeat="card in ::carousel track by $index" ng-repeat-done="1" ng-click="viewDetailsModal(card, carousels)">
+      <div dtv-asset-card data="card"></div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,36 @@
+.dtv-container {
+  padding: 2em;
+}
+
+#dtv_tup {
+  padding: 0 3em;
+}
+
+.carousel-container {
+  margin-bottom: 30px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  h5 {
+    text-transform: uppercase;
+  }
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow-x: scroll;
+  white-space:nowrap;
+
+  .poster {
+    display:inline-block;
+    margin-left: 10px;
+    &:first-of-type {
+      margin-left: 0;
+    }
+    img {
+      width: 200px;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+<html ng-app="ngtvApp">
+	<head>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/users/bk/wave/">
+    <title>WAVE - desktop</title>
+    <link rel="stylesheet" href="/_shared/ngtv2/css/styles.css">
+    <link rel="stylesheet" href="assets/css/desktop.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+    <link rel="stylesheet" href="assets/css/modalVideo.css">
+    <script type="text/javascript" src="chrome-extension://aadgmnobpdmgmigaicncghmmoeflnamj/ng-inspector.js"></script>
+  </head>
+  <body ng-controller="AppCtrl" class="{{browser}}">
+    <div>
+      <div ui-view="header"></div>
+      <div ui-view="body"></div>
+      <div ui-view="modal"></div>
+      <div ui-view="footer"></div>
+    </div>
+    <!--Libraries-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+    <script src="assets/vendor/iscroll.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="/_shared/vendor/js/ct-ui-router-extras.js"></script>
+    <!-- Components-->
+    <script src="/_shared/ngtv2/components/asset-card/dtvAssetCard.js"></script>
+    <script src="/_shared/ngtv2/js/directives/dtvList.js"></script>
+    <script src="/_shared/ngtv2/js/directives/dtvUtils.js"></script>
+    <script src="/_shared/ngtv2/js/directives/dtvBackground.js"></script>
+    <script src="/_shared/ngtv2/js/services/dtvEnvService.js"></script>
+    <!-- Services-->
+    
+    <script src="/_shared/ngtv2/js/services/dtvApi.js"></script>
+    <!--
+    <script src="assets/js/services/env.js"></script>
+    -->
+    <!-- Common files for Mobile and Desktop-->
+
+    <!-- Desktop Components-->
+    <script src="assets/components/desktop/desktopApp.js"></script>
+    <script src="assets/components/desktop/header/base/HeaderController.js"></script>
+    <script src="assets/components/desktop/header/hero/HeroController.js"></script>
+    <script src="assets/components/desktop/content/home/HomeController.js"></script>
+    <script src="assets/components/desktop/content/browse/BrowseController.js"></script>
+    <script src="assets/components/desktop/content/grid/GridViewController.js"></script>
+    <script src="assets/components/desktop/modal/details/MovieDetailsModalController.js"></script>
+    <script src="assets/components/desktop/modal/videoplayer/VideoPlayerModalController.js"></script>
+    
+    <!-- Mobile Components-->
+
+    <!-- NGTV2 -->
+    <script src="/app/app.module.js"></script>
+    <script src="/app/app.routes.js"></script>
+
+
+    <script src="assets/js/directives/modal/dtvModalVideoPlayerLink.js"></script>
+    <!--
+    <script src="assets/js/services/intent.js"></script>
+    <script src="assets/js/directives/modal/dtvModal.js"></script>
+    
+    <script src="assets/js/directives/modal/dtvModalDetailsTabletLink.js"></script>
+    <script src="assets/js/directives/modal/dtvModalDetailsLink.js"></script>
+    <script src="assets/components/desktop/header/header.controller.js"></script>
+    <script src="assets/components/desktop/home/home.controller.js"></script>
+    <script src="assets/components/desktop/home/grid/grid.controller.js"></script>
+    -->
+  </body>
+</html>

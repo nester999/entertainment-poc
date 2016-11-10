@@ -1,0 +1,42 @@
+<div class="details movie" ng-class="class" ng-animate="{enter: 'tabins'}">
+  <div class="heading">
+    <span class="program-title">{{programTitle}}</span>
+    <a href="#" ng-click="close()">
+      <i class="icon icon-dtv2-chevron-up"></i>
+    </a>
+  </div>
+  <div class="body">
+    <div class="program-metadata">
+      <ul class="description">
+        <li ng-repeat="meta in headerMeta">{{meta}}</li>
+      </ul>
+      <button class="btn fab" type="button">
+        <i class="icon icon-dtv2-follow"></i>
+      </button>
+      <button class="btn fab" type="button">
+        <i class="icon icon-dtv2-watchlist"></i>
+      </button>
+    </div>
+    <div layout="row">
+      <div class="poster-container" flex="40">
+        <img src="{{imgSrc}}">
+      </div>
+      <div class="info">
+        <ul ng-if="tomatoScore || flicksterScore" class="critic-metadata">
+          <li ng-if="tomatoScore" class="tomato-score">{{tomatoScore}}%</li>
+          <li ng-if="flicksterScore" class="flixster-score">{{flicksterScore}}%</li>
+        </ul>
+        <p>{{description}}</p>
+        <button class="btn action" type="button">More Ways to Watch</button>
+      </div>
+    </div>
+    <div class="tab-tup">
+      <div class="bottom-bar"></div>
+      <tabset>
+        <tab ng-repeat="tab in tabs" heading="{{tab.title}}" select="change(tab.href)" active="tab.active" disable="tab.disabled"></tab>
+      </tabset>
+      <div ui-view dtv-scroll scroll-y="true" momentum="true"></div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,13 @@
+{
+  "comment": "NOTE: only dependencies that are UNIQUE to the entertainment app will go here, most will live in lib/grunt/package.json",
+  "name": "directv",
+  "version": "0.0.1",
+  "description": "The prototyping playground DIRECTV's imagineers.",
+  "dependencies": {
+    "less": "~1.7.1",
+    "ejs": "~1.0.0",
+    "request": "~2.36.0",
+		"open": "0.0.5",
+    "less-middleware": "^1.0.3"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "ui-router-demo",
+  "dependencies": {
+    "angular": "~1.3.0",
+    "angular-ui-router": "~0.2.10",
+    "angular-bootstrap": "latest",
+    "bootstrap": "latest",
+    "lodash": "latest",
+    "ui-router-extras": "latest",
+    "requirejs": "latest",
+    "angularAMD": "latest",
+    "jquery": "~2.1.4",
+    "angular-slick": "~0.2.1",
+    "themoviedb": "https://github.com/cavestri/themoviedb-javascript-library.git",
+    "require-css": "~0.1.8"
+  }
+}

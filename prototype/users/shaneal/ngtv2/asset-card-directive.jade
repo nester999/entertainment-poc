@@ -1,0 +1,478 @@
+extends layout/layout
+
+block append head-styles
+  | <style>
+  |   .card { width: 340px; height: 236px; }
+  |   .card-wrapper { width: 1500px; height: 273px; }
+  |   h4 { margin-left: 25px; }
+  |   div[dtv-asset-card] { width: 340px; height: 236px; margin-left: 25px; float: left; }
+  | </style>
+
+
+block content
+  div(ng-controller="MyCtrl")
+    .card-wrapper
+      h4 Movies
+      div(dtv-asset-card, ng-repeat="movie in movies" data="movie")
+    .card-wrapper
+      h4 Show
+      div(dtv-asset-card, ng-repeat="show in shows" data="show")
+    .card-wrapper
+      h4 Episode
+      div(dtv-asset-card, ng-repeat="episode in episodes" data="episode")
+    .card-wrapper
+      h4 Clip
+      div(dtv-asset-card, ng-repeat="clip in clips" data="clip")
+    .card-wrapper
+      h4 Sportings
+      div(dtv-asset-card, ng-repeat="sporting in sportings" data="sporting")
+    .card-wrapper
+      h4 Personality
+      div(dtv-asset-card, ng-repeat="actor in actors" data="actor")
+    .card-wrapper
+      h4 Live Content
+      div(dtv-asset-card, ng-repeat="liveContent in liveContents" data="liveContent")
+    .card-wrapper
+
+block append bottom-scripts
+  script(type="text/javascript").
+    var app = angular.module('dtvApp', ['dtv.background', 'dtv.assetCard']);
+    
+    app.controller('MyCtrl', function($scope) {
+      $scope.movies = [
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/9gm3lL8JMTTmc3W4BmNMCuRLdL8.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/w500/2BXd0t9JdVqCp9sKf6kzMkr7QjB.jpg",
+          "card_type": "recomendation", // 'recomendation, following, in-progress'
+          "media_type": "movie", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "Guardians of the Galaxy",
+          "hash_tag": "paulrudd",
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "Larger-than-life and dangerously explosive, they're so funny that boys and girls will love the film in equal measure.",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': true,
+          "subscribed": true
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/9gm3lL8JMTTmc3W4BmNMCuRLdL8.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/w500/2BXd0t9JdVqCp9sKf6kzMkr7QjB.jpg",
+          "card_type": "", // 'recomendation, following, in-progress'
+          "media_type": "movie", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "Guardians of the Galaxy",
+          "hash_tag": "paulrudd",
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "Larger-than-life and dangerously explosive, they're so funny that boys and girls will love the film in equal measure.",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': true,
+          "subscribed": true
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/9gm3lL8JMTTmc3W4BmNMCuRLdL8.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/w500/2BXd0t9JdVqCp9sKf6kzMkr7QjB.jpg",
+          "card_type": "following", // 'recomendation, following, in-progress'
+          "media_type": "movie", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "Guardians of the Galaxy",
+          "hash_tag": "paulrudd",
+          "tomato_score": 96,
+          "recomended_by": "Agents of S.H.E.I.L.D",
+          "description": "Larger-than-life and dangerously explosive, they're so funny that boys and girls will love the film in equal measure.",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': true,
+          "subscribed": true
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/w500/1eh71zFRnblNsnb2NCU7plqFfd3.jpg",
+          "card_type": "in-progress", // 'recomendation, following, in-progress'
+          "media_type": "movie", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "Guardians of the Galaxy",
+          "hash_tag": "paulrudd",
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "Larger-than-life and dangerously explosive, they're so funny that boys and girls will love the film in equal measure.",
+          "media_duration": "3720000",
+          "media_position": "2750000",
+          'ppv': true,
+          "subscribed": true
+        }
+      ]
+
+      $scope.shows = [
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "http://www.theetherdesign.com/wp-content/uploads/2013/12/TRU_look2_gk_01w.jpg",
+          "card_type": "recomendation", // 'recomendation, following, in-progress'
+          "media_type": "show", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "True Detective",
+          "hash_tag": "paulrudd",
+          "tomato_score": 96,
+          "recomended_by": "The Americans",
+          "description": "1 Season, 8 Episodes",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': false,
+          "subscribed": false
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "http://www.theetherdesign.com/wp-content/uploads/2013/12/TRU_look2_gk_01w.jpg",
+          "card_type": "", // 'recomendation, following, in-progress'
+          "media_type": "show", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "True Detective",
+          "hash_tag": "paulrudd",
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "1 Season, 8 Episodes",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': false,
+          "subscribed": false
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "http://www.theetherdesign.com/wp-content/uploads/2013/12/TRU_look2_gk_01w.jpg",
+          "card_type": "following", // 'recomendation, following, in-progress'
+          "media_type": "show", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "True Detective",
+          "hash_tag": "matthewmcconaughey",
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "1 Season, 8 Episodes",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': false,
+          "subscribed": false
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "http://www.theetherdesign.com/wp-content/uploads/2013/12/TRU_look2_gk_01w.jpg",
+          "card_type": "in-progress", // 'recomendation, following, in-progress'
+          "media_type": "show", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "True Detective",
+          "hash_tag": "paulrudd",
+          "caption_tag": 'new season',
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "1 Season, 8 Episodes",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': false,
+          "subscribed": false
+        }
+      ]
+
+      $scope.episodes = [
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/w300/yoT8gRTjGRcxWLHYtFC8Arep2gN.jpg",
+          "card_type": "recomendation", // 'recomendation, following, in-progress'
+          "media_type": "episode", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "Key & Peele",
+          "hash_tag": "paulrudd",
+          "tomato_score": 96,
+          "recomended_by": "Tim & Eric's Awesome Show",
+          "description": "S3 E8 | McCringleberry's Excessive Celebration",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': false,
+          "subscribed": false
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/w300/yoT8gRTjGRcxWLHYtFC8Arep2gN.jpg",
+          "card_type": "", // 'recomendation, following, in-progress'
+          "media_type": "episode", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "Key & Peele",
+          "hash_tag": "paulrudd",
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "S3 E8 | McCringleberry's Excessive Celebration",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': false,
+          "subscribed": false
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/w300/yoT8gRTjGRcxWLHYtFC8Arep2gN.jpg",
+          "card_type": "following", // 'recomendation, following, in-progress'
+          "media_type": "episode", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "Key & Peele",
+          "hash_tag": "keyandpeele",
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "S3 E8 | McCringleberry's Excessive Celebration",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': false,
+          "subscribed": false
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/w300/yoT8gRTjGRcxWLHYtFC8Arep2gN.jpg",
+          "card_type": "in-progress", // 'recomendation, following, in-progress'
+          "media_type": "episode", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "Key & Peele",
+          "hash_tag": "paulrudd",
+          "caption_tag": 'new season',
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "S3 E8 | McCringleberry's Excessive Celebration",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': false,
+          "subscribed": false
+        }
+      ]
+
+      $scope.clips = [
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://deepestdream.com/wp-content/uploads/2015/01/AntMan1-672x372.jpg",
+          "card_type": "recomendation", // 'recomendation, following, in-progress'
+          "media_type": "clip", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "Ant-Man Teaser Trailer",
+          "hash_tag": "paulrudd",
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "Paul Rudd as Ant-Man in Marvel's Highly Anticipated Summer Blockbuster Movie.",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': false,
+          "subscribed": false
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://deepestdream.com/wp-content/uploads/2015/01/AntMan1-672x372.jpg",
+          "card_type": "", // 'recomendation, following, in-progress'
+          "media_type": "clip", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "Ant-Man Teaser Trailer",
+          "hash_tag": "paulrudd",
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "Paul Rudd as Ant-Man in Marvel's Highly Anticipated Summer Blockbuster Movie.",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': false,
+          "subscribed": false
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://deepestdream.com/wp-content/uploads/2015/01/AntMan1-672x372.jpg",
+          "card_type": "following", // 'recomendation, following, in-progress'
+          "media_type": "clip", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "Ant-Man Teaser Trailer",
+          "hash_tag": "paulrudd",
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "Paul Rudd as Ant-Man in Marvel's Highly Anticipated Summer Blockbuster Movie.",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': false,
+          "subscribed": false
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://deepestdream.com/wp-content/uploads/2015/01/AntMan1-672x372.jpg",
+          "card_type": "in-progress", // 'recomendation, following, in-progress'
+          "media_type": "clip", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "Ant-Man Teaser Trailer",
+          "hash_tag": "paulrudd",
+          "progress_caption": 'new season',
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "Paul Rudd as Ant-Man in Marvel's Highly Anticipated Summer Blockbuster Movie.",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': false,
+          "subscribed": false
+        }
+      ]
+
+      $scope.sportings = [
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/w300/yoT8gRTjGRcxWLHYtFC8Arep2gN.jpg",
+          "card_type": "recomendation", // 'recomendation, following, in-progress'
+          "media_type": "sporting-event", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "BKB: Silva vs. Diaz",
+          "hash_tag": "paulrudd",
+          "tomato_score": 96,
+          "recomended_by": "Tim & Eric's Awesome Show",
+          "description": "Anderson Silva Vs. Nick Diaz",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': true,
+          "subscribed": false
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/w300/yoT8gRTjGRcxWLHYtFC8Arep2gN.jpg",
+          "card_type": "", // 'recomendation, following, in-progress'
+          "media_type": "sporting-event", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "BKB: Silva vs. Diaz",
+          "hash_tag": "paulrudd",
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "Anderson Silva Vs. Nick Diaz",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': true,
+          "subscribed": false
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/w300/yoT8gRTjGRcxWLHYtFC8Arep2gN.jpg",
+          "card_type": "following", // 'recomendation, following, in-progress'
+          "media_type": "sporting-event", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "BKB: Silva vs. Diaz",
+          "hash_tag": "bkb",
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "Anderson Silva Vs. Nick Diaz",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': true,
+          "subscribed": false
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/w300/yoT8gRTjGRcxWLHYtFC8Arep2gN.jpg",
+          "card_type": "in-progress", // 'recomendation, following, in-progress'
+          "media_type": "sporting-event", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "BKB: Silva vs. Diazs",
+          "hash_tag": "paulrudd",
+          "caption_tag": 'new season',
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "Anderson Silva Vs. Nick Diaz",
+          "media_duration": "3720000",
+          "media_position": "1860000",
+          'ppv': true,
+          "subscribed": false
+        }
+      ]
+
+      $scope.actors = [
+        {
+          "id": 177572,
+          "poster_path": "http://upload.wikimedia.org/wikipedia/commons/9/99/Tom_Hiddleston_Thor_2_cropped.png",
+          "card_type": "recomendation", // 'recomendation, following, in-progress'
+          "media_type": "actor-personality", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "name": "Tom Hiddleston",
+          "title": "Actor",
+          "hash_tag": "paulrudd",
+          "recomended_by": "The Avengers",
+          "metadata": [
+            ['Muppets Most Wanted', 'The Great Escapo'],
+            ['Thor: The Dark World', 'Loki'],
+            ['Exhibition', 'Estate Agent'],
+            ['Only Lovers Left Alive', 'Estate Agent']
+          ]
+        },
+        {
+          "id": 177572,
+          "poster_path": "http://upload.wikimedia.org/wikipedia/commons/9/99/Tom_Hiddleston_Thor_2_cropped.png",
+          "card_type": "", // 'recomendation, following, in-progress'
+          "media_type": "actor-personality", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "name": "Tom Hiddleston",
+          "title": "Actor",
+          "hash_tag": "paulrudd",
+          "recomended_by": "The Avengers",
+          "metadata": [
+            ['Muppets Most Wanted', 'The Great Escapo'],
+            ['Thor: The Dark World', 'Loki'],
+            ['Exhibition', 'Estate Agent'],
+            ['Only Lovers Left Alive', 'Estate Agent']
+          ]
+        },
+        {
+          "id": 177572,
+          "poster_path": "http://upload.wikimedia.org/wikipedia/commons/9/99/Tom_Hiddleston_Thor_2_cropped.png",
+          "card_type": "following", // 'recomendation, following, in-progress'
+          "media_type": "actor-personality", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "name": "Tom Hiddleston",
+          "title": "Actor",
+          "hash_tag": "paulrudd",
+          "recomended_by": "The Avengers",
+          "metadata": [
+            ['Muppets Most Wanted', 'The Great Escapo'],
+            ['Thor: The Dark World', 'Loki'],
+            ['Exhibition', 'Estate Agent'],
+            ['Only Lovers Left Alive', 'Estate Agent']
+          ]
+        }
+      ]
+
+      $scope.liveContents = [
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/w300/4ADdHbxdIg4KeMWW0SNigCFb6Ih.jpg",
+          "channel_logo": "https://image.tmdb.org/t/p/w300/4ADdHbxdIg4KeMWW0SNigCFb6Ih.jpg",
+          "card_type": "recomendation", // 'recomendation, following, in-progress'
+          "media_type": "live-content", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "Better Call Saul",
+          "hash_tag": "breakingbad",
+          "recomended_by": "Breaking Bad",
+          "description": "9:00 - 10:00PM | S1 E1 Uno"
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/w300/4ADdHbxdIg4KeMWW0SNigCFb6Ih.jpg",
+          "channel_logo": "https://image.tmdb.org/t/p/w300/4ADdHbxdIg4KeMWW0SNigCFb6Ih.jpg",
+          "card_type": "", // 'recomendation, following, in-progress'
+          "media_type": "live-content", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "Better Call Saul",
+          "hash_tag": "breakingbad",
+          "tomato_score": 96,
+          "recomended_by": "The Avengers",
+          "description": "9:00 - 10:00PM | S1 E1 Uno"
+        },
+        {
+          "id": 177572,
+          "poster_path": "https://image.tmdb.org/t/p/w300/3zQvuSAUdC3mrx9vnSEpkFX0968.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/w300/4ADdHbxdIg4KeMWW0SNigCFb6Ih.jpg",
+          "channel_logo": "https://image.tmdb.org/t/p/w300/4ADdHbxdIg4KeMWW0SNigCFb6Ih.jpg",
+          "card_type": "following", // 'recomendation, following, in-progress'
+          "media_type": "live-content", // 'movie', 'show', 'episode', 'clip', 'music-video', 'sporting-event', 'actor-personality', 'network', 'live-content'
+          "title": "Better Call Saul",
+          "hash_tag": "breakingbad",
+          "recomended_by": "The Avengers",
+          "description": "9:00 - 10:00PM | S1 E1 Uno"
+        }
+      ]
+    });
+
+    $(function() {
+      FastClick.attach(document.body);
+      $('.toggle-theme').click(function() {
+        $('body').toggleClass('dark-theme');
+      });
+    });

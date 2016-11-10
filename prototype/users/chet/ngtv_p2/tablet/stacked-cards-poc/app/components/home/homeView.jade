@@ -1,0 +1,45 @@
+extends ../layouts/layout.jade
+
+block head
+  link(rel='stylesheet', href='assets/css/styles.css')
+  //- link(rel='stylesheet', href='/../ngtv2/assets/css/styles.css')
+  //- script(src="/_shared/ngtv2/components/asset-card/dtvAssetCard.js")
+
+block content
+  div(ng-app="NgtvP2", ng-controller="homeController")
+
+    include ../../shared/ipad_header/ipad_header.jade
+
+    .category-scroller(ng-style="{'overflow': disableScrollbar ,'margin-top': categoryScroller.marginTop }")
+      h2.selected-category-title(ng-style="{ 'left': selectedTitle.style.left, 'top' : selectedTitle.style.top, 'opacity': selectedTitle.style.opacity, 'font-size': selectedTitle.style.fontSize, 'transition': selectedTitle.style.transition, 'height': selectedTitle.style.height}") {{selectedCategory.name}}
+      .category-scroller-container.clearfix(ng-style="{'width': categoryScroller.width, 'height': categoryScroller.height}")
+        .category-items(ng-repeat="category in categoryItems ", ng-class="{'fly-out' : category.flyOut, 'fly-in': category.focus}", ng-style="{'font-size': categoryStackResize.fontSize, 'transition': categoryStackResize.transition, 'z-index': category.zIndex, 'margin': categoryStackResize.margin, 'display': category.display, 'visibility': category.style.visibility , 'left': category.style.left, 'bottom':  category.style.bottom }", class="{{category.flyOutXDirection + ' ' + category.flyOutYDirection + ' ' + category.viewType}}")
+          h2.category-title(ng-click="categoryZoom($event, category, 'grid-view')", ng-style="{ 'left': category.flyIn.title.left, 'bottom' : category.flyIn.title.bottom, 'opacity': category.flyIn.title.opacity, 'font-size': category.flyIn.title.fontSize, 'transition': selectedTitle.style.transition}") {{category.name}}
+          //- Uncomment for rolodex view .category-list(ng-click="categoryZoom($event, category, 'rolodex-view')", ng-style="{ 'width': categoryScrollerContainer.width }")
+          .category-list(ng-style="{ 'width': categoryScrollerContainer.width }", hm-swipe-down="swipeNextCard(category)", hm-swipe-up="swipePrevCard(category)")
+            .list-item(ng-repeat="item in category.items", class="card-type-{{item.card_type}}", ng-style="{'left': item.flyIn.left, 'bottom' : item.flyIn.bottom, 'font-size': item.flyIn.fontSize, 'margin': item.flyIn.margin, 'transition': categoryStyle.transition, 'width': item.flyIn.width, 'height': item.flyIn.height, 'position': item.flyIn.position, 'opacity': item.flyIn.opacity}")
+              div(ng-if="item.card_type !== 'movie'")
+                img(src="{{item.backdrop_path}}").img
+                .details(style="{{item.testingStyle}}")
+                  div(ng-switch on="item.media_type")
+                    div(ng-switch-when="show")
+                      .title {{item.title}}
+                      .overview {{"S" + item.number_of_episodes + " E" + item.number_of_episodes}} | {{item.episode_title}}
+                    div(ng-switch-when="movie")
+                      .continue-playtime-bar(ng-style="{'width': '23%', 'top': categoryListStyle.cards.progressBar.locationTop }")
+                      .title {{item.title}}
+                      //- .continue-playtime-display {{item.runtime | timeFormatting }}
+                      .clearfix
+                      .ratings {{item.tomato_score * 10 }}%
+                    div(ng-switch-default)
+                      .title{{item.details_title}}
+                      .overview {{item.overview}}
+              div(ng-if="item.card_type === 'movie'")
+                img(src="{{item.poster_path}}").img
+                .details
+                  .title {{item.details_title}}
+                  .ratings {{item.tomato_score * 10}}%
+                  .overview {{item.overview}}
+
+block scripts 
+  script(src="app/components/home/homeController.js")

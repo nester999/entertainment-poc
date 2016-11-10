@@ -1,0 +1,51 @@
+[
+  {
+    "episode_number": 1,
+    "name": "Pilot",
+    "description": "When an unassuming high school chemistry teacher discovers he has a rare form of lung cancer, he decides to team up with a former student and create a top of the line crystal meth in a used RV, to provide for his family once he is gone.",
+    "duration": 42,
+    "img": "https://image.tmdb.org/t/p/w130/88Z0fMP8a88EpQWMCs1593G0ngu.jpg"
+  },
+  {
+    "episode_number": 2,
+    "name": "The Cat's in the Bag",
+    "description": "Walt and Jesse attempt to tie up loose ends. The desperate situation gets more complicated with the flip of a coin. Walt's wife, Skyler, becomes suspicious of Walt's strange behavior.",
+    "duration": 42,
+    "img": "https://image.tmdb.org/t/p/original/vJ1vrL8e8yvQr0YgQTnblsCYpX.jpg"
+  },
+  {
+    "episode_number": 3,
+    "name": "...and the Bag's in the River",
+    "description": "Walter fights with Jesse over his drug use, causing him to leave Walter alone with their captive, Krazy-8. Meanwhile, Hank has a scared straight moment with Walter Jr. after his aunt discovers he has been smoking pot. Also, Skylar is upset when Walter stays away from home.",
+    "duration": 42,
+    "img": "https://image.tmdb.org/t/p/original/mn73tWx7ivuMmdBdiHFK7KRHjDy.jpg"
+  },
+  {
+    "episode_number": 4,
+    "name": "Cancer Man",
+    "description": "Walter finally tells his family that he has been stricken with cancer. Meanwhile, the DEA believes Albuquerque has a new, big time player to worry about. Meanwhile, a worthy recipient is the target of a depressed Walter's anger, and Jesse makes a surprise visit to his parents home.",
+    "duration": 42,
+    "img": "https://image.tmdb.org/t/p/original/m1CCrmD47ag6r8zQCDpd54ryksw.jpg"
+  },
+  {
+    "episode_number": 5,
+    "name": "Gray Matter",
+    "description": "Walter and Skyler attend a former colleague's party. Jesse tries to free himself from the drugs, while Skyler organizes an intervention.",
+    "duration": 42,
+    "img": "https://image.tmdb.org/t/p/original/aR1BLarVxcMSemL6Q0C796nZfC2.jpg"
+  },
+  {
+    "episode_number": 6,
+    "name": "Crazy Handful of Nothin'",
+    "description": "The side effects of chemo begin to plague Walt. Meanwhile, the DEA rounds up suspected dealers.",
+    "duration": 42,
+    "img": "https://image.tmdb.org/t/p/original/fZST9WpwrYl2qHq3WHdUFDrPc2U.jpg"
+  },
+  {
+    "episode_number": 7,
+    "name": "A No-Rough-Stuff Type Deal",
+    "description": "Walter accepts his new identity as a drug dealer after a PTA meeting. Elsewhere, Jesse decides to put his aunt's house on the market and Skyler is the recipient of a baby shower.",
+    "duration": 42,
+    "img": "https://image.tmdb.org/t/p/original/gyRMAdWZHhWpXpOvA1ctwoIuG4e.jpg"
+  }
+]

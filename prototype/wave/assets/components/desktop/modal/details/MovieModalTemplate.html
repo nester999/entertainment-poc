@@ -1,0 +1,94 @@
+<div ng-if="active" class="details-modal modal" ng-click="close()">
+  <div class="embed-responsive embed-responsive-16by9">
+    <div class="modal-content series-detail" ng-style="modal.style" ng-click="$event.stopPropagation();">
+      <dtv-start-watching ng-style="startWatching.style"></dtv-start-watching>
+      <div class="btn-close-modal" ng-click="close()" ng-style="closeOnTop.style">
+        <i class="icon icon-dtv2-close-thin" ng-style='closeButton.style'></i>
+      </div>
+      
+      <!--here's where all the series info starts-->
+      <div class="movie-details-bar" ng-style="modalWhiteBar.style">
+        <div class="title-row" ng-style="titleRow.style">
+          <h3 class="series-title" ng-style="seriesTitle.style">{{card.title}}</h3>
+          <span ng-if="modalTabs.active">
+            <i class="icon icon-dtv2-chevron-right" ng-click="minimizeModalTabs()"></i>
+            <i class="icon icon-dtv2-close-thin" ng-if="!modalTabs.active" ng-click="close()"></i>
+          </span>
+        </div>
+        <span ng-if="!modalTabs.active">
+          <i class="icon" ng-class="isFavorite ? 'icon-dtv2-favorite' : 'icon-dtv2-favorite-o'" ng-click="isFavorite = !isFavorite" id="favorite" ></i>
+          <i class="icon icon-dtv2-dots"></i>
+        </span>
+        <div class="movie-info-container" ng-style="infoContainer.style">
+          <div class="movie-info">
+            <span class="episode-year">{{year}}</span>
+            <span class="genre">{{genres}}</span>
+            <span class="mature-rating">{{certificationRating}}</span>
+            <i class="icon icon-dtv2-common-circle" style="color: forestgreen">
+                <i class="icon icon-dtv2-common-check" style="color: black"></i>
+            </i>
+            <span class="common-sense-media">age 13+</span>
+          </div>
+          <div class="description-container">
+            <span class="description">{{description}}</span>
+          </div>
+          <div class="ratings-tup">
+            <ul class="metadata">
+              <li class="tomato-score">{{rottenTomatoScore}}%</li>
+              <li class="flixster-score">{{rottenTomatoScore - 10}}%</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="modal-tabs" ng-style="modalTabs.style" id="tabContent">
+          <ul>
+            <li ng-repeat="tab in modalTabs.tabs" ng-click="selectTab(tab)" ng-class="{'active': tab.active}" ng-style="tabWidth.style">{{tab.name}}</li>
+          </ul>
+
+          <div class="tab-content" ng-if="modalTabs.activeTab === 'clips'">
+            <h3>Clips</h3>
+            <div class="clips-container">
+              <div class="dtv-scroll">
+                <ul dtv-list id="{{details.id}}Clips" break-points="breakPoints" layout="'grid'" class="clips">
+                  <li ng-repeat="data in clipData" ng-repeat-done="{{details.id}}Clips">
+                    <div dtv-asset-card data="data"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+          <div class="tab-content" ng-if="modalTabs.activeTab === 'extras'">
+            <h3>Extras</h3>
+            <div class="clips-container">
+              <div class="dtv-scroll">
+                <ul dtv-list id="{{details.id}}Clips" break-points="breakPoints" layout="'grid'" class="clips">
+                  <li ng-repeat="data in clipData" ng-repeat-done="{{details.id}}Clips">
+                    <div dtv-asset-card data="data"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" ng-if="modalTabs.activeTab === 'similarMovies'">
+            <h3>Similar Movies</h3>
+            <div class="similar-shows-container">
+              <div class="dtv-scroll">
+                <ul dtv-list id="{{details.id}}Clips" break-points="breakPoints" layout="'grid'" class="clips">
+                  <li ng-repeat="data in clipData" ng-repeat-done="{{details.id}}Clips">
+                    <div dtv-asset-card data="data"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="video-player" ng-if="showVideoPlayer">
+    <div class="video-menu-overlay">
+    </div>
+    <div class="video"></div>
+  </div>
+</div>

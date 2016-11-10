@@ -1,0 +1,45 @@
+@layout-breakpoint-sm: 600px;
+@layout-breakpoint-md: 960px;
+@layout-breakpoint-lg: 1200px;
+
+// SMALL SCREEN
+.media-small(@content) {
+  @media (max-width: @layout-breakpoint-sm - 1) {
+    @content();
+  }
+}
+
+// BIGGER THAN SMALL SCREEN
+.media-small-up(@content) {
+  @media (min-width: @layout-breakpoint-sm) {
+    @content();    
+  }
+}
+
+// MEDIUM SCREEN
+.media-medium(@content) {
+  @media (min-width: @layout-breakpoint-sm) and (max-width: @layout-breakpoint-md - 1) {
+    @content();
+  }
+}
+
+// BIGGER THAN MEDIUM SCREEN
+.media-medium-up(@content) {
+  @media (min-width: @layout-breakpoint-md) {
+    @content();
+  }
+}
+
+// LARGE SCREEN
+.media-large(@content) {
+  @media (min-width: @layout-breakpoint-md) and (max-width: @layout-breakpoint-lg - 1) {
+    @content();
+  }
+}
+
+// BIGGER THAN LARGE SCREEN
+.media-large-up(@content) {
+  @media (min-width: @layout-breakpoint-lg) {
+    @content();
+  }
+}

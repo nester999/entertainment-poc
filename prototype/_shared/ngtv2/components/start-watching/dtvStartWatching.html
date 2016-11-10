@@ -1,0 +1,12 @@
+<div class="container-fluid has-content modal-start-watching-content">
+  <div class="row-fluid" ng-click="launchVideoPlayerModal()">
+    <i class="icon icon-dtv2-play"></i>
+    <div class="start-watching-info">
+      <div class="start-watching">Start Watching</div>
+      <div class="series-episode" ng-if="!isSports"><strong>S1 E1</strong></div>
+      <div class="episode-title" ng-if="isChannel">{{mainChannelShow}}</div>
+      <div class="episode-title" ng-if="isSports"><strong>{{matchTitle}}</strong></div>
+      <div class="episode-title" ng-if="isShow"><strong>{{firstEpisodeTitle}}</strong></div>
+    </div>
+  </div>
+</div>

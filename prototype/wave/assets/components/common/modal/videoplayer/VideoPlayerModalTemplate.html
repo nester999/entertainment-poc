@@ -1,0 +1,53 @@
+<div class="modal video-player-view" ng-if="active" ng-style="modal.style">
+  <div class="modal-overlay" ng-style="modal.overlay.style"></div>
+  <div class="video-player" ng-mouseenter="revealVideoTabNav()" ng-mouseleave="hideVideoTabNav()">
+    <div class="video">
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8IdMPpKMdcc" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="controls" ng-style="videoTabNav.controls.style">
+      <div class="right-sidebar-nav" ng-style="videoTabNav.style">
+        <ul class="close-modal">
+          <li>
+            <div class="close-modal-btn" ng-click="closeVideoPlayer()">X</div>
+          </li>
+        </ul>
+        <ul class="tab-nav">
+          <li ng-repeat="tab in videoSideBarNav" ng-click="revealVideoTabNavContent(tab)" ng-class="{'active': tab.active}" ng-mouseenter="videoTabNavTabMouseEnter(tab)" ng-mouseleave="videoTabNavTabMouseLeave(tab)" ng-style="tab.style">
+            <i class="fa fa-angle-left" ng-style="tab.icon.style"></i>{{tab.name}}
+          </li>
+        </ul>
+        <ul class="tab-content" ng-style="videoTabNav.content.style">
+          <li ng-repeat="tab in videoSideBarNav" ng-class="{'active': tab.active}" ng-if="tab.active">
+            <div class="tab-content-header clearfix">
+              <select name="" id="" class="pull-left">
+                <option value="">Season 1</option>  
+                <option value="">Season 2</option>  
+                <option value="">Season 3</option>  
+                <option value="">Season 4</option>  
+                <option value="">Season 5</option>  
+              </select>
+              <div class="pull-right">
+                <i class="fa fa-times cursor-pointer" ng-click="closeVideoTabNavContent(tab)"></i>
+              </div>
+            </div>
+            <ul class="video-list" ng-style="videoTabNav.videoList.style">
+              <li ng-repeat="video in tab.items">
+                <div class="video-thumbnails">
+                  <img src="{{video.backdrop_path}}" alt="">  
+                </div>
+                <div class="video-info">
+                  <div class="clearfix">
+                    <div class="episode bold pull-left">S5 E1</div>
+                    <i class="fa fa-ellipsis-h pull-right"></i>
+                  </div>
+                  <div class="video-title">The Wars to Come</div>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>

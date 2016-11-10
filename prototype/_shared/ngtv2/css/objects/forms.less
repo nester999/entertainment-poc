@@ -1,0 +1,103 @@
+input[type="checkbox"] {
+  opacity: 0.01; // keep browser from flashing old input
+}
+
+select,
+input[type="checkbox"] {
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      outline: none;
+      -webkit-outline: none;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    outline: none;
+    -webkit-outline: none;
+  }
+}
+
+select,
+.dtv-checkbox-tup {
+  padding: .5em 0;
+  font-size: .8em;
+  font-family: 'DTV-DIN';
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+select {
+  padding: .5em 1.4em .5em 0;
+  border: 0;
+  border-radius: 0;
+  background: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.dtv-dropdown {
+  position: relative;
+  display: inline-block;
+  color: #4d4d4d;
+  i {
+    position: absolute;
+    top: .9em; right: 0;
+    margin-left: .5em;
+    font-size: .6em;
+    pointer-events: none;
+    touch-action: none;
+  }
+}
+
+.dtv-checkbox-tup {
+  position: relative;
+  display: inline-block;
+  color: #4d4d4d;
+  label {
+    padding: .5em 1.4em .5em 0;
+  }
+  input[type="checkbox"] {
+    opacity: 0.01;
+    vertical-align: middle;
+    &:checked + i:before {
+      display: inline-block;
+    }
+  }
+  i {
+    content: '';
+    position: absolute;
+    top: .05em; right: 0;
+    width: 1.9em;
+    height: 1.9em;
+    background: #fff;
+    border-radius: 2px;
+    line-height: 1;
+    pointer-events: none;
+    touch-action: none;
+    &:before {
+      position: relative;
+      top: .27em; left: .25em; // If adjusting this value fix in FF below
+      display: none;
+      width: .9em;
+      height: .7em;
+      font-size: 1.5em;
+      line-height: 1;
+      vertical-align: middle;
+    }
+  }
+}
+
+@-moz-document url-prefix() {
+  .dtv-checkbox-tup i:before {
+    top: .1em;
+  }
+}
+
+

@@ -1,0 +1,20 @@
+<div class="card" ng-class="class" ui-sref="modal.details({media_type:mediaType, id:id})">
+  <div class="poster">
+    <span ng-if="hashTag" class="tag">#{{::hashTag}}</span>
+    <div dtv-background-cover src="::imgSrc">
+      <i class="icon icon-dtv2-placeholder"></i>
+    </div>
+  </div>
+  <div class="details">
+    <span class="program-title">{{::programTitle}}</span>
+    <div class="metadata">
+      <div class="tomato-score">{{::tomatoScore}}%</div>
+      <i ng-if="::ppv" class="icon icon-dtv2-coin"></i>
+    </div>
+    <p>{{::summary}}</p>
+    <div ng-if="::recomendedBy" class="recomended-by">
+      <i class="icon icon-dtv2-look"></i>
+      <span>{{::recomendedBy}}</span>
+    </div>
+  </div>
+</div>

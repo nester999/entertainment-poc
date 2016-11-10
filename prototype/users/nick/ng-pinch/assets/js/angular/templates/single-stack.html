@@ -1,0 +1,32 @@
+<div id="single_wrapper" hm-pan="onHammer" hm-pinchin="onHammer" hm-pinchout="onHammer" hm-press="onHammer" hm-rotate="onHammer" hm-swipe="onHammer" hm-tap="onHammer" hm-doubletap="onHammer">
+
+
+
+  <div id="stack_back"></div>
+
+  <div id="single_stack">
+    <a class="single_card active" index="{{$index}}" ng-repeat="model in collection track by $index">
+      <div class="series_title medium_text"> {{model.etitle}}</div>
+      <img ng-src="{{model.image}}" class="stack_image" alt="{{model.etitle}}">
+
+      <div class="stack_content">
+        <div class="stack_description_wrapper">
+          <div class="stack_info_wrapper">
+            <div class="stack_time semi_large_text"> 28:33</div>
+            <div class="stack_title din_alternate_bold semi_large_text"> {{model.etitle}}</div>
+          </div>
+          <div class="stack_description semi_large_text_reg"> S2 E4
+            <span class="stack_separate">|</span> Get Off My Jump
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div id="stat_modules">
+    <a href="#" class="move_button">Event</a>
+    <span id="move_velocity"></span>
+    <span id="event_type">{{eventType}}</span>
+  </div>
+
+</div>

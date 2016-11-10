@@ -1,0 +1,20 @@
+<div class="card" ng-class="class">
+  <div class="poster">
+    <span ng-if="hashTag" class="tag">#{{hashTag}}</span>
+    <div dtv-background-cover src="imgSrc">
+      <i class="icon icon-dtv-placeholder"></i>
+    </div>
+  </div>
+  <div class="details">
+    <span class="program-title">{{programTitle}}</span>
+    <div class="metadata">
+      <div class="tomato-score">{{tomatoScore}}%</div>
+      <i ng-if="ppv" class="icon icon-dtv-coin"></i>
+    </div>
+    <p>{{summary}}</p>
+    <div ng-if="recomendedBy" class="recomended-by">
+      <i class="icon icon-dtv-look"></i>
+      <span>{{recomendedBy}}</span>
+    </div>
+  </div>
+</div>

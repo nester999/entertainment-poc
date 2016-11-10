@@ -1,0 +1,32 @@
+ui-router-extras
+
+When defining nested states do not have a slash in the front of the url: ex:
+
+.state({
+  name: 'home',
+  url: '/'
+})
+
+DO THIS:
+
+var browseState = {
+  name: 'home.movies',
+  url: 'movies',
+};
+
+<a href="movies">go to movies</a>
+
+NOT THIS:
+
+var browseState = {
+  name: 'home.movies',
+  url: '/movies',
+};
+
+<a href="/movies">go to movies</a>
+
+--------------------------------------------------------------------------------
+
+How to handle producer pages?
+How to handle mobile vs web layout?
+

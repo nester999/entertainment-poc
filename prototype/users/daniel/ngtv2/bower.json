@@ -1,0 +1,24 @@
+{
+  "name": "ngtv_prototypes",
+  "version": "0.0.1",
+  "authors": [
+    "Daniel Cipoletti <dccipoletti@directv.com>"
+  ],
+  "description": "NGTV Prototypes",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "core-component-page": "Polymer/core-component-page#^0.5",
+    "jquery": "~2.1.3",
+    "angular": "~1.3.14",
+    "greensock": "~1.16.1",
+    "jquery-hammerjs": "~2.0.0",
+    "scrollmagic": "~2.0.3"
+  }
+}

@@ -1,0 +1,10 @@
+<div ng-repeat="carousel in carousels track by $index" class="carousel-container">
+  <a href="#">{{carousel.name}}</a>
+  <div class="carousel">
+    <div ng-repeat="item in carousel.items track by $index" class="poster">
+      <a href="movies/{{item.id}}">
+        <img ng-src="{{images_uri + item.poster_path}}">
+      </a>
+    </div>
+  </div>
+</div>

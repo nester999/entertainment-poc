@@ -1,0 +1,12 @@
+<div ng-repeat="carousel in carousels" class="dtv-carousel-tup">
+  <a ui-sref="app.entertainment.grid({data:carousel.items, id:carousel.id})" href="#" class="dtv-carousel-title">
+    <h3>{{carousel.name}}</h3>
+    <i class="icon icon-dtv2-arrow-right-medium"></i>
+  </a>
+
+  <ul dtv-list id="{{carousel.id}}" break-points="breakPoints" layout="layout">
+    <li ng-repeat="card in carousel.items" ng-repeat-done="{{carousel.id}}" ng-click="viewDetailsModal(card, carousels)">
+      <div dtv-asset-card data="card"></div>
+    </li>
+  </ul>
+</div>

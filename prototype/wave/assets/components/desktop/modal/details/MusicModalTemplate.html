@@ -1,0 +1,85 @@
+<div ng-if="active" class="web-series-modal modal" ng-click="close()">
+  <div class="embed-responsive embed-responsive-16by9">
+    <div class="modal-content series-detail" ng-style="modal.style" ng-click="$event.stopPropagation();">
+      <div class="btn-close-modal" ng-click="close()">
+        <i class="icon icon-dtv2-close-thin"></i>
+      </div>
+      <dtv-start-watching></dtv-start-watching>
+
+      <!--here's where all the series info starts-->
+      <div class="white-details-bar" ng-style="modalWhiteBar.style">
+        <div class="title-row" ng-style="titleRow.style">
+          <h3 class="series-title" ng-style="seriesTitle.style">{{band}} - {{song}} - Official Video</h3>
+          <span ng-if="!modalTabs.active">
+            <i class="icon" ng-class="isFavorite ? 'icon-dtv2-favorite' : 'icon-dtv2-favorite-o'" ng-click="isFavorite = !isFavorite" id="favorite" ></i>
+            <i class="icon icon-dtv2-dots"></i>
+          </span>
+          <span ng-if="modalTabs.active">
+            <i class="icon icon-dtv2-chevron-down" ng-click="minimizeModalTabs()"></i>
+            <i class="icon icon-dtv2-close-thin" ng-click="close()"></i>
+          </span>
+        </div>
+        <div class="info-container" ng-style="infoContainer.style">
+          <div class="series-info">
+            <span class="episode-info">{{band}}</span>
+            <span class="genre">{{genres}}</span>
+            <span class="duration">{{duration}}</span>
+          </div>
+          <div class="description-container">
+            <span class="description">Lyrics: {{lyrics}}</span>
+          </div>
+        </div>
+        
+        <div class="modal-tabs" ng-style="modalTabs.style" ng-if="isShow" id="tabContent">
+
+          <ul>
+            <li ng-repeat="tab in modalTabs.tabs" ng-click="selectTab(tab)" ng-class="{'active': tab.active}" ng-style="tabWidth">{{tab.name}}</li>
+          </ul>
+          <div class= "tab-content" ng-if="modalTabs.activeTab === 'moreFromAlbum'">
+            <h3>More From {{album}}</h3>
+            <div class="clips-container">
+              <div class="dtv-scroll">
+                <ul dtv-list id="{{details.id}}Clips" break-points="breakPoints" layout="'grid'" class="clips">
+                  <li ng-repeat="data in clipData" ng-repeat-done="{{details.id}}Clips">
+                    <div dtv-asset-card data="data"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" ng-if="modalTabs.activeTab === 'moreFromBand'">
+            <h3>More From {{band}}</h3>
+            <div class="clips-container">
+              <div class="dtv-scroll">
+                <ul dtv-list id="{{details.id}}Clips" break-points="breakPoints" layout="'grid'" class="clips">
+                  <li ng-repeat="data in clipData" ng-repeat-done="{{details.id}}Clips">
+                    <div dtv-asset-card data="data"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" ng-if="modalTabs.activeTab === 'similarArtists'">
+            <h3>Similar Artists</h3>
+            <div class="cast-crew-container">
+              <div class="dtv-scroll">
+                <ul dtv-list id="{{details.id}}Clips" break-points="breakPoints" layout="'grid'" class="clips">
+                  <li ng-repeat="data in actors" ng-repeat-done="{{details.id}}Clips">
+                    <div dtv-asset-card data="data"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="video-player" ng-if="showVideoPlayer">
+    <div class="video-menu-overlay">
+    </div>
+    <div class="video"></div>
+  </div>
+</div>

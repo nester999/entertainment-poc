@@ -1,0 +1,27 @@
+body {
+  padding: 4em 0;
+}
+
+.lead {
+  text-align: center;
+}
+
+.container {
+  max-width: 850px;
+}
+
+@media (max-width:1000px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (min-width:1000px) {
+  .container {
+    width: 70%;
+  }
+}
+
+.footer-heading {
+  text-align: center;
+}

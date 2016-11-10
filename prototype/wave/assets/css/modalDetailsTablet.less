@@ -1,0 +1,621 @@
+@import 'angular-material.css';
+.spinner.active{
+  &:before {
+    content: '';
+    border: 3px solid transparent;
+    position: absolute;
+    z-index: 100;
+    border-radius: 50%;
+    background: transparent;
+    border-top-color: #1d84ff;
+    border-right-color: #1d84ff;
+    width: 25px;
+    height: 25px;    
+    -webkit-animation: load3 .35s infinite linear;
+    animation: load3 .35s infinite linear;
+    top: 50%;
+    left: 50%;
+    margin-left: -25px;    
+  }
+}
+
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+ul.list-inline > li { display: inline-block; }
+.custom-checkbox {
+  cursor: pointer;
+  .checkbox {  
+    display: inline-block;
+    height: 1.25em;
+    width: 1.25em;
+    background-color: #FFF;
+    border-radius: .25em;
+    margin-bottom: -.25em;
+    position: relative;
+    &:after {
+      content: "\f106";
+      font-family: "dtv2-icons";
+      position: absolute;
+      padding: .1em .2em;
+      opacity: 0;
+    }
+  }
+  &:hover .checkbox:after { opacity: .25; }
+  input:checked + span.checkbox:after { opacity: 1; }
+}
+.tablet-view-btn {
+    position: absolute;
+    z-index: 1;
+    background-color: #FF7D43;
+    border-radius: .25em;
+    padding: .3em .5em .1em .5em;
+    font-size: .55em;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    right: 1em;
+    top: 1em;
+    cursor: pointer;
+    color: #FFF;
+}
+.modal.tablet-view {
+  z-index: 9999;
+  .backdrop { transition: .25s; }
+  .modal-body {
+    position: absolute;
+    top: 50%;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: -280px;
+    width: 603px;
+    height: 559px;
+    border: 1px #ccc solid;
+    border-right: none;
+    -webkit-box-shadow: 0px 6px 10px 0px #555;
+    box-shadow: 0px 6px 10px 0px #555;
+    transition: .25s;
+  }
+  .modal-content {
+    border: none;
+    box-shadow: none;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    &.details {
+      border: none;
+      box-sizing: border-box;
+      padding: 1.5em;
+      padding-bottom: 0;
+      width: 603px;
+      height: 559px;
+      background: #f2f2f3;
+      color: #4c4c4c;
+      overflow: hidden;
+      top: 0;
+      left: auto;
+      // left: 0;
+      margin: 0;
+      transition: .25s;
+      box-shadow: none;
+      border-right: 1px #ccc solid;
+      ul.options { padding: 0em 1.5em 1em 1.5em; border-bottom: 1px solid #CCC;
+        li{
+          margin-right: 1em; padding-right: 1em; text-transform: uppercase;
+        }
+      }
+      .season-select-dropdown{ font-family: 'DTV-DIN',sans-serif; position: relative; cursor: pointer;
+        &:after {
+          content: "\f101";
+          font-family: "dtv2-icons";
+          position: absolute; 
+          float: right;
+          z-index: -1;
+          top: 0;
+          right: 0;
+          padding: .5em 1em .5em;          
+        }
+        select { width: 100%; cursor: pointer; font-family: 'DTV-DIN'; }
+      }
+      .tab-tup .spinner:before{
+        top: 25%;
+      }
+    }
+  
+    &.more-ways-to-watch-nav{
+      width: 215px;
+      height: 559px;
+      background: #eaeaea;
+      top: 0;
+      right: 0;
+      left: auto;
+      z-index: 1;
+      height: 100%;
+      .modal-content-body {
+        padding: 2em 1em;
+        transition: .25s;
+      }
+      .tabs-menu { text-align: center; border-bottom: 1px solid #FFF;
+        & > li { 
+          display: inline-block; 
+          color: #6f7a95;
+          padding: 1em;
+          margin: 0 .5em;
+          text-transform: uppercase;
+          cursor: pointer;
+          position: relative;
+          &.active { font-weight: bold; 
+            &:after {
+              content: '';
+              border-bottom: 1px solid #6f7a95;
+              position: absolute;
+              bottom: -5px;
+              left: 0;
+              width: 100%;
+              z-index: 1;
+            }
+          }
+        }
+      }
+      .tab-content {
+        padding: 1em 0;
+        color: #4c4c4c;
+        ul li {
+          p {
+            font-size: .75em;
+            line-height: 1.25em;
+          }
+          button.btn { 
+            background-image: -webkit-linear-gradient(#7b8dca, #7081bb);
+            background-image: -o-linear-gradient(#7b8dca, #7081bb);
+            background-image: linear-gradient(#7b8dca, #7081bb); 
+            color: #FFF;
+            font-family: 'DTV-DIN',sans-serif;
+            width: 100%;
+            display: block;
+            text-align: left;
+            font-size: .8em;
+            padding: 0.8em 1em 0.65em 1em;
+            &.play:after {
+              content: "\f11a";
+              float: right;
+              font-family: "dtv2-icons";
+              font-size: .8em;
+            }
+            &.record {
+              &:after {
+                position: absolute;
+                content: "";
+                top: 50%;
+                right: 1em;
+                transform: translateY(-50%);
+                width: .8em;
+                height: .8em;
+                border-radius: 50%;
+                background-color: #FFF;
+              }
+              &.active:after {
+                background-color: #f00;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .tab-tup .nav-tabs {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    width: 100%
+  }
+
+  .tab-tup .nav-tabs>li {
+    position: relative;
+    display: inline-block
+  }
+
+  .tab-tup .nav-tabs>li>a {
+      position: relative;
+      display: block;
+      padding: 1em 2em;
+      color: #335e88;
+      font-size: .75em;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .15em
+  }
+
+  .tab-tup .nav-tabs>li>a:hover,.tab-tup .nav-tabs>li>a:focus {
+      text-decoration: none;
+      outline: none;
+  }
+
+  .tab-tup .nav-tabs>li.active a {
+    font-weight: bold;
+    border: none;
+  }
+  .tab-tup .nav-tabs>li.active:after {
+    position: absolute;
+    bottom: -4px;
+    content: '';
+    border-bottom: 1px solid #0179b5;
+    width: 100%;
+    z-index: 1;
+  }
+  .tab-tup .bottom-bar {
+      position: absolute;
+      height: 1px;
+      top: 2.45em;
+      right: 0;
+      left: 0;
+      background: #ccc;
+      z-index: -1;
+      opacity: 0
+  }
+
+  .btn.fab, input.btn.fab {
+      font-size: 1.2em;
+      padding: 0;
+      border-radius: 50%;
+      width: 2em;
+      height: 2em;
+  }
+  
+  .details ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    &.clips {
+      padding: 0 1em;
+    }
+  }
+
+  .details li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .details .heading {
+    position: relative;
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+
+  .details .heading a {
+    position: relative;
+    top: 0;
+    right: 0;
+    float: right;
+    color: #b3b3b3;
+    display: none;
+    font-size: 2.2em;
+    transition: .5s;
+    opacity: 1;
+  }
+
+  .details .details-btn {
+    transition: .5s;
+    float: right;
+    margin-top: 3px;    
+  }
+  .details .details-btn .btn {
+    position: relative;
+    font-size: .9em
+  }
+
+  .details .heading > .program-title {
+    display: block;
+    margin-bottom: .1em;
+    font-family: "DIN-Light";
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden; 
+    width: 80%;
+    text-overflow: ellipsis;
+  }
+
+  .details .body {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 450px;
+    transition: .5s;
+    overflow: hidden;
+  }
+
+  .details .body img {
+      width: 100%;
+      height: auto
+  }
+
+  .details .body p {
+      font-size: .75em
+  }
+
+  .details .program-metadata {
+      position: relative;
+      margin-bottom: 1em
+  }
+
+  .details .program-metadata ul {
+    font-size: .75em;
+    padding-top: .25em;
+  }
+
+  .details .program-metadata ul:after {
+      content: "";
+      display: block;
+      height: 0;
+      visibility: hidden;
+      font-size: 0;
+      clear: both
+  }
+
+  .details .program-metadata ul:after:before,.details .program-metadata ul:after:after {
+      content: " ";
+      display: table
+  }
+
+  .details .program-metadata ul:after:after {
+      clear: both
+  }
+
+  .details .program-metadata ul li {
+      float: left
+  }
+
+  .details .program-metadata ul li:after {
+      content: '|';
+      margin: 0 .5em
+  }
+
+  .details .program-metadata ul li:last-child:after {
+      content: ''
+  }
+
+  .details .program-metadata .btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: .9em
+  }
+
+  .details .program-metadata .btn:first-of-type {
+    right: 2.5em
+  }
+
+  .details .info {
+    position: relative;
+    padding-left: 1.2em
+  }
+
+  .details .info .btn.action {
+    position: absolute;
+    bottom: 7px;
+    right: 0
+  }
+
+  .details .tab-tup {
+    position: relative;
+    top: -8px;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    margin-left: -1.5em;
+    margin-right: -1.5em;
+  }
+
+  .details .tab-tup .nav-tabs {
+    z-index: 1;
+    width: 95%;
+    margin: 1em auto;
+  }
+
+  .details .tab-tup>ui-view {
+      position: absolute;
+      top: 39px;
+      bottom: 0;
+      overflow: hidden
+  }
+
+  .details .tab-tup>ui-view>ul {
+      position: relative;
+      overflow: visible
+  }
+
+  .details.movies .body {
+      padding-bottom: 3.5em
+  }
+
+  .details.movies .info {
+      position: relative;
+      padding-left: 1.2em
+  }
+
+  .details.movies .info .btn.action {
+      position: absolute;
+      bottom: 8px;
+      right: 0
+  }
+
+  .details.movies .critic-metadata {
+      font-size: 1em;
+      margin-bottom: 1.8em
+  }
+
+  .details.movies .critic-metadata .tomato-score:before {
+      margin-right: .5em
+  }
+
+  .details.movies .critic-metadata .flixster-score:before {
+      margin-right: .4em
+  }
+
+  .details.series .poster-container {
+      width: 100%;
+      height: 280px;
+      position: relative;
+      cursor: pointer;
+  }
+
+  .details.series .poster-container i{
+    position: absolute;
+    color: #FFF;
+    font-size: 35px;
+    left: 50%;
+    top: 50%;
+    margin-top: -35px;
+  }
+
+
+  .details.series .info {
+      padding-left: 0;
+      margin-bottom: 1.75em
+  }
+
+  .details.series .info .btn.action {
+      top: .3em;
+      bottom: initial
+  }
+
+  .details.series .info p {
+      display: -webkit-box;
+      width: 60%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical
+  }
+  .details .episodes > li { padding: .75em 1.5em; 
+    &:first-child { border: none; margin-top: 1em; }
+  }
+  .awards td {
+    color: #e59a08
+  }
+
+  .awards .icon {
+    position: relative;
+    top: .26em;
+    font-size: 1.7em
+  }
+
+  .awards .award:not(:first-of-type) {
+    margin-left: 1.5em
+  }
+
+  .awards table {
+    margin-left: .5em
+  }
+
+  .awards tr {
+      font-size: .75em
+  }
+
+  .awards tr td:first-child {
+    font-weight: bold;
+    text-align: right
+  }
+
+  .awards tr td:last-child {
+    padding-left: .35em
+  }
+
+  .details .episodes {
+    margin: 0;
+    .placeholder {
+      width: 100%;
+      height: 23%;
+      background: #e1e1e1;
+    }
+  }
+
+  .details-content .dtv-checkbox-tup {
+    margin-left: 2em
+  }
+
+.details .dtv-scroll {
+    padding: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: .25s;
+    opacity:0;
+}
+
+#dtv_details_carousel_tup {
+    position: relative;
+    margin: 0 auto
+}
+
+.details .clips>div {
+    width: 265px;
+    height: 184px;
+    margin-bottom: 1em
+}
+
+.details .clips>div:nth-child(odd) {
+    float: left
+}
+
+.details .clips>div:nth-child(even) {
+    float: right
+}
+
+.details .clips>div>div {
+    width: 100%;
+    height: 100%
+}
+
+
+  .btn {
+    border-radius: 0;
+    font-size: .9em;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: #6f7a95;
+    padding: .35em .7em .15em .7em;
+    margin-right: 0;
+    border: 1px solid #d5d5d6;
+  }
+}
+
+
+// .modal.tablet-view .tab-tup .nav-tabs {
+//   &:after {
+//     content: "";
+//     position: absolute;
+//     left: 0;
+//     bottom: 0;
+//     width: 100%;
+//     height: 1px;
+//     background: #ccc;
+//   }
+// }

@@ -1,0 +1,9 @@
+<div class="card" ng-class="class" ui-sref="modal.details({media_type:mediaType, id:id})">
+  <div class="poster">
+    <span ng-if="hashTag" class="tag">#{{::hashTag}}</span>
+    <div class="genre-type">{{::genreType}}</div>
+    <div dtv-background-cover src="::imgSrc">
+      <i class="icon icon-dtv2-placeholder"></i>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<style>
+*
+{
+  box-sizing: border-box;
+}
+
+.Modal-backdrop
+{
+ position: fixed;
+ top: 0px;
+ left: 0px;
+ height:100%;
+ width:100%;
+ background: #fff;
+ z-index: 1001;
+ opacity: 0.5;
+}
+
+.Modal-holder
+{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  width:100%;
+  background: transparent;
+  z-index: 1002;
+  padding: 30px 15px;
+}
+</style>
+
+<div class="Modal-backdrop"></div>
+<div class="Modal-holder" style="border:2px solid">
+  <div class="modal-header">
+    <!-- <button ui-sref="app">Close</button>   -->
+  </div>
+  <div ui-view autoscroll="false"></div>  
+  <div class="modal-footer">
+  </div>
+</div>  
+
+

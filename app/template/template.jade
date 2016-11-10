@@ -1,0 +1,23 @@
+extends /shared/templates/poc-base-template
+
+append head-scripts
+  !{appendHeadScripts}
+
+prepend head-scripts
+  !{prependHeadScripts}
+
+prepend head-styles
+  !{prependHeadStyles}
+
+append head-styles
+  !{appendHeadStyles}
+
+block content
+  div !{style}
+  div !{html}
+
+prepend bottom-scripts
+  !{prependBottomScripts}
+
+append bottom-scripts
+  !{appendBottomScripts}

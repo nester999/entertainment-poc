@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1396,
+    "title": "Breaking Bad",
+    "poster_path": "https://image.tmdb.org/t/p/w1000/88Z0fMP8a88EpQWMCs1593G0ngu.jpg",
+    "backdrop_path": "http://i.huffpost.com/gen/1556343/images/o-BREAKING-BAD-facebook.jpg",
+    "media_type": "show",
+    "air_dates": "2008-2013",
+    "seasons": 5,
+    "episodes": 62,
+    "description": "Breaking Bad is an American crime drama television series created and produced by Vince Gilligan. Set and produced in Albuquerque, New Mexico, Breaking Bad is the story of Walter White, a struggling high school chemistry teacher who is diagnosed with inoperable lung cancer at the beginning of the series. He turns to a life of crime, producing and selling methamphetamine, in order to secure his family's financial future before he dies, teaming with his former student, Jesse Pinkman. Heavily serialized, the series is known for positioning its characters in seemingly inextricable corners and has been labeled a contemporary western by its creator.",
+    "awards": {
+      "emmys": 16,
+      "golden_globes": 2,
+      "nominations": 108
+    },
+    "genres": ["Crime", "Drama"],
+    "rating": "TV-MA"
+  },
+  {
+    "id": 1420,
+    "title": "The Theory of Everything",
+    "poster_path": "https://image.tmdb.org/t/p/w500/4jspr8hLLuju59bCnMiefzRW4p0.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/jIh6T8re0iFYEqBXlBMkAUhLgpr.jpg",
+    "media_type": "movie",
+    "release_date": "2014",
+    "tomato_score": 96,
+    "flickster_score": 95,
+    "description": "A look at the relationship between the famous physicist Stephen Hawking and his wife.",
+    "genres": ["Biography", "Drama", "Thriller"],
+    "rating": "PG-13",
+    "duration": "1 hr 54min"
+  },
+  {
+    "id": 1425,
+    "title": "Breaking Bad",
+    "poster_path": "https://image.tmdb.org/t/p/w1000/88Z0fMP8a88EpQWMCs1593G0ngu.jpg",
+    "backdrop_path": "http://i.huffpost.com/gen/1556343/images/o-BREAKING-BAD-facebook.jpg",
+    "media_type": "show",
+    "air_dates": "2008-2013",
+    "seasons": 5,
+    "episodes": 62,
+    "description": "Breaking Bad is an American crime drama television series created and produced by Vince Gilligan. Set and produced in Albuquerque, New Mexico, Breaking Bad is the story of Walter White, a struggling high school chemistry teacher who is diagnosed with inoperable lung cancer at the beginning of the series. He turns to a life of crime, producing and selling methamphetamine, in order to secure his family's financial future before he dies, teaming with his former student, Jesse Pinkman. Heavily serialized, the series is known for positioning its characters in seemingly inextricable corners and has been labeled a contemporary western by its creator.",
+    "awards": {
+      "emmys": 16,
+      "golden_globes": 2,
+      "nominations": 108
+    },
+    "genres": ["Crime", "Drama"],
+    "rating": "TV-MA"
+  }
+]
+

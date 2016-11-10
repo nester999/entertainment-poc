@@ -1,0 +1,13 @@
+<div ng-repeat="category in categoriesList" ng-style="{'font-size': cardStack.style.fontSize}" class="dtve-list dtve-title-list is-carousel">
+  <div class="carousel-title-tup">
+    <h3 class="carousel-title">{{category.name}}</h3>
+    <a href="carousel/{{category.id}}" class="btn">View All</a>
+  </div>
+  <div class="carousel-container">
+    <div class="carousel-slider">
+      <ul dtv-carousel="dtv-carousel" class="carousel-items">
+        <li dtv-asset-card="dtv-asset-card" ng-repeat="card in category.items" data="card" class="carousel-item"></li>
+      </ul>
+    </div>
+  </div>
+</div>

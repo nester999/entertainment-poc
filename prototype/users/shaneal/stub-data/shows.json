@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1396,
+    "poster_path": "https://image.tmdb.org/t/p/w500/4yMXf3DW6oCL0lVPZaZM2GypgwE.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/w500/eSzpy96DwBujGFj0xMbXBcGcfxX.jpg",
+    "vote_average": 9,
+    "heading_title": "Breaking Bad",
+    "details_title": "Breaking Bad",
+    "number_of_episodes": 62,
+    "number_of_seasons": 5,
+    "caption": "5 Seasons, 62 Episodes",
+    "card_type": "tv"
+  },
+  {
+    "id": 61406,
+    "poster_path": "https://image.tmdb.org/t/p/w500/29BkJzkb1rchLGpebaGtCkyzgfv.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/w500/alE6kn4y7WXqdHqgzQclYnDUBvd.jpg",
+    "vote_average": 6.8,
+    "heading_title": "Transparent",
+    "details_title": "Transparent",
+    "number_of_episodes": 9,
+    "number_of_seasons": 1,
+    "caption": "1 Seasons, 9 Episodes",
+    "card_type": "tv"
+  },
+  {
+    "id": 1425,
+    "poster_path": "https://image.tmdb.org/t/p/w500/6AquMx9MoJZTaZIR2AokSDATFCt.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/w500/cu1lW6y91eveEDVHl5V4ERpEfDc.jpg",
+    "vote_average": 8.4,
+    "heading_title": "House of Cards",
+    "details_title": "House of Cards",
+    "number_of_episodes": 39,
+    "number_of_seasons": 3,
+    "caption": "3 Seasons, 39 Episodes",
+    "card_type": "tv"
+  },
+  {
+    "id": 2316,
+    "poster_path": "https://image.tmdb.org/t/p/w500/iP0uuzWOR5uornNpkkZiemVonMi.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/w500/eLiqATmcigKP8K2BhjLdELmEqsy.jpg",
+    "vote_average": 8.1,
+    "heading_title": "The Office",
+    "details_title": "The Office",
+    "number_of_episodes": 195,
+    "number_of_seasons": 9,
+    "caption": "9 Seasons, 195 Episodes",
+    "card_type": "tv"
+  }
+]

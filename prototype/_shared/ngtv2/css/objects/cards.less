@@ -1,0 +1,376 @@
+// TODO: Clean up .tag CSS and make more reusable instead of duplicating CSS
+// TODO: don't nest as much
+
+.dtv-asset-card {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.card-template-tup {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: inherit;
+}
+
+// Base layout
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .poster {
+    position: absolute;
+  }
+  .details {
+    position: absolute;
+    width: initial;
+    height: initial;
+    color: inherit;
+    background: #fff;
+    border: 1px solid #d9dbdd;
+  }
+  li {
+    .truncate-text();
+    vertical-align: middle;
+  }
+  .overlay {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 90%);
+    .title {
+      position: absolute;
+      top: 8px; left: 9px;
+      z-index: 1;
+      color: #fff;
+      font-size: .8em;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.card ul {
+  .unstyled-list();
+}
+
+// Landscape
+.card {
+  .poster {
+    top: 0; right: 0; bottom: 19%; left: 0;
+  }
+  .details {
+    top: 81%; right: 0; bottom: 0; left: 0;
+    padding: .5em;
+    border-top: 0;
+    ul:not(.metadata) {
+      display: -webkit-flex;
+      -webkit-align-items: center;
+      -webkit-justify-content: space-between;
+    }
+    li:first-child { -webkit-flex-shrink: 1000000; }
+    .program-title {
+      display: block;
+      margin-top: -.15em;
+      margin-bottom: 0;
+      color: #4c4c4c;
+      font-size: .8em;
+      text-transform: uppercase;
+      white-space: nowrap;  
+    }
+    .description {
+      color: #999;
+      font-size: .7em;
+    }
+  }
+  &.recomendation .details {
+    ul:first-of-type {
+      margin-bottom: -.1em;
+    }
+  }
+}
+
+// Portrait
+.card.portrait {
+  .poster {
+    top: 0; right: 53%; bottom: 0; left: 0;
+  }
+  .details {
+    top: 0; right: 0; bottom: 0; left: 47%;
+    padding: .85em .7em;
+    border-top: 1px solid #d9dbdd;
+    border-left: 0;
+    .program-title {
+      margin-top: 0;
+      font-size: 1em;
+      line-height: 1.2;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+  .metadata {
+    position: relative;
+    margin-top: .6em;
+    margin-bottom: -.33em;
+    font-size: .8em;
+    .icon {
+      position: relative;
+      top: .05em;
+      margin-left: .18em;
+      color: #999;
+      font-size: 1.4em;
+    }
+  }
+  p {
+    display: -webkit-box;
+    margin: 0;
+    margin-top: 1em;
+    font-size: .75em;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; 
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+  }
+}
+
+// In Progress
+.card {
+  .progress {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+  }
+  .bar {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 40%;
+    height: 4px;
+    background: #3ffb8a;
+  }
+}
+
+// Tags
+.card {
+  .tag {
+    border-radius: 3px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0 , .2);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+  .poster .tag {
+    position: absolute;
+    top: 1em; left: 1em;
+    background: -webkit-linear-gradient(top, #009af2 0%, #0092e7 100%);
+    padding: .3em .5em .1em .5em;
+    color: #fff;
+    font-size: .55em;
+  }
+  &.show.in-progress .poster .tag {
+    background: #14c05a;
+  }
+  .progress .tag {
+    position: absolute;
+    top: initial; bottom: 8%; right: 2%; left: initial;
+    padding: .23em .4em 0 .5em;
+    background: #000;
+    color: #fff;
+    font-size: .65em;
+    line-height: 1.1;
+  }
+  .details .tag {
+    padding: .5em .4em 0 .5em;
+    margin-top: -.7em;
+    background: #e5e5e5;
+    border-radius: 3px;
+    color: #999;
+    font-size: .55em;
+    line-height: 1.1;
+  }
+}
+
+// Placeholder
+.dtv-background-cover,
+div[dtv-background-cover] {
+  background-color: #ececec;
+  i {
+    position: absolute;
+    top: 50%; left: 50%;
+    color: #e1e1e1;
+    font-size: 3.5em;
+    -webkit-transform: translate(-50%, -50%);
+  }
+  &.loaded i {
+    display: none;
+  }
+}
+
+// Recomendation
+.card {
+  .recomended-by {
+    color: #999;
+    text-transform: uppercase;
+    .icon {
+      position: relative;
+      top: 0;
+      font-size: 1.2em;
+    }
+    span {
+      left: -.1em;
+      font-size: .6em;
+      vertical-align: middle;
+    }
+  }
+  &.portrait {
+    .recomended-by {
+      position: absolute;
+      right: 0; bottom: -.1em;; left: .7em;
+    }    
+  }
+}
+
+// Actor-Personality
+.card.actor-personality {
+  ul {
+    display: block !important;
+    margin-bottom: .25em;
+    li:first-child {
+      color: #086bc6;
+      font-size: .6em;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    li:last-child {
+      color: #4d4d4d;
+      font-size: .4em;
+      font-style: italic;
+    }
+    li.name {
+      display: block;
+      color: #4c4c4c;
+      font-family: 'DIN-Light';
+      font-size: 1em;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      line-height: 1 !important;
+    }
+    li.title {
+      margin: .25em 0;
+      color: #999;
+      font-size: .8em;
+      font-style: normal;
+    }
+  }
+  .details ul:first-of-type {
+    margin-bottom: .7em;
+  }
+}
+
+// Genre Cards
+.card.genre {
+  .poster {
+    width: 100%;
+    height: 100%;
+    &:before {
+      content: '';
+      background-color: rgba(000,000,000,.35);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .genre-type {
+      position: absolute;
+      top: 4em;
+      width: 100%;
+      text-align: center;
+      text-shadow: 0px 0px 7px #000;
+      color: #FFF;
+      font-size: 1.5em;
+    }
+  }
+}
+
+.vertical-align-center {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.card.favorite-channels {
+  background: #FFF;
+  border: 1px solid #d9dbdd;
+  color: #4c4c4c;
+  .card-label {
+    padding: .65em 1em .5em 1em;
+    box-shadow: 0px 1px 3px #CCC;
+    position: relative;
+    font-weight: bold;
+  }
+  .channels-list{
+    background-color: #F6F6F6;
+    height: 200px;
+    overflow: auto;
+    .channel {
+      padding: .75em 1em;
+      border-bottom: 1px solid #ccc;
+      & > div { float: left; height: 20px; }
+      .network-logo { width: 15%; text-align: center; 
+        img {
+          max-height: 100%;
+          max-width: 100%;
+          width: auto;
+        }
+      }
+      .currently-playing { width: 60%; font-weight: bold; font-size: .85em;
+        .vertical-align-center {
+          height: 20px;
+          padding: 0 .75em;
+        }
+        .ellipsis {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          width: 155px;
+          white-space: nowrap;
+          display: block;
+        }
+      }
+      .air-time { width: 25%; font-size: .85em;
+        .vertical-align-center { height: 20px; }
+      }
+    }
+  }
+}
+
+// Making absolute because it's shifting other elements when relative
+.ppv {
+  &.movie .icon-dtv2-coin {
+    position: initial;
+  }
+  .icon-dtv2-coin {
+    position: absolute;
+    top: .55em;
+    right: .34em;
+    color: #999;
+  }
+}
+
+// TODO: HARDED CODED
+.card.live-content {
+  .channel-logo {
+    position: absolute;
+    top: .5em; right: .5em; bottom: .5em; left: 80%;
+    // background: green;
+  }
+}
+
+// Dark overrides
+.dark-theme .card {
+  .details {
+    background: #2e2f34;
+    border-color: #202225;
+    .program-title, .name, { color: #fff; }
+    .metadata, p { color: #999; }
+    .tag { background: #444; }
+  }
+  &.actor-personality ul li:last-child { color: #999; }
+}
